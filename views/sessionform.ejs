@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/resources/img/iconografia/ico.ico"
+            type="image/x-icon">
+        <title><%=tipo%></title>
+    </head>
+    <body>
+        <%- include('./partials/header.ejs') %>
+        <main>
+            <% if(tipo == "registro") {%>
+            <%- include("./partials/register.ejs") %>
+            <% } %>
+            <% if(tipo == "inicio") {%>
+            <%- include("./partials/getIn.ejs") %>
+            <% } %>
+            <% if(tipo == "actualizar_correo") {%>
+            <%- include("./partials/updateCorreo.ejs") %>
+            <% } %>
+            <% if(tipo == "actualizar_direccion") {%>
+            <%- include("./partials/updateDireccion.ejs") %>
+            <% } %>
+            <% if(tipo == "actualizar_nombre") {%>
+            <%- include("./partials/updateNombre.ejs") %>
+            <% } %>
+            <% if(tipo == "actualizar_contrasenia") {%>
+            <%- include("./partials/updateContrasenia.ejs") %>
+            <% } %>
+            <% if(tipo == "actualizar_celular") {%>
+            <%- include("./partials/updateCelular.ejs") %>
+            <% } %>
+            <% if(tipo == "actualizar_identificacion") {%>
+            <%- include("./partials/updateIdentificacion.ejs") %>
+            <% } %>
+            <% if(tipo == "actualizar_telefono") {%>
+            <%- include("./partials/updateTelefono.ejs") %>
+            <% } %>
+            <% if(tipo == "actualizar_foto") {%>
+            <%- include("./partials/updateUserImage.ejs") %>
+            <% } %>
+            <% if(tipo == "ventas") {%>
+            <%- include("./partials/ventas.ejs") %>
+            <% } %>
+            <% if(tipo == "ensenar") {%>
+            <%- include("./partials/ensenar.ejs") %>
+            <% } %>
+        </main>
+        <%- include('./partials/footer.ejs') %>
+    </body>
+</html>

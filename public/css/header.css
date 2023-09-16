@@ -1,0 +1,215 @@
+html{
+    min-width: 100vw;
+}
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+header {
+    background-color: var(--color-primario);
+    /* Color principal */
+    color: var(--color-texto-terciario);
+    display: flex;
+    padding-left: 30px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    width: 90vw;
+    border-top-right-radius:25px ;
+    border-bottom-left-radius:25px ;
+}
+
+#logoContainer img {
+    height: 50px;
+    max-width: 100%;
+    margin: 2.5px;
+    padding: 2.5px;
+    margin-right: -30px;
+    padding-right: -30px;
+}
+
+
+/* Menús y elementos desplegables */
+.menu {
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-item {
+    margin-right: 20px;
+    margin-left: 20px;
+    padding-right: 20px;
+    position: relative;
+}
+
+.submenu {
+    border-top-right-radius:25px ;
+    border-bottom-left-radius:25px ;
+    background-color: var(--color-secundario);
+    /* Color secundario */
+    display: none;
+    position: absolute;
+    list-style: none;
+    padding: 10px;
+    top: 20%;
+    left: 0;
+    z-index: 1;
+}
+
+ul.submenu ul {
+    border-top-right-radius:25px ;
+    border-bottom-left-radius:25px ;
+    display: none;
+    position: relative;
+    background-color:var(--color-primario);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    top:15%;
+}
+
+ul.submenu ul li {
+    padding: 10px;
+    border-bottom: none;
+    cursor: pointer;
+}
+
+ul.submenu li:hover ul {
+    display: block;
+    color: var(--color-texto-terciario);
+}
+
+li a{
+    text-decoration: none;
+    color: var(--color-texto-terciario);
+}
+
+.submenu li {
+    padding: 10px;
+    border-bottom: 3px double var(--color-texto-terciario);
+    cursor: pointer;
+}
+
+.submenu li:last-child {
+    border-bottom: none;
+}
+
+.submenu li:hover,
+.submenu li a:hover {
+    color: var(--color-texto-secundario);
+}
+
+.menu-item:hover .submenu {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+    }
+
+    .menu-item {
+        margin: 10px 0;
+    }
+
+    .menu.open .menu-item {
+        display: none;
+    }
+
+    .sandwich-menu {
+        font-size: 24px;
+        display: block;
+        cursor: pointer;
+        margin-left: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .sandwich-menu.open {
+        display: none;
+    }
+
+    .menu.open .menu-item.open .submenu {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .sandwich-menu {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        margin: 0;
+        position: relative;
+        top: 50%;
+    }
+
+    .menu-item {
+        display: none;
+    }
+
+    .menu.open .menu-item {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu.open .menu-item li {
+        padding: 10px;
+        border-bottom: 3px double var(--color-texto-terciario);
+        cursor: pointer;
+    }
+
+    .menu.open .submenu li:last-child {
+        border-bottom: none;
+    }
+
+    .sandwich-menu {
+        position: relative;
+        top: 50%;
+        margin: 10px;
+        padding: 5px;
+    }
+
+    .submenu {
+        top: 50%;
+        display: none;
+        position: relative;
+        background-color: var(--color-secundario);
+        /* Color secundario */
+        list-style: none;
+        margin: 10px;
+        padding: 5px;
+        transition: right 1s ease;
+    }
+
+    .menu-item:hover .submenu {
+        right: 10px;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    header {
+        min-width: 100vw;
+    }
+}
+
+@media screen and (max-width: 335px) {
+   
+    #logo01 {
+        display: none;
+    }
+    #logo {
+        height: 50px;
+        width: 75px;
+        margin: 2.5px;
+        padding: 2.5px;
+    }
+}

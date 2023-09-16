@@ -1,0 +1,32 @@
+{
+  "name": "enjoyourpe_0.2",
+  "version": "0.2",
+  "description": "proyecto enjoy con nuevo diseño en las vistas y back con arquitectura modelo-vista-controlador",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "setup": "npm install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.6.1",
+    "nodemailer": "^6.9.5",
+    "path": "^0.12.7",
+    "sharp": "^0.32.5",
+    "validator": "^13.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

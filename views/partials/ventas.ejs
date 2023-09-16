@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="/resources/css/forms.css">
+<section style="width: fit-content;">
+    <form action="/PublicarUnaVenta" method="post"
+        enctype="multipart/form-data">
+        <label for="nombre">Titulo</label>
+        <input type="text" name="nombre" id="nombre_producto"
+            placeholder="nombre" maxlength="100" required>
+        <label for="descripcion">descripcion</label>
+        <textarea name="descripcion" id="descripcion_producto"
+            maxlength="500" required style="min-height: 300px;"></textarea>
+        <div class="listado_1">
+            <div>
+                <label for="stock">stock</label>
+                <input name="stock" type="number"
+                    placeholder="15" required
+                    style="width: 25%;">
+            </div>
+            <div>
+                <label for="precio">precio</label>
+                <input name="precio" type="number"
+                    placeholder="5000" required
+                    style="width: 25%;">
+            </div>
+        </div>
+        <label for="imagen_post">Imagen</label>
+        <img style="display: none;" id="imagen_preview" src="#"
+            alt="Imagen previa" />
+        <input type="file" name="imagen_post" id="imagen_post" accept="image/*">
+        <label for="dimenciones">Dimenciones</label>
+        <input type="text" name="dimenciones"
+            id="dimenciones_producto"
+            placeholder="Dimenciones" maxlength="100" required>
+        <label for="Categoria"></label>
+        <select name="Categoria" id="Categoria_post" required>
+            <option value="7">Comida</option>
+            <option value="8">Juguetes</option>
+            <option value="9">Accesorios</option>
+        </select>
+        <button type="submit">Postear</button>
+    </form>
+</section>
+<script src="/resources/js/forms.js"></script>

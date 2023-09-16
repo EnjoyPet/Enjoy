@@ -1,0 +1,151 @@
+/* Estilo general para todos los elementos de formulario */
+form {
+    font-family: Arial, sans-serif;
+    background-color: var(--color-fondo);
+    padding: 20px;
+    border: 1px solid var(--color-terciario);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 100px;
+    margin: 50px 25px 50px 25px;
+    
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+form h1{
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+/* Estilo para etiquetas de formulario */
+label {
+    font-weight: bold;
+    color: var(--color-texto);
+    margin-bottom: 5px;
+}
+
+/* Estilo para campos de entrada de texto */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--color-terciario);
+    border-radius: 5px;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    overflow-y: auto;
+    word-wrap:break-word;
+    max-height: 300px;
+}
+textarea {
+    margin: 15px auto;
+    max-width: 300px;
+    
+}
+
+/* Estilo para campos de entrada de selección (select) */
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--color-terciario);
+    border-radius: 5px;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+/* Estilo para los botones del formulario */
+button {
+    padding: 10px 20px;
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: var(--color-enlace);
+}
+
+/* Estilo para enlaces en el formulario */
+a {
+    color: var(--color-enlace);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-enlace-hover);
+}
+
+form p{
+    color: var(--color-secundario);
+    background-color: var(--color-primario);
+    width: 50%;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+    justify-content: center; 
+    margin-bottom: 25px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+#imagen_preview{
+    margin: 15px auto 15px auto;
+    max-width: 200px;
+    max-height: 200px;
+    height: auto;
+    width: auto;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--color-terciario);
+    border-radius: 5px;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    cursor: pointer; 
+}
+
+input[type="file"]::file-selector-button {
+    padding: 5px 10px;
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="file"]::file-display-input {
+    margin-top: 5px;
+    font-size: 14px;
+    color: var(--color-texto);
+}
+
+#eliminar-imagen-btn{
+    background-color: var(--color-secundario);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: fit-content;
+    cursor: pointer;
+    margin: 10px auto 10px auto;
+}
+
+#eliminar-imagen-btn:hover{
+    background-color: var(--color-enlace);
+}

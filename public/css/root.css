@@ -1,0 +1,20 @@
+:root {
+    --color-primario: #E8C7A3;
+    /* Color principal (Beige suave) */
+    --color-secundario: #B4A7A0;
+    /* Color secundario (Gris beige) */
+    --color-terciario: #e7e7d4;
+    /* Color terciario (Gris) */
+    --color-fondo: #F3EFE7;
+    /* Color de fondo (Blanco crema) */
+    --color-texto: #333;
+    /* Color de texto principal (Gris oscuro) */
+    --color-texto-secundario: #888;
+    /* Color de texto secundario (Gris claro) */
+    --color-texto-terciario: #f3eded;
+    /*colo de texto terciario (blanco apagado)*/
+    --color-enlace: #007BFF;
+    /* Color de enlaces (Azul) */
+    --color-enlace-hover: #0056b3;
+    /* Color de enlaces al pasar el cursor (Azul más oscuro) */
+}

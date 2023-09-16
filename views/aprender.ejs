@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/resources/img/iconografia/ico.ico"
+            type="image/x-icon">
+        <title>Enjoy - Aprender</title>
+    </head>
+    <body>
+        <%- include("./partials/header.ejs") %>
+        <main>
+            <div class="sectionnomargin">
+                <% posts.forEach(post => { %>
+                <section>
+
+                    <div class="horizontalmidsection"
+                        style="flex-direction: column;">
+                        <h2 class="listado_1"> <%= post.titulo_post %></h2>
+
+                        <div class="imgcontainer">
+                            <img id="user_big_img" class="usuario_img"
+                                src="data:image/jpeg;base64,<%= post.imagen_post.toString('base64') %>"
+                                alt="imagen del post">
+                        </div>
+
+                        <p class="listado_1" style="width: 50%;"> <%=
+                            post.contenido_post %></p>
+                        <div class="grid" style="width: 50%;">
+                            <% if (data.usuario != null) { %>
+                            <div class="like_button_container">
+                                <button class="meGusta-Button"
+                                    onclick="meGustaPost('<%= post.id_post %>')">
+                                    Me Gusta
+                                </button>
+                                <span class="likes-count"
+                                    id="likes-count-<%= post.id_post %>"><%=
+                                    post.meGusta_post %></span>
+                            </div>
+                            <div class="like_button_container">
+                                <button class="noMeGusta-Button"
+                                    onclick="noMeGustaPost('<%= post.id_post %>')">
+                                    No Me Gusta
+                                </button>
+                                <span class="dislikes-count"
+                                    id="dislikes-count-<%= post.id_post %>"><%=
+                                    post.noMeGusta_post %></span>
+                            </div>
+                            <% } else { %>
+                            <div onclick="linkTo('cuenta/iniciar-sesion')" class="like_button_container">
+                                <span class="meGusta-span">
+                                    Me Gusta
+                                </span>
+                                <span class="likes-count"><%=
+                                    post.meGusta_post
+                                    %></span>
+                            </div>
+                            <div onclick="linkTo('cuenta/iniciar-sesion')" class="like_button_container">
+                                <span class="noMeGusta-span">
+                                    No Me Gusta
+                                </span>
+                                <span class="dislikes-count"><%=
+                                    post.noMeGusta_post %></span>
+                            </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </section>
+                <% }); %>
+            </div>
+        </main>
+        <%- include("./partials/footer.ejs") %>
+        <script src="/resources/js/async.js"></script>
+    </body>
+</html>
