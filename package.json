@@ -1,5 +1,5 @@
 {
-  "name": "enjoyourpe_0.2",
+  "name": "enjoyourpet_0.2",
   "version": "0.2",
   "description": "proyecto enjoy con nuevo diseño en las vistas y back con arquitectura modelo-vista-controlador",
   "main": "index.js",
