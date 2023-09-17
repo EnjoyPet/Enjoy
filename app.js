@@ -20,13 +20,10 @@ const upload = multer({ storage: storage });
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
   secret: 'PantallaZapatoMause2213',
-  resave: false,
+  resave: true,
   saveUninitialized: true,
   cookie: {
     maxAge: 30 * 60 * 1000,
-    // secure: true, descomentar cunado tenga https
-    httpOnly: true,
-    sameSite: 'strict'
   }
 }));
 
