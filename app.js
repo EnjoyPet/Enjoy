@@ -1,9 +1,9 @@
-const port = process.env.PORT || 3000;
 const path = require("path");
 const conection = require('./config/db');
 
 global.dotenv = require("dotenv");
 dotenv.config({ path: './env/.env' });
+const port = process.env.PORT || 3000;
 
 const express = require("express");
 const session = require('express-session');
@@ -129,7 +129,7 @@ app.get('/Pronto-Implementado',acountController.mostrarMensaje);
 
 
 app.listen(port, () => {
-    console.log(`Servidor en ejecución en el puerto ${port}`);
+  console.log(`Levantando el Servidor ${port}`);
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
