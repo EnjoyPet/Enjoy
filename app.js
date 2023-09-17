@@ -1,9 +1,23 @@
 const path = require("path");
-const conection = require('./config/db');
+const nodemailer = require('nodemailer');
+
+const controllers = require('./controllers.js');
+const conection = require('./db.js');
+
 
 global.dotenv = require("dotenv");
 dotenv.config({ path: './env/.env' });
 const port = process.env.PORT || 3000;
+
+const transporter = nodemailer.createTransport({
+  service: 'Gmail',
+  auth: {
+      user: process.env.MAILER_MAIL,
+      pass: process.env.MAILER_PASS
+  }
+});
+
+global.transporter = transporter;
 
 const express = require("express");
 const session = require('express-session');
@@ -30,13 +44,8 @@ app.use(session({
   }
 }));
 
+// Ahora puedes usar la variable modelsPath en otros scripts
 
-const indexController = require('./controllers/indexController');
-const UserController = require("./controllers/usercontroller");
-const acountController = require("./controllers/acountController");
-const productosController = require("./controllers/productosController");
-const ventasController = require("./controllers/ventasController");
-const entrenamientoController = require("./controllers/entrenamientoController");
 const { send } = require("process");
 
 // INDEX
@@ -64,58 +73,58 @@ app.get('/',(req,res)=>{
 //
 
 //REGISTRO
-app.get('*/cuenta/registrarse',UserController.rederizarformderegistro);
-app.post('*/registrar-usuario',UserController.registrarUsuario);
-app.post('*/verificar-mail',UserController.verificarCorreo);
+app.get('*/cuenta/registrarse',controllers.UserController.rederizarformderegistro);
+app.post('/registrar-usuario',controllers.UserController.registrarUsuario);
+app.post('*/verificar-mail',controllers.UserController.verificarCorreo);
 //
 
 //INICIO
-app.get('*/cuenta/iniciar-sesion',UserController.rederizarformdeinicio);
-app.post('*/inciar',UserController.iniciarSesion);
+app.get('*/cuenta/iniciar-sesion',controllers.UserController.rederizarformdeinicio);
+app.post('*/inciar',controllers.UserController.iniciarSesion);
 //
 
 //CERRAR
-app.get('*/usuario/cerrar-sesion',UserController.cerrarSesion);
+app.get('*/usuario/cerrar-sesion',controllers.UserController.cerrarSesion);
 //
 
 //IFORMACION DE LA CUENTA
-app.get('*/usuario/informacion',acountController.renderAcountInfo);
-app.get('/usuario/informacion/actualizar/:objetivo',acountController.renderActializacionForm);
-app.get('/usuario/carrito',acountController.renderizarCarrito);
-app.get('/usuario/productos',acountController.renderizarProductos);
+app.get('*/usuario/informacion',controllers.acountController.renderAcountInfo);
+app.get('/usuario/informacion/actualizar/:objetivo',controllers.acountController.renderActializacionForm);
+app.get('/usuario/carrito',controllers.acountController.renderizarCarrito);
+app.get('/usuario/productos',controllers.acountController.renderizarProductos);
 
-app.post('/verificar-actualizar-correo',acountController.verificarCodigo);
+app.post('/verificar-actualizar-correo',controllers.acountController.verificarCodigo);
 
-app.post('/actualizar-correo',acountController.actualizarCorreo);
-app.post('/actualizar-direccion',acountController.actualizarDireccion);
-app.post('/actualizar-nombre',acountController.actualizarNombre);
-app.post('/actualizar-contrasenia',acountController.actualizarContrasenia);
-app.post('/actualizar-celular',acountController.actualizarCelular);
-app.post('/actualizar-identificacion',acountController.actualizarIdentificacion);
-app.post('/actualizar-telefono',acountController.actualizarTelefono);
-app.post('/actualizar-imagen_usuario', upload.single('imagen_post'),acountController.actualizarImagen);
+app.post('/actualizar-correo',controllers.acountController.actualizarCorreo);
+app.post('/actualizar-direccion',controllers.acountController.actualizarDireccion);
+app.post('/actualizar-nombre',controllers.acountController.actualizarNombre);
+app.post('/actualizar-contrasenia',controllers.acountController.actualizarContrasenia);
+app.post('/actualizar-celular',controllers.acountController.actualizarCelular);
+app.post('/actualizar-identificacion',controllers.acountController.actualizarIdentificacion);
+app.post('/actualizar-telefono',controllers.acountController.actualizarTelefono);
+app.post('/actualizar-imagen_usuario', upload.single('imagen_post'),controllers.acountController.actualizarImagen);
 
-app.post('/eliminar-imagen_usuario',acountController.eliminarImagen);
+app.post('/eliminar-imagen_usuario',controllers.acountController.eliminarImagen);
 //
 
 //PRODUCTOS
-app.get('/productos/:categoria/:pagina',productosController.renderProductos);
-app.get('/ver/producto/:id_producto',productosController.renderInfoProducto);
-app.get('/producto/comprar/:id_producto',productosController.comprarProducto);
-app.get('/producto/al-carro/:id_producto',productosController.productoAlCarro);
-app.get('/carrito/:id_carrito/producto/comprar/:id_producto',productosController.comprarCarrito);
-app.get('/carrito/:id_carrito/producto/eliminar/:id_producto',productosController.eliminarCarrito);
+app.get('/productos/:categoria/:pagina',controllers.productosController.renderProductos);
+app.get('/ver/producto/:id_producto',controllers.productosController.renderInfoProducto);
+app.get('/producto/comprar/:id_producto',controllers.productosController.comprarProducto);
+app.get('/producto/al-carro/:id_producto',controllers.productosController.productoAlCarro);
+app.get('/carrito/:id_carrito/producto/comprar/:id_producto',controllers.productosController.comprarCarrito);
+app.get('/carrito/:id_carrito/producto/eliminar/:id_producto',controllers.productosController.eliminarCarrito);
 //
 
 //VENTAS
-app.get('/vender',ventasController.renderVentasForm);
-app.post('/PublicarUnaVenta', upload.single('imagen_post'),ventasController.publicarVenta);
+app.get('/vender',controllers.ventasController.renderVentasForm);
+app.post('/PublicarUnaVenta', upload.single('imagen_post'),controllers.ventasController.publicarVenta);
 //
 
 //TIPS DE ENTRENAMIENTO
-app.get('/entrenamiento/ensenar',entrenamientoController.renderensenarForm);
-app.get('/entrenamiento/aprender',entrenamientoController.renderAprender);
-app.post('/hacerUnPost' ,upload.single('imagen_post'),entrenamientoController.hacerPost);
+app.get('/entrenamiento/ensenar',controllers.entrenamientoController.renderensenarForm);
+app.get('/entrenamiento/aprender',controllers.entrenamientoController.renderAprender);
+app.post('/hacerUnPost' ,upload.single('imagen_post'),controllers.entrenamientoController.hacerPost);
 app.put('/entrenamiento/aprender/puntuar/noMeGusta/:id', (req, res) => {
   const postId = req.params.id;
 
@@ -143,7 +152,7 @@ app.put('/entrenamiento/aprender/puntuar/meGusta/:id', (req, res) => {
 //
 
 //Sin Implementar
-app.get('/Pronto-Implementado',acountController.mostrarMensaje);
+app.get('/Pronto-Implementado',controllers.acountController.mostrarMensaje);
 
 //
 
@@ -154,7 +163,6 @@ app.listen(port, () => {
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/resources', express.static('public'));
-app.use('/resources', express.static(__dirname + '/public'));
 app.set('views', path.join(__dirname, 'views'))
 app.set("view engine", "ejs")
 app.use((err, req, res, next) => {

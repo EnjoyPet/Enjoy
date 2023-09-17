@@ -46,6 +46,9 @@
             <% if(tipo == "ensenar") {%>
             <%- include("./partials/ensenar.ejs") %>
             <% } %>
+            <% if(tipo == "verificarCodigo") {%>
+                <%- include("./partials/verificarCodigo.ejs") %>
+                <% } %>
         </main>
         <%- include('./partials/footer.ejs') %>
     </body>
