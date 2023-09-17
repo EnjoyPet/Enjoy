@@ -20,10 +20,13 @@ const upload = multer({ storage: storage });
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
   secret: 'PantallaZapatoMause2213',
-  resave: true,
+  resave: false,
   saveUninitialized: true,
   cookie: {
     maxAge: 30 * 60 * 1000,
+    // secure: true, descomentar cunado tenga https
+    httpOnly: true,
+    sameSite: 'strict'
   }
 }));
 
@@ -134,3 +137,7 @@ app.use('/resources', express.static('public'));
 app.use('/resources', express.static(__dirname + '/public'));
 app.set('views', path.join(__dirname, 'views'))
 app.set("view engine", "ejs")
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('¡Algo salió mal!');
+});
