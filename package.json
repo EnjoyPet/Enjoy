@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
   "name": "login_poo_nodejs",
   "version": "1.0.0",
   "description": "",
+=======
+  "name": "enjoyourpet_0.2",
+  "version": "0.2",
+  "description": "proyecto enjoy con nuevo diseño en las vistas y back con arquitectura modelo-vista-controlador",
+>>>>>>> a0e7bb1bb7ba028ecbaa202849966ea37a439b65
   "main": "app.js",
   "scripts": {
     "start": "node app.js",

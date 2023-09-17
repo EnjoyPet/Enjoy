@@ -1,3 +1,4 @@
+const port = process.env.PORT || 3000;
 const path = require("path");
 const conection = require('./config/db');
 
@@ -126,7 +127,7 @@ app.get('/Pronto-Implementado',acountController.mostrarMensaje);
 
 //
 
-const port = process.env.PORT || 8080;
+
 app.listen(port, () => {
     console.log(`Servidor en ejecución en el puerto ${port}`);
 });
