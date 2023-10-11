@@ -355,11 +355,11 @@ UserController.rederizarformdeinicio = (req, res) => {
 };
 
 UserController.registrarUsuario = async (req, res) => {
-  const { nombre, correo, numero, contrasenia } = req.body;
+  const { nombre, correo, numero, contrasenia, contrasenia2 } = req.body;
     const data = models.getData(req);
 
   try {
-    await models.UserModel.comprobarCorreo(correo, async (correoResult) => {
+    await models.UserModel.comprobarCorreo(correo, contrasenia,contrasenia2, async (correoResult) => {
       if (!correoResult.isValid) {
         res.send(correoResult.message);
       } else if (correoResult.result.length == 0) {

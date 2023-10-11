@@ -10,45 +10,16 @@
     <body>
         <%- include('./partials/header.ejs') %>
         <main>
-            <% if(tipo == "registro") {%>
-            <%- include("./partials/register.ejs") %>
+
+            <% if(tipo !== null) {%>
+                <% const Ruta = './partials/' + tipo + '.ejs' %>
+                <%- include(Ruta) %>
+            <% } else {%>
+                <section style="flex-direction: column;">
+                    <h1 class="listado_1">Hubo un Problema</h1>
+                    <h3 class="listado_1">No encontramos la ruta definida esperamos solucionar esto pronto</h3>
+                </section>
             <% } %>
-            <% if(tipo == "inicio") {%>
-            <%- include("./partials/getIn.ejs") %>
-            <% } %>
-            <% if(tipo == "actualizar_correo") {%>
-            <%- include("./partials/updateCorreo.ejs") %>
-            <% } %>
-            <% if(tipo == "actualizar_direccion") {%>
-            <%- include("./partials/updateDireccion.ejs") %>
-            <% } %>
-            <% if(tipo == "actualizar_nombre") {%>
-            <%- include("./partials/updateNombre.ejs") %>
-            <% } %>
-            <% if(tipo == "actualizar_contrasenia") {%>
-            <%- include("./partials/updateContrasenia.ejs") %>
-            <% } %>
-            <% if(tipo == "actualizar_celular") {%>
-            <%- include("./partials/updateCelular.ejs") %>
-            <% } %>
-            <% if(tipo == "actualizar_identificacion") {%>
-            <%- include("./partials/updateIdentificacion.ejs") %>
-            <% } %>
-            <% if(tipo == "actualizar_telefono") {%>
-            <%- include("./partials/updateTelefono.ejs") %>
-            <% } %>
-            <% if(tipo == "actualizar_foto") {%>
-            <%- include("./partials/updateUserImage.ejs") %>
-            <% } %>
-            <% if(tipo == "ventas") {%>
-            <%- include("./partials/ventas.ejs") %>
-            <% } %>
-            <% if(tipo == "ensenar") {%>
-            <%- include("./partials/ensenar.ejs") %>
-            <% } %>
-            <% if(tipo == "verificarCodigo") {%>
-                <%- include("./partials/verificarCodigo.ejs") %>
-                <% } %>
         </main>
         <%- include('./partials/footer.ejs') %>
     </body>

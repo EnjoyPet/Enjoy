@@ -429,19 +429,21 @@ productosModel.eliminarCarrito = async (id_carrito, callback) => {
 
 const UserModel = {};
 
-UserModel.comprobarCorreo = async (correo, callback) => {
-    if (!validator.isEmail(correo)) {
-        callback({ isValid: false, message: "Este correo no es valido" });
-    } else {
-        const query = 'SELECT id_usuario FROM usuario WHERE correo = ?';
-        try {
-            conection.query(query, [correo], (error, result) => {
-                callback({ isValid: true, result: result });
-            });
-        } catch (error) {
-            callback({ isValid: false, message: "Ocurrió un error en la consulta: " + error });
+UserModel.comprobarCorreo = async (correo, contrasenia, contrasenia2, callback) => {
+    if (contrasenia === contrasenia2) {
+        if (!validator.isEmail(correo)) {
+            callback({ isValid: false, message: "Este correo no es valido" });
+        } else {
+            const query = 'SELECT id_usuario FROM usuario WHERE correo = ?';
+            try {
+                conection.query(query, [correo], (error, result) => {
+                    callback({ isValid: true, result: result });
+                });
+            } catch (error) {
+                callback({ isValid: false, message: "Ocurrió un error en la consulta: " + error });
+            }
         }
-    }
+    }else callback({ isValid: false, message: "Las Conteseñas No Coinsiden"});
 };
 
 UserModel.registrarUsuario = async (nombre, correo, numero, contrasenia) => {
@@ -560,4 +562,3 @@ ventasModel.publicarVenta = async (req, nombre, categoria, descripcion, dimencio
 /* * ---------------------------------------------------------------------------------------------------------- * */
 
 module.exports = { acountModel, entrenamientoModel, getData, productosModel, UserModel, ventasModel };
-                                                                           

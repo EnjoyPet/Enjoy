@@ -1,13 +1,14 @@
 *{
     box-sizing:content-box;
+    margin: 0;
+    padding: 0;
 }
 body {
     font-family: Arial, sans-serif;
     background-color: var(--color-fondo);
     background-repeat: repeat;
-    /* Fondo */
     color: var(--color-texto);
-    /* Texto principal */
+    overflow-x: hidden;
 }
 main{
     min-height: 100vh;
@@ -21,6 +22,7 @@ main{
     padding: 20px;
     color: var(--color-texto-terciario);
 }
+
 section {
     height: fit-content;
     min-height: 450px;
@@ -86,6 +88,7 @@ section {
 }
 
 .like_button_container {
+    display: flex;
     padding: 10px;
     width: 25%;
     background-color: var(--color-primario);
@@ -95,6 +98,7 @@ section {
     cursor: pointer;
     transition: background-color 0.3s;
     margin: 15px auto;
+    flex-direction: column;
 }
 
 .like_button_container:hover {

@@ -10,6 +10,7 @@
     <body>
         <%- include("./partials/header.ejs") %>
         <main>
+            
             <div class="sectionnomargin">
                 <% posts.forEach(post => { %>
                 <section>
@@ -28,20 +29,16 @@
                             post.contenido_post %></p>
                         <div class="grid" style="width: 50%;">
                             <% if (data.usuario != null) { %>
-                            <div class="like_button_container">
-                                <button class="meGusta-Button"
-                                    onclick="meGustaPost('<%= post.id_post %>')">
-                                    Me Gusta
-                                </button>
+                            <div class="like_button_container"
+                            onclick="meGustaPost('<%= post.id_post %>')">
+                                <h3>Me Gusta</h3>
                                 <span class="likes-count"
                                     id="likes-count-<%= post.id_post %>"><%=
                                     post.meGusta_post %></span>
                             </div>
-                            <div class="like_button_container">
-                                <button class="noMeGusta-Button"
-                                    onclick="noMeGustaPost('<%= post.id_post %>')">
-                                    No Me Gusta
-                                </button>
+                            <div class="like_button_container" 
+                            onclick="noMeGustaPost('<%= post.id_post %>')">
+                                <h3>No Me Gusta</h3>
                                 <span class="dislikes-count"
                                     id="dislikes-count-<%= post.id_post %>"><%=
                                     post.noMeGusta_post %></span>
