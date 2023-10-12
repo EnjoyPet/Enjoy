@@ -404,6 +404,30 @@ UserController.cerrarSesion = async (req,res) => {
     res.redirect("/");
 }
 
+UserController.RecuperarContrasenia = async (req,res)=>{
+    const data = models.getData(req);
+    res.render('sessionform',{tipo:'indicarcorreo',data});
+}
+
+UserController.renderizarverificarCodContrasenia = async (req,res)=>{
+    models.UserModel.renderIndicarCorreoParaRecuperar(req);
+    const data = models.getData(req);
+    res.render('sessionform',{tipo:'recuperarcontrasenia',correo:req.body.correo, data});
+} 
+
+UserController.actualizarContraseniaOlvidada = async (req,res) =>{
+    const {codigo,correo, Nuev_contrasenia, Nuev_contrasenia_2} = req.body;
+    models.UserModel.actualizarContraseniaOlvidada(req,codigo,correo, Nuev_contrasenia,Nuev_contrasenia_2, (result)=>{
+        if(result.error){
+            console.error(result.message);
+            res.send(result.message);
+        }else{
+            const data = models.getData(req);
+            res.render('sessionform',{tipo:'inicio',data});
+        }
+    });
+
+}
 /* *----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------* */
 
 /* * ventas * */

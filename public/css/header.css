@@ -46,7 +46,7 @@ header {
     padding: 10px;
     top: 20%;
     left: 0;
-    z-index: 1;
+    z-index: 3;
 }
 
 ul.submenu ul {

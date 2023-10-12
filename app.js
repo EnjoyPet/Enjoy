@@ -81,6 +81,10 @@ app.post('*/verificar-mail',controllers.UserController.verificarCorreo);
 //INICIO
 app.get('*/cuenta/iniciar-sesion',controllers.UserController.rederizarformdeinicio);
 app.post('*/inciar',controllers.UserController.iniciarSesion);
+app.get('*/usuario/recuperar-contrasenia',controllers.UserController.RecuperarContrasenia);
+app.post('*/usuario/recuperar-contrasenia/verificar',controllers.UserController.renderizarverificarCodContrasenia);
+app.post('*/usuario/recuperar-contrasenia/verificar/actualizar-contrasenia',controllers.UserController.actualizarContraseniaOlvidada);
+
 //
 
 //CERRAR

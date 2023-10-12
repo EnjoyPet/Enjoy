@@ -37,7 +37,7 @@ textarea {
     margin-bottom: 10px;
     border: 1px solid var(--color-terciario);
     border-radius: 5px;
-    background-color: var(--color-fondo);
+    background-color: var(--color-secundario);
     color: var(--color-texto);
     overflow-y: auto;
     word-wrap:break-word;
@@ -70,10 +70,19 @@ button {
     cursor: pointer;
     transition: background-color 0.3s;
     margin-top: 15px;
+
+    border-top-right-radius: 35px;
+    border-bottom-left-radius: 35px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border: 1 solid;
 }
 
 button:hover {
     background-color: var(--color-enlace);
+}
+
+.other-button:hover{
+    background-color: var(--color-enlace-hover);
 }
 
 /* Estilo para enlaces en el formulario */

@@ -526,6 +526,58 @@ UserModel.iniciarSesion = async (req, correo, contrasenia, callback) => {
     })
 }
 
+UserModel.renderIndicarCorreoParaRecuperar = async (req)=>{
+    const correo = req.body.correo;
+    const verificationCode = crypto.randomBytes(2).toString('hex');
+
+    verification.set(correo, {
+        Codigo: verificationCode,
+        corr:correo,
+    });
+
+    const mailOptions = {
+        from: process.env.MAILER_MAIL,
+        to: correo,
+        subject: 'Código de recuperacion',
+        text: `Tu código de recuperacion es: ${verificationCode}.`,
+    };
+
+    global.transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+            console.error(error);
+        } else {
+            console.log('Correo de recuperacion enviado: ' + info.response);
+        }
+    });
+}
+
+UserModel.actualizarContraseniaOlvidada = async (req, codigo,correo, contrasenia_1, contrasenia_2,callback)=>{
+    if(contrasenia_1 === contrasenia_2){
+        const DatosdeUsuario = verification.get(correo);
+        if (!DatosdeUsuario || DatosdeUsuario.Codigo !== codigo) {
+            callback({ error: true, message: "Este código es incorrecto" });
+        } else {
+            const contrasenia = await bcryptjs.hash(contrasenia_1, 8);
+    
+            const query = "UPDATE usuario SET contrasenia = ? WHERE correo = ?";
+            try {
+                conection.query(query, [contrasenia, correo], (error, result) => {
+                    if (error) throw error
+                    else {
+                        verification.delete(correo);
+                        callback({ error: false, message: "Éxito al actualizar la contraseña" });
+                    }
+                });
+            } catch (err) {
+                throw err;
+                callback({ error: true, message: "Error al actualizar la contraseña" });
+            }
+        }
+    }else{
+        callback({ error: true, message: "Las Contraseñas No Coinsiden" });
+    }
+}
+
 /* * ---------------------------------------------------------------------------------------------------------- * */
 
 /* * ventas * */

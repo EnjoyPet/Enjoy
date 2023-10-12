@@ -22,5 +22,6 @@ function changeImage() {
     currentIndex = (currentIndex + 1) % images.length;
 
 }
+changeImage();
 
 setInterval(changeImage, 5000);
