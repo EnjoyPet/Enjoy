@@ -94,6 +94,11 @@ li a{
 
 .menu-item:hover .submenu {
     display: block;
+    
+}
+
+.menu {
+    transition: ease .3s;
 }
 
 @media screen and (max-width: 768px) {

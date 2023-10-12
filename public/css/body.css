@@ -2,13 +2,17 @@
     box-sizing:content-box;
     margin: 0;
     padding: 0;
+    
 }
 body {
-    font-family: Arial, sans-serif;
-    background-color: var(--color-fondo);
-    background-repeat: repeat;
+    font-family: Autour One, sans-serif;
+    /* background-color: var(--color-fondo);
+    background-repeat: repeat; */
+    background: linear-gradient(180deg, var(--color-primario) 30%, var(--color-secundario) 50%, var(--color-terciario) 100%);
     color: var(--color-texto);
     overflow-x: hidden;
+    font-weight: 700;
+
 }
 main{
     min-height: 100vh;
@@ -24,14 +28,14 @@ main{
 }
 
 section {
-    height: fit-content;
-    min-height: 450px;
+    height: min-content;
+    min-height: 250px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 90%;
     background-color: var(--color-terciario);
-    margin: 25px auto;
+    margin: 20px auto;
     border-top-right-radius: 35px;
     border-bottom-left-radius: 35px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);

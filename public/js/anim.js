@@ -3,7 +3,7 @@ animatedText.textContent = "";
 
 // Texto que quieres mostrar letra por letra
 const textToShow = [
-    "● Proporciona bienestar, calidad, cuidado y respeto \na los nuevos miembros de la familia, satisfaciendo  \n las expectativas de nuestros clientes.  \n  \n \n ● Mejora la calidad de vida de los animales callejeros, \nque actualmente no tienen cuidado y una familia \n para adoptarlos.  \n  \n \n ● Ofrece una tienda de productos atractivos, garantizados \n y de alta calidad"
+    " Proporciona bienestar, calidad, cuidado y respeto \na los nuevos miembros de la familia, satisfaciendo  \n las expectativas de nuestros clientes.  \n  \n \n  Mejora la calidad de vida de los animales callejeros, \nque actualmente no tienen cuidado y una familia \n para adoptarlos.  \n  \n \n Ofrece una tienda de productos atractivos, garantizados \n y de alta calidad"
 ];
 let currentLetterIndex = 0;
 
