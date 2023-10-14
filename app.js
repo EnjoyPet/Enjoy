@@ -155,6 +155,18 @@ app.put('/entrenamiento/aprender/puntuar/meGusta/:id', (req, res) => {
 });
 //
 
+//adopciones
+
+app.get('/usuario/adopciones/adoptar/:categoria/:filtro/:pagina',controllers.adopcionesController.rendermascotas)
+app.get('/usuario/adopciones/dar',controllers.adopcionesController.rendermascotasform)
+app.post('/usuario/adopciones/dar/registrarmascota',upload.array('imagen_mascota', 3),controllers.adopcionesController.registrarmascota)
+
+app.get('/ver/mascota/:idmascota',controllers.adopcionesController.verInfoAvanzada);
+
+app.get('/usuario/adoptar/mascota/:idmascota/:iddueno',controllers.adopcionesController.adoptar);
+
+//
+
 //Sin Implementar
 app.get('/Pronto-Implementado',controllers.acountController.mostrarMensaje);
 

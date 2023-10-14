@@ -5,7 +5,6 @@ const crypto = require('crypto');
 const shar = require('sharp');
 const ejs = require('ejs');
 const path = require('path');
-const { error } = require('console');
 const { query } = require('express');
 
 
@@ -443,7 +442,7 @@ UserModel.comprobarCorreo = async (correo, contrasenia, contrasenia2, callback) 
                 callback({ isValid: false, message: "Ocurrió un error en la consulta: " + error });
             }
         }
-    }else callback({ isValid: false, message: "Las Conteseñas No Coinsiden"});
+    } else callback({ isValid: false, message: "Las Conteseñas No Coinsiden" });
 };
 
 UserModel.registrarUsuario = async (nombre, correo, numero, contrasenia) => {
@@ -526,13 +525,13 @@ UserModel.iniciarSesion = async (req, correo, contrasenia, callback) => {
     })
 }
 
-UserModel.renderIndicarCorreoParaRecuperar = async (req)=>{
+UserModel.renderIndicarCorreoParaRecuperar = async (req) => {
     const correo = req.body.correo;
     const verificationCode = crypto.randomBytes(2).toString('hex');
 
     verification.set(correo, {
         Codigo: verificationCode,
-        corr:correo,
+        corr: correo,
     });
 
     const mailOptions = {
@@ -551,14 +550,14 @@ UserModel.renderIndicarCorreoParaRecuperar = async (req)=>{
     });
 }
 
-UserModel.actualizarContraseniaOlvidada = async (req, codigo,correo, contrasenia_1, contrasenia_2,callback)=>{
-    if(contrasenia_1 === contrasenia_2){
+UserModel.actualizarContraseniaOlvidada = async (req, codigo, correo, contrasenia_1, contrasenia_2, callback) => {
+    if (contrasenia_1 === contrasenia_2) {
         const DatosdeUsuario = verification.get(correo);
         if (!DatosdeUsuario || DatosdeUsuario.Codigo !== codigo) {
             callback({ error: true, message: "Este código es incorrecto" });
         } else {
             const contrasenia = await bcryptjs.hash(contrasenia_1, 8);
-    
+
             const query = "UPDATE usuario SET contrasenia = ? WHERE correo = ?";
             try {
                 conection.query(query, [contrasenia, correo], (error, result) => {
@@ -573,7 +572,7 @@ UserModel.actualizarContraseniaOlvidada = async (req, codigo,correo, contrasenia
                 callback({ error: true, message: "Error al actualizar la contraseña" });
             }
         }
-    }else{
+    } else {
         callback({ error: true, message: "Las Contraseñas No Coinsiden" });
     }
 }
@@ -613,4 +612,154 @@ ventasModel.publicarVenta = async (req, nombre, categoria, descripcion, dimencio
 
 /* * ---------------------------------------------------------------------------------------------------------- * */
 
-module.exports = { acountModel, entrenamientoModel, getData, productosModel, UserModel, ventasModel };
+/* * adopciones * */
+const adopcionesModel = {};
+
+adopcionesModel.registrarmascota = async (req, callback) => {
+    const { Nombre, Edad, Especie, Raza, Sexo, Personalidad, Historia, C_Ninos, C_Animales, Requisitos } = req.body;
+    const id_usuario = req.session.id_usuario;
+
+    if (req.files) {
+        const images = [];
+        const totalImages = req.files.length;
+
+        const imagePromises = req.files.map(async (file) => {
+            const imagenRedimensionada = await shar(file.buffer)
+                .resize({ height: 200, fit: shar.fit.contain })
+                .toBuffer();
+            images.push(imagenRedimensionada);
+        });
+
+        try {
+            await Promise.all(imagePromises);
+
+            const query = "INSERT INTO mascota (nombre, edad, especie, raza, sexo, usuario_mascota, personalidad, historia, comportamiento_niños, comportamiento_animales, requisitos) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            conection.query(query, [Nombre, Edad, Especie, Raza, Sexo, id_usuario, Personalidad, Historia, C_Ninos, C_Animales, Requisitos], async (error, result, fields) => {
+                if (!error) {
+                    const lastInsertedId = result.insertId;
+
+                    const insertImagePromises = images.map(async (imagen) => {
+                        const imageQuery = "INSERT INTO mascota_imagenes (idmascota, imagen) VALUES (?, ?)";
+                        return new Promise((resolve, reject) => {
+                            conection.query(imageQuery, [lastInsertedId, imagen], (error, result, fields) => {
+                                if (!error) {
+                                    resolve('Imagen registrada');
+                                } else {
+                                    reject(`Error al registrar la imagen: ${error}`);
+                                }
+                            });
+                        });
+                    });
+
+                    try {
+                        await Promise.all(insertImagePromises);
+                        callback({ error: null, message: 'Mascota y sus imágenes registradas con éxito' });
+                    } catch (error) {
+                        callback({ error: true, message: `Error al registrar imágenes: ${error}` });
+                    }
+                } else {
+                    callback({ error: true, message: `Error al registrar la mascota: ${error}` });
+                }
+            });
+        } catch (error) {
+            callback({ error: true, message: `Error al redimensionar imágenes: ${error}` });
+        }
+    } else {
+        callback({ error: true, message: 'Hay problemas con las imágenes' });
+    }
+};
+
+
+
+adopcionesModel.rendermascotas = async (categoria, filtro, pagina, callback) => {
+    let query = '';
+    let params = [pagina * 10, 10]; 
+    switch (categoria) {
+        case 'TODO':
+            query = `SELECT mascota.id_mascota, mascota.nombre, mascota.sexo, mascota_especie.nombre AS especie, mascota_raza.raza, mascota.edad, MAX(mascota_imagenes.imagen) AS imagen FROM mascota JOIN mascota_especie ON mascota.especie = mascota_especie.id_especie JOIN mascota_raza ON mascota.raza = mascota_raza.idmascota_raza LEFT JOIN mascota_imagenes ON mascota_imagenes.idmascota = mascota.id_mascota GROUP BY mascota.id_mascota LIMIT ?, ?`;
+            break;
+
+        case 'Especie':
+            query = `SELECT mascota.id_mascota, mascota.nombre, mascota.sexo, mascota_especie.nombre AS especie, mascota_raza.raza, mascota.edad, MAX(mascota_imagenes.imagen) AS imagen FROM mascota JOIN mascota_especie ON mascota.especie = mascota_especie.id_especie JOIN mascota_raza ON mascota.raza = mascota_raza.idmascota_raza LEFT JOIN mascota_imagenes ON mascota_imagenes.idmascota = mascota.id_mascota WHERE mascota.especie = ? GROUP BY mascota.id_mascota LIMIT ?, ?`;
+            params.unshift(filtro); 
+            break;
+
+        case 'Raza':
+            query = `SELECT mascota.id_mascota, mascota.nombre, mascota.sexo, mascota_especie.nombre AS especie, mascota_raza.raza, mascota.edad, MAX(mascota_imagenes.imagen) AS imagen FROM mascota JOIN mascota_especie ON mascota.especie = mascota_especie.id_especie JOIN mascota_raza ON mascota.raza = mascota_raza.idmascota_raza LEFT JOIN mascota_imagenes ON mascota_imagenes.idmascota = mascota.id_mascota WHERE mascota.raza = ? GROUP BY mascota.id_mascota LIMIT ?, ?`;
+            params.unshift(filtro); 
+            break;
+
+        case 'Edad':
+            query = `SELECT mascota.id_mascota, mascota.nombre, mascota.sexo, mascota_especie.nombre AS especie, mascota_raza.raza, mascota.edad, MAX(mascota_imagenes.imagen) AS imagen FROM mascota JOIN mascota_especie ON mascota.especie = mascota_especie.id_especie JOIN mascota_raza ON mascota.raza = mascota_raza.idmascota_raza LEFT JOIN mascota_imagenes ON mascota_imagenes.idmascota = mascota.id_mascota WHERE mascota.edad <= ? GROUP BY mascota.id_mascota LIMIT ?, ?`;
+            params.unshift(filtro);
+            break;
+    }
+
+    conection.query(query, params, async (error, result, fields) => {
+        if (error) {
+            console.log(error);
+            callback({ error: true, message: `Error en la consulta: ${error}` });
+        } else {
+            callback({ error:false, result: result });
+        }
+    });
+}
+
+adopcionesModel.verInfoAvanzada = async (req,callback)=>{
+    const idmascota = req.params.idmascota;
+    const query = 'select mascota.usuario_mascota as idDueno, mascota.nombre as Nombre, mascota_especie.nombre as Especie, mascota_raza.raza as Raza, mascota.edad as Edad, mascota.sexo as Sexo, mascota.personalidad as Personalidad, mascota.historia as Historia, mascota.comportamiento_niños as C_Ninos, mascota.comportamiento_animales as C_Animales, mascota.requisitos as Requisitos from mascota join mascota_especie on mascota.especie = mascota_especie.id_especie join mascota_raza on mascota.raza = mascota_raza.idmascota_raza where mascota.id_mascota = ?';
+
+    conection.query(query,idmascota, async (error, result, fields) =>{
+        if(error){
+            callback({error:true,message:`error en la consulta de informacion: ${error}`});
+            console.log(error);
+        }else{
+            const mascota = result;
+            const query = 'select mascota_imagenes.imagen from mascota_imagenes where mascota_imagenes.idmascota = ?';
+            conection.query(query,idmascota, async (error, result, fields) =>{
+                if(error){
+                    callback({error:true,message:`error en la consulta de imagenes: ${error}`});
+                    console.log(error);
+                }else{
+                    const imagenes = result;
+                    callback({error:false, mascota: mascota, imagenes: imagenes});
+                }
+            });
+        }
+    })
+} 
+adopcionesModel.adoptar = async (req,callback)=>{
+    const idmascota = req.params.idmascota;
+    const iddueno = req.params.iddueno;
+
+    const usuario_correo = req.session.correo;
+    const usuario_celular = req.session.celular;
+    const query = 'select correo,nombre from usuario where id_usuario = ?'
+    conection.query(query,iddueno,async(error,result) => {
+        if(error){
+            callback({error:true,message:`error en la consulta de imagenes: ${error}`});
+            console.log(error);
+        }else{
+            const destino = result[0].correo;
+        const mailOptions = {
+            from: process.env.MAILER_MAIL,
+            to: destino,
+            subject: 'Alguien quiere adoptar a tu mascota',
+            text: `Hola ${result[0].nombre} parece que alguien quiere adoptar a tu mascota comunicate con el o ella al siguiente correo: \n ${usuario_correo}\n o escribele a https://api.whatsapp.com/send?phone=${usuario_celular} \natentamente \n EnjoyYourPet Team`,
+        };
+        global.transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.error(error);
+                callback({error:true,message:`Error: ${error}`})
+            } else {
+                console.log('Correo de informacion enviado: ' + info.response);
+                callback({error:false})
+            }
+        });
+    }
+    })
+}
+/* *----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------* */
+
+
+module.exports = { acountModel, entrenamientoModel, getData, productosModel, UserModel, ventasModel, adopcionesModel };

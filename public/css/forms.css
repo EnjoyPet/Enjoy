@@ -52,6 +52,7 @@ textarea {
 /* Estilo para campos de entrada de selección (select) */
 select {
     width: 100%;
+    height: 25px;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid var(--color-terciario);
@@ -109,7 +110,7 @@ form p{
     border-bottom-left-radius: 15px;
 }
 
-#imagen_preview{
+#imagen_preview, .imagen_mascota_preview{
     margin: 15px auto 15px auto;
     max-width: 200px;
     max-height: 200px;
@@ -143,6 +144,18 @@ input[type="file"]::file-display-input {
     margin-top: 5px;
     font-size: 14px;
     color: var(--color-texto);
+}
+
+.formSelectContainer{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: fit-content;
+    align-content: space-between;
+}
+
+.formSelectContainer select{
+    width: 50px;
 }
 
 #eliminar-imagen-btn{

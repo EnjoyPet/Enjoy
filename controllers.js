@@ -4,163 +4,163 @@ const models = require("./models.js");
 
 const acountController = {};
 
-acountController.renderAcountInfo = async (req, res) =>{
-    if(req.session.usuario != null){
-    models.acountModel.getData(req,(result)=>{
-        const data = result[0];
-        res.render('acount',{ data })
-    });
-    }else
+acountController.renderAcountInfo = async (req, res) => {
+    if (req.session.usuario != null) {
+        models.acountModel.getData(req, (result) => {
+            const data = result[0];
+            res.render('acount', { data })
+        });
+    } else
         res.redirect('/');
-} 
+}
 
-acountController.renderActializacionForm = async (req, res) =>{
-    const objetivo = 'actualizar_'+req.params.objetivo;
+acountController.renderActializacionForm = async (req, res) => {
+    const objetivo = 'actualizar_' + req.params.objetivo;
     const data = models.getData(req);
-    if(data.usuario != null)
-        res.render('sessionform',{tipo:objetivo, data })
+    if (data.usuario != null)
+        res.render('sessionform', { tipo: objetivo, data })
     else
         res.redirect('/');
 }
 
-acountController.actualizarCorreo = async (req, res) =>{
+acountController.actualizarCorreo = async (req, res) => {
     const correo = req.body.correo;
-    models.acountModel.actualizarCorreo(req,correo, (result) => {
-        if(!result.isValid){
+    models.acountModel.actualizarCorreo(req, correo, (result) => {
+        if (!result.isValid) {
             res.send(result.message);
         }
     });
 }
 
-acountController.verificarCodigo = async (req,res)=>{
+acountController.verificarCodigo = async (req, res) => {
     const { correo, codigo } = req.body;
-    models.acountModel.verificarCodigo(correo,codigo,(result)=>{
-        if(result.error){
+    models.acountModel.verificarCodigo(correo, codigo, (result) => {
+        if (result.error) {
             res.send(result.message);
-        }else{
+        } else {
             req.session.correo = correo;
             res.redirect('/usuario/informacion');
         }
     })
 }
 
-acountController.actualizarDireccion = async (req,res)=>{
+acountController.actualizarDireccion = async (req, res) => {
     const direccion = req.body.direccion;
-    models.acountModel.actualizarDatos(req,'direccion',direccion,(result)=>{
-        if(result.error)
+    models.acountModel.actualizarDatos(req, 'direccion', direccion, (result) => {
+        if (result.error)
             res.send(result.message);
-        else{
+        else {
             req.session.direccion = direccion;
             res.redirect('/usuario/informacion');
         }
     });
 }
 
-acountController.actualizarNombre = async (req,res)=>{
+acountController.actualizarNombre = async (req, res) => {
     const nombre = req.body.nombre;
-    models.acountModel.actualizarDatos(req,'nombre',nombre,(result)=>{
-        if(result.error)
+    models.acountModel.actualizarDatos(req, 'nombre', nombre, (result) => {
+        if (result.error)
             res.send(result.message);
-        else{
+        else {
             req.session.usuario = nombre;
             res.redirect('/usuario/informacion');
         }
     });
 };
 
-acountController.actualizarContrasenia = async (req,res)=>{
-    const {ant_contrasenia,Nuev_contrasenia,Nuev_contrasenia_2}=req.body;
-    models.acountModel.actualizarContrasenia(req,ant_contrasenia,Nuev_contrasenia,Nuev_contrasenia_2,(result)=>{
-        if(!result.valid)
+acountController.actualizarContrasenia = async (req, res) => {
+    const { ant_contrasenia, Nuev_contrasenia, Nuev_contrasenia_2 } = req.body;
+    models.acountModel.actualizarContrasenia(req, ant_contrasenia, Nuev_contrasenia, Nuev_contrasenia_2, (result) => {
+        if (!result.valid)
             res.send(result.message);
-        else{
+        else {
             res.redirect('/usuario/informacion');
         }
     });
 };
 
-acountController.actualizarCelular = async (req,res)=>{
+acountController.actualizarCelular = async (req, res) => {
     const celular = req.body.celular;
-    models.acountModel.actualizarDatos(req,'celular',celular,(result)=>{
-        if(result.error)
+    models.acountModel.actualizarDatos(req, 'celular', celular, (result) => {
+        if (result.error)
             res.send(result.message);
-        else{
+        else {
             req.session.celular = celular;
             res.redirect('/usuario/informacion');
         }
     });
 };
 
-acountController.actualizarIdentificacion = async (req,res)=>{
+acountController.actualizarIdentificacion = async (req, res) => {
     const identificacion = req.body.identificacion;
-    models.acountModel.actualizarDatos(req,'identificacion',identificacion,(result)=>{
-        if(result.error)
+    models.acountModel.actualizarDatos(req, 'identificacion', identificacion, (result) => {
+        if (result.error)
             res.send(result.message);
-        else{
+        else {
             req.session.identificacion = identificacion;
             res.redirect('/usuario/informacion');
         }
     });
 };
 
-acountController.actualizarTelefono = async (req,res)=>{
+acountController.actualizarTelefono = async (req, res) => {
     const telefono = req.body.telefono;
-    models.acountModel.actualizarDatos(req,"telefono",telefono,(result)=>{
-        if(result.error)
+    models.acountModel.actualizarDatos(req, "telefono", telefono, (result) => {
+        if (result.error)
             res.send(result.message);
-        else{
+        else {
             req.session.telefono = telefono;
             res.redirect('/usuario/informacion');
         }
     });
 };
 
-acountController.actualizarImagen = async (req,res)=>{
-    models.acountModel.actualizarImagen(req,(result)=>{
-        if(!result.valid){
+acountController.actualizarImagen = async (req, res) => {
+    models.acountModel.actualizarImagen(req, (result) => {
+        if (!result.valid) {
             res.send(result.message);
-        }else{
+        } else {
             res.redirect('/usuario/informacion');
         }
     });
 }
 
-acountController.eliminarImagen = async (req,res)=>{
-    models.acountModel.eliminarImagen(req,(result)=>{
-        if(!result.valid){
+acountController.eliminarImagen = async (req, res) => {
+    models.acountModel.eliminarImagen(req, (result) => {
+        if (!result.valid) {
             res.send(result.message);
-        }else{
+        } else {
             res.redirect('/usuario/informacion');
         }
     });
 }
 
-acountController.renderizarCarrito = async (req,res)=>{
-    if(req.session.usuario != null && req.session.direccion != null){
-        models.acountModel.renderizarCarrito(req,(result)=>{
+acountController.renderizarCarrito = async (req, res) => {
+    if (req.session.usuario != null && req.session.direccion != null) {
+        models.acountModel.renderizarCarrito(req, (result) => {
             const data = models.getData(req);
-            if(!result.valid){
+            if (!result.valid) {
                 res.send(result.message);
-            }else{
-                res.render('carrito',{data, carrito:result.carrito});
+            } else {
+                res.render('carrito', { data, carrito: result.carrito });
             }
         })
-    }else{
+    } else {
         res.redirect('/');
     }
 }
 
-acountController.renderizarProductos = async (req,res)=>{
-    if(req.session.usuario != null && req.session.direccion != null){
-        models.acountModel.renderizarProductos(req,(result)=>{
+acountController.renderizarProductos = async (req, res) => {
+    if (req.session.usuario != null && req.session.direccion != null) {
+        models.acountModel.renderizarProductos(req, (result) => {
             const data = models.getData(req);
-            if(!result.valid){
+            if (!result.valid) {
                 res.send(result.message);
-            }else{
-                res.render('usuarioProductos',{data, productos:result.productos});
+            } else {
+                res.render('usuarioProductos', { data, productos: result.productos });
             }
         })
-    }else{
+    } else {
         res.redirect('/');
     }
 }
@@ -168,9 +168,9 @@ acountController.renderizarProductos = async (req,res)=>{
 
 
 
-acountController.mostrarMensaje = async (req,res)=>{
+acountController.mostrarMensaje = async (req, res) => {
     const data = models.getData(req);
-    res.render('mensajes',{data, header:'PRONTO LO TENDRAS',body:'La función a la que estás intentando acceder actualmente se encuentra en desarrollo y estamos trabajando arduamente para perfeccionarla. Pronto estará disponible para tu uso y disfrute. Agradecemos profundamente tu paciencia y comprensión mientras trabajamos para brindarte una experiencia excepcional. Tu interés y apoyo son muy importantes para nosotros, y estamos ansiosos por ofrecerte una solución de alta calidad en un futuro cercano. ¡Gracias por ser parte de nuestro viaje de desarrollo!'})
+    res.render('mensajes', { data, header: 'PRONTO LO TENDRAS', body: 'La función a la que estás intentando acceder actualmente se encuentra en desarrollo y estamos trabajando arduamente para perfeccionarla. Pronto estará disponible para tu uso y disfrute. Agradecemos profundamente tu paciencia y comprensión mientras trabajamos para brindarte una experiencia excepcional. Tu interés y apoyo son muy importantes para nosotros, y estamos ansiosos por ofrecerte una solución de alta calidad en un futuro cercano. ¡Gracias por ser parte de nuestro viaje de desarrollo!' })
 }
 
 /* *----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------* */
@@ -179,37 +179,37 @@ acountController.mostrarMensaje = async (req,res)=>{
 
 const entrenamientoController = {};
 
-entrenamientoController.renderensenarForm = async (req, res) =>{
+entrenamientoController.renderensenarForm = async (req, res) => {
     const data = models.getData(req);
-    if(data.usuario != null)
-        res.render('sessionform',{tipo:'ensenar', data })
+    if (data.usuario != null)
+        res.render('sessionform', { tipo: 'ensenar', data })
     else
         res.redirect('/cuenta/iniciar-sesion');
 }
 
-entrenamientoController.renderAprender = async (req, res) =>{
+entrenamientoController.renderAprender = async (req, res) => {
     const data = models.getData(req);
-    models.entrenamientoModel.renderAprender((result)=>{
-        if(!result.valid){
+    models.entrenamientoModel.renderAprender((result) => {
+        if (!result.valid) {
             console.error(result.message);
             res.send(result.message);
-        }else{
-            res.render('aprender',{data,posts:result.posts});
+        } else {
+            res.render('aprender', { data, posts: result.posts });
         }
     });
 }
 
-entrenamientoController.hacerPost = async (req,res) =>{
-  const { titulo, contenido_post, Categoria_post } = req.body;
-  
-  models.entrenamientoModel.hacerPost(req,titulo,contenido_post,Categoria_post, (result)=>{
-    if(!result.valid){
-        console.error(result.message);
-        res.send(result.message);
-    }else{
-        res.redirect('/entrenamiento/aprender');
-    }
-  })
+entrenamientoController.hacerPost = async (req, res) => {
+    const { titulo, contenido_post, Categoria_post } = req.body;
+
+    models.entrenamientoModel.hacerPost(req, titulo, contenido_post, Categoria_post, (result) => {
+        if (!result.valid) {
+            console.error(result.message);
+            res.send(result.message);
+        } else {
+            res.redirect('/entrenamiento/aprender');
+        }
+    })
 }
 
 /* *----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------* */
@@ -218,12 +218,12 @@ entrenamientoController.hacerPost = async (req,res) =>{
 
 const getIndex = (req, res) => {
     const data = models.getData(req);
-  
-    if(data.usuario != null && data.direccion == null)
-    res.redirect('/usuario/informacion');
+
+    if (data.usuario != null && data.direccion == null)
+        res.redirect('/usuario/informacion');
     else
-    res.render('index', { data });
-  };
+        res.render('index', { data });
+};
 
 /* *----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------* */
 
@@ -231,102 +231,102 @@ const getIndex = (req, res) => {
 
 const productosController = {};
 
-productosController.renderProductos = async (req,res)=>{
+productosController.renderProductos = async (req, res) => {
     const categoria = req.params.categoria;
     const pagina = req.params.pagina;
     const data = models.getData(req);
-    models.productosModel.renderProductos(categoria,pagina,(result)=>{
-        if(!result.valid){
+    models.productosModel.renderProductos(categoria, pagina, (result) => {
+        if (!result.valid) {
             console.error(result.message);
             res.send(result.message);
-        }else{
-            res.render('productos',{
+        } else {
+            res.render('productos', {
                 data,
                 pagina,
                 categoria,
-                productos:result.productos
+                productos: result.productos
             })
         }
     })
 }
 
-productosController.renderInfoProducto = async (req,res)=>{
+productosController.renderInfoProducto = async (req, res) => {
     const id_producto = req.params.id_producto;
     const data = models.getData(req);
-    models.productosModel.renderInfoProducto(id_producto,(result)=>{
-        if(!result.valid){
+    models.productosModel.renderInfoProducto(id_producto, (result) => {
+        if (!result.valid) {
             console.error(result.message);
             res.send(result.message);
-        }else{
-            res.render('productoInfo',{
+        } else {
+            res.render('productoInfo', {
                 data,
-                producto:result.producto
+                producto: result.producto
             });
         }
     });
 }
 
-productosController.comprarProducto = async (req,res)=>{
+productosController.comprarProducto = async (req, res) => {
     const id_producto = req.params.id_producto;
     const data = models.getData(req);
-    if(data.direccion != null){
-        models.productosModel.comprarProducto(req,id_producto,(result)=>{
-            if(!result.valid){
+    if (data.direccion != null) {
+        models.productosModel.comprarProducto(req, id_producto, (result) => {
+            if (!result.valid) {
                 console.error(result.message);
                 res.send(result.message);
-            }else{
-                res.render('mensajes',{
+            } else {
+                res.render('mensajes', {
                     data,
                     header: result.header,
                     body: result.body
                 });
             }
         });
-    }else{
+    } else {
         res.redirect('/');
     }
 }
 
-productosController.productoAlCarro = async (req,res)=>{
+productosController.productoAlCarro = async (req, res) => {
     const id_producto = req.params.id_producto;
-    models.productosModel.productoAlCarro(req,id_producto,(result)=>{
-        if(!result.valid){
+    models.productosModel.productoAlCarro(req, id_producto, (result) => {
+        if (!result.valid) {
             console.error(result.message);
             res.send(result.message);
-        }else{
-            const link=`/usuario/carrito`;
+        } else {
+            const link = `/usuario/carrito`;
             res.redirect(link);
         }
     });
 }
 
-productosController.comprarCarrito = async (req,res) =>{
+productosController.comprarCarrito = async (req, res) => {
     const id_producto = req.params.id_producto;
     const id_carrito = req.params.id_carrito;
-    models.productosModel.comprarCarrito(req,id_carrito,id_producto,(result)=>{
-        if(!result.valid){
+    models.productosModel.comprarCarrito(req, id_carrito, id_producto, (result) => {
+        if (!result.valid) {
             console.error(result.message);
             res.send(result.message);
-        }else{
-            const link=`/usuario/carrito`;
+        } else {
+            const link = `/usuario/carrito`;
             res.redirect(link);
         }
     });
 }
 
-productosController.eliminarCarrito = async (req,res) =>{
+productosController.eliminarCarrito = async (req, res) => {
     const id_carrito = req.params.id_carrito;
-    if(req.session.usuario != null){
-        models.productosModel.eliminarCarrito(id_carrito,(result)=>{
-            if(!result.valid){
+    if (req.session.usuario != null) {
+        models.productosModel.eliminarCarrito(id_carrito, (result) => {
+            if (!result.valid) {
                 console.error(result.message);
                 res.send(result.message);
-            }else{
-                const link=`/usuario/carrito`;
+            } else {
+                const link = `/usuario/carrito`;
                 res.redirect(link);
             }
         });
-    }else{
+    } else {
         res.redirect('/');
     }
 }
@@ -338,92 +338,92 @@ productosController.eliminarCarrito = async (req,res) =>{
 const UserController = {};
 
 UserController.rederizarformderegistro = (req, res) => {
-  if (req.session.usuario)
-    res.redirect("/");
-  else{
-    const data = models.getData(req);
-    res.render("sessionform", { tipo: "registro", data });
-  }
+    if (req.session.usuario)
+        res.redirect("/");
+    else {
+        const data = models.getData(req);
+        res.render("sessionform", { tipo: "registro", data });
+    }
 };
 UserController.rederizarformdeinicio = (req, res) => {
-  if (req.session.usuario)
-    res.redirect("/");
-  else{
-    const data = models.getData(req);
-    res.render("sessionform", { tipo: "inicio", data });
-  }
+    if (req.session.usuario)
+        res.redirect("/");
+    else {
+        const data = models.getData(req);
+        res.render("sessionform", { tipo: "inicio", data });
+    }
 };
 
 UserController.registrarUsuario = async (req, res) => {
-  const { nombre, correo, numero, contrasenia, contrasenia2 } = req.body;
+    const { nombre, correo, numero, contrasenia, contrasenia2 } = req.body;
     const data = models.getData(req);
 
-  try {
-    await models.UserModel.comprobarCorreo(correo, contrasenia,contrasenia2, async (correoResult) => {
-      if (!correoResult.isValid) {
-        res.send(correoResult.message);
-      } else if (correoResult.result.length == 0) {
-        const verificationCode = await models.UserModel.registrarUsuario(nombre, correo, numero, contrasenia);
-        console.log("Código de verificación generado:", verificationCode);
-        res.render("sessionform",{data,tipo:"verificarCodigo",correo:correo})
-      } else {
-        console.log(correoResult.result)
-        res.send("Este correo ya está registrado");
-      }
-    });
-  } catch (error) {
-    res.send("Error en el registro: " + error);
-  }
+    try {
+        await models.UserModel.comprobarCorreo(correo, contrasenia, contrasenia2, async (correoResult) => {
+            if (!correoResult.isValid) {
+                res.send(correoResult.message);
+            } else if (correoResult.result.length == 0) {
+                const verificationCode = await models.UserModel.registrarUsuario(nombre, correo, numero, contrasenia);
+                console.log("Código de verificación generado:", verificationCode);
+                res.render("sessionform", { data, tipo: "verificarCodigo", correo: correo })
+            } else {
+                console.log(correoResult.result)
+                res.send("Este correo ya está registrado");
+            }
+        });
+    } catch (error) {
+        res.send("Error en el registro: " + error);
+    }
 };
 
 UserController.verificarCorreo = async (req, res) => {
-  const { correo, codigo } = req.body;
+    const { correo, codigo } = req.body;
 
-  models.UserModel.verificarCodigo(correo, codigo, (result) => {
-    if (result.error) {
-      res.send(result.message);
-    } else {
-      res.redirect('/cuenta/iniciar-sesion');
-    }
-  });
+    models.UserModel.verificarCodigo(correo, codigo, (result) => {
+        if (result.error) {
+            res.send(result.message);
+        } else {
+            res.redirect('/cuenta/iniciar-sesion');
+        }
+    });
 };
 
 UserController.iniciarSesion = async (req, res) => {
-  const { correo, contrasenia } = req.body;
-  models.UserModel.iniciarSesion(req,correo,contrasenia, (result)=>{
-    if(result.logget){
-      res.redirect("/");
-    }else{
-      res.send(result.message);
-    }
-  })
+    const { correo, contrasenia } = req.body;
+    models.UserModel.iniciarSesion(req, correo, contrasenia, (result) => {
+        if (result.logget) {
+            res.redirect("/");
+        } else {
+            res.send(result.message);
+        }
+    })
 }
 
-UserController.cerrarSesion = async (req,res) => {
+UserController.cerrarSesion = async (req, res) => {
     req.session.destroy();
     res.redirect("/");
 }
 
-UserController.RecuperarContrasenia = async (req,res)=>{
+UserController.RecuperarContrasenia = async (req, res) => {
     const data = models.getData(req);
-    res.render('sessionform',{tipo:'indicarcorreo',data});
+    res.render('sessionform', { tipo: 'indicarcorreo', data });
 }
 
-UserController.renderizarverificarCodContrasenia = async (req,res)=>{
+UserController.renderizarverificarCodContrasenia = async (req, res) => {
     models.UserModel.renderIndicarCorreoParaRecuperar(req);
     const data = models.getData(req);
-    res.render('sessionform',{tipo:'recuperarcontrasenia',correo:req.body.correo, data});
-} 
+    res.render('sessionform', { tipo: 'recuperarcontrasenia', correo: req.body.correo, data });
+}
 
-UserController.actualizarContraseniaOlvidada = async (req,res) =>{
-    const {codigo,correo, Nuev_contrasenia, Nuev_contrasenia_2} = req.body;
-    models.UserModel.actualizarContraseniaOlvidada(req,codigo,correo, Nuev_contrasenia,Nuev_contrasenia_2, (result)=>{
-        if(result.error){
+UserController.actualizarContraseniaOlvidada = async (req, res) => {
+    const { codigo, correo, Nuev_contrasenia, Nuev_contrasenia_2 } = req.body;
+    models.UserModel.actualizarContraseniaOlvidada(req, codigo, correo, Nuev_contrasenia, Nuev_contrasenia_2, (result) => {
+        if (result.error) {
             console.error(result.message);
             res.send(result.message);
-        }else{
+        } else {
             const data = models.getData(req);
-            res.render('sessionform',{tipo:'inicio',data});
+            res.render('sessionform', { tipo: 'inicio', data });
         }
     });
 
@@ -434,27 +434,93 @@ UserController.actualizarContraseniaOlvidada = async (req,res) =>{
 
 const ventasController = {};
 
-ventasController.renderVentasForm = async (req, res) =>{
+ventasController.renderVentasForm = async (req, res) => {
     const data = models.getData(req);
-    if(data.usuario != null)
-        res.render('sessionform',{tipo:'ventas', data })
+    if (data.usuario != null)
+        res.render('sessionform', { tipo: 'ventas', data })
     else
         res.redirect('/cuenta/iniciar-sesion');
 }
 
-ventasController.publicarVenta = async (req,res) =>{
-  const { nombre, descripcion, stock, precio, dimenciones, Categoria } = req.body;
-  
-  models.ventasModel.publicarVenta(req,nombre,Categoria,descripcion,dimenciones,stock,precio,(result)=>{
-    if(!result.valid){
-        console.error(result.message);
-        res.send(result.message);
-    }else{
-        res.redirect('/vender');
-    }
-  })
+ventasController.publicarVenta = async (req, res) => {
+    const { nombre, descripcion, stock, precio, dimenciones, Categoria } = req.body;
+
+    models.ventasModel.publicarVenta(req, nombre, Categoria, descripcion, dimenciones, stock, precio, (result) => {
+        if (!result.valid) {
+            console.error(result.message);
+            res.send(result.message);
+        } else {
+            res.redirect('/vender');
+        }
+    })
 }
 
 /* *----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------* */
 
-module.exports = {acountController,entrenamientoController,getIndex,productosController,UserController,ventasController}
+/* * adopciones * */
+const adopcionesController = {};
+
+adopcionesController.rendermascotas = async (req, res) => {
+    const categoria = req.params.categoria;
+    const filtro = req.params.filtro;
+    const pagina = req.params.pagina;
+
+    const data = models.getData(req);
+
+    models.adopcionesModel.rendermascotas(categoria,filtro,pagina,(result)=>{
+        if(result.error){
+            res.send(result.message);
+        }else
+            res.render('mascotasEnAdopcion',{data,mascotas:result.result,categoria,filtro,pagina});
+    })
+}
+
+adopcionesController.rendermascotasform = async (req, res) => {
+    const data = models.getData(req);
+    if(data.usuario != null)
+        res.render('sessionform', { tipo: 'registrarmascota', data })
+    else
+        res.redirect('/');
+}
+
+adopcionesController.registrarmascota = async (req, res) => {
+    models.adopcionesModel.registrarmascota(req,(result)=>{
+        if(result.error)
+            res.send('Error: ' + result.message);
+        else
+        res.redirect('/usuario/adopciones/adoptar/TODO/0/0');
+
+    });
+}
+
+adopcionesController.verInfoAvanzada = async (req,res) => {
+    const data = models.getData(req);
+    if(data.usuario != null)
+        models.adopcionesModel.verInfoAvanzada(req,(result)=>{
+            if(result.error){
+                console.log(result.error);
+                res.send(`algo salio mal: ${result.message}`);
+            }
+            else{
+                console.log(result.mascota[0])
+                res.render('infoMascotaAvanzada',{data, mascota: result.mascota[0], imagenes: result.imagenes,id:req.params.idmascota})
+            }
+        })
+    else
+        res.redirect('/');
+}
+
+adopcionesController.adoptar = async (req,res) =>{
+    models.adopcionesModel.adoptar(req,(result)=>{
+        if(result.error){
+            console.log(result.error);
+            res.send(`algo salio mal: ${result.message}`);
+        }
+        else{
+            res.redirect('/')
+        }
+    })
+}
+/* *----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------* */
+
+module.exports = { acountController, entrenamientoController, getIndex, productosController, UserController, ventasController, adopcionesController }

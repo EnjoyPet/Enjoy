@@ -31,3 +31,9 @@ function linkTo(service, section1, section2, section3) {
 
     window.location.href = link;
 }
+
+function DeplegarSeccion(id){
+    const seccion = document.getElementById(id);
+    
+    seccion.style.display = seccion.style.display === 'block' ? 'none' : 'block';
+}
