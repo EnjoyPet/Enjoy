@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title><%=tipo%></title>
+    <%- include("./partials/metalink.ejs") %>
+  </head>
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+      <% if(tipo !== null) {%> <% const Ruta = './partials/' + tipo + '.ejs' %>
+      <%- include(Ruta) %> <% } else {%>
+      <section style="flex-direction: column">
+        <h1 class="listado_1">Hubo un Problema</h1>
+        <h3 class="listado_1">
+          No encontramos la ruta definida esperamos solucionar esto pronto
+        </h3>
+      </section>
+      <% } %>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

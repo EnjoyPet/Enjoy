@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Enjoyourpet - Mascota</title>
+    <%- include("./partials/metalink.ejs") %>
+  </head>
+  <body>
+    <!-- <header>
+    <div id="titulo" class="interactuable" onclick="linkTo(null,null)">
+        <div id="logoContainer">
+            <img id="logo" src="/resources/img/iconografia/logo.png" alt="">
+            <img id="logo01"src="/resources/img/iconografia/logo01.png" alt="">
+        </div>
+    </div>
+    <div class="menu">
+        <div class="sandwich-menu" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        <div class="menu-item">
+            Lugares
+            <ul class="submenu">
+                <li><a href="https://www.google.com/maps/search/pet+friendly/" target="_blank">Pet Friendly</a></li>
+                <li onclick="linkTo('Pronto-Implementado')" /*onclick="linkTo('localizacion',null)"*/>Localización</li>
+            </ul>
+        </div>
+        <div class="menu-item">
+            Negocios
+            <ul class="submenu">
+                <li onclick="linkTo('vender',null)">Vender</li>
+                <li>Comprar
+                    <ul>
+                        <li onclick="linkTo('productos','todo','0')">Todo</li>
+                        <li onclick="linkTo('productos','juguetes','0')">Juguetes</li>
+                        <li onclick="linkTo('productos','alimentos','0')">Alimentos</li>
+                        <li onclick="linkTo('productos','accesorios','0')">Accesorios</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="menu-item">
+            Servicios
+            <ul class="submenu">
+                <li onclick="linkTo('Pronto-Implementado')" /*onclick=""*/>Veterinaria</li>
+                <li>Entrenamiento
+                    <ul>
+                        <li onclick="linkTo('entrenamiento','ensenar')">Enseñar</li>
+                        <li onclick="linkTo('entrenamiento','aprender')">Aprender</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="menu-item">
+            Cuenta
+            <ul class="submenu">
+                <li onclick="linkTo('cuenta','iniciar-sesion')">Iniciar</li>
+                <li onclick="linkTo('cuenta','registrarse')">Registrarse</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="/resources/js/header.js"></script>
+</header> -->
+    <%- include('./partials/header.ejs') %>
+    <main>
+      <section class="verticalSection">
+        <h1 class="XS-Section">CONOCE A TU POSIBLE COMPAÑERO</h1>
+        <div class="sectionnomargin">
+          <section
+            class="horizontalmidsection secondary-color position-relative"
+          >
+            <div
+              class="imagen-interactuable-container"
+              onclick="openModal('modal-imgs-adopcion')"
+            >
+              <div class="imagen-interactuable-cortinilla"></div>
+              <img
+                src="data:image/jpeg;base64,<%= imagenes[0].imagen.toString('base64') %>"
+                alt="imagen de la mascota"
+              />
+            </div>
+          </section>
+          <section class="horizontalmidsection">
+            <div class="XS-Section">
+              <h1><%= mascota.Nombre %></h1>
+            </div>
+            <div class="info">
+              <h2>Edad:</h2>
+              <p><%= mascota.Edad %></p>
+            </div>
+            <div class="info">
+              <h2>Sexo:</h2>
+              <p>
+                <% if(mascota.Sexo == 0){ %> <%= 'Hembra' %> <% }else{ %><%=
+                'Macho' %> <% } %>
+              </p>
+            </div>
+          </section>
+        </div>
+        <section class="verticalSection">
+          <h1
+            class="medio-margin interactuable"
+            onclick="DeplegarSeccion('Ficha-De-Informacion')"
+          >
+            Ficha De Informacion
+          </h1>
+          <section
+            id="Ficha-De-Informacion"
+            class="verticalSection"
+            style="display: none"
+          >
+            <div class="samallSection botom-border">
+              <div class="XS-Section">
+                <h1>Informacion Básica</h1>
+              </div>
+              <div class="info">
+                <h2>Nombre:</h2>
+                <p><%= mascota.Nombre %></p>
+              </div>
+              <div class="info">
+                <h2>Especie:</h2>
+                <p><%= mascota.Especie %></p>
+              </div>
+              <div class="info">
+                <h2>Raza:</h2>
+                <p><%= mascota.Raza %></p>
+              </div>
+              <div class="info">
+                <h2>Edad:</h2>
+                <p><%= mascota.Edad %></p>
+              </div>
+              <div class="info">
+                <h2>Sexo:</h2>
+                <p>
+                  <% if(mascota.Sexo == 0){ %> <%= 'Hembra' %> <% }else{ %><%=
+                  'Macho' %> <% } %>
+                </p>
+              </div>
+            </div>
+
+            <div class="samallSection medio-margin">
+              <div class="XS-Section">
+                <h1>Personalidad</h1>
+              </div>
+              <div class="info">
+                <h2>Personalidad:</h2>
+                <p><%= mascota.Personalidad %></p>
+              </div>
+            </div>
+
+            <div class="samallSection medio-margin">
+              <div class="XS-Section">
+                <h1>Historia</h1>
+              </div>
+              <div class="info">
+                <h2>Historia:</h2>
+                <p><%= mascota.Historia %></p>
+              </div>
+            </div>
+
+            <div class="samallSection medio-margin">
+              <div class="XS-Section">
+                <h1>Comportamiento</h1>
+              </div>
+              <div class="info">
+                <h2>Con Niños:</h2>
+                <p><%= mascota.C_Niños %></p>
+              </div>
+              <div class="info">
+                <h2>Con Otros Animales:</h2>
+                <p><%= mascota.C_Animales %></p>
+              </div>
+            </div>
+
+            <div class="samallSection medio-margin">
+              <div class="XS-Section">
+                <h1>Requisitos de Adopción</h1>
+              </div>
+              <div class="info">
+                <h2>Requisitos:</h2>
+                <p><%= mascota.Requisitos %></p>
+              </div>
+            </div>
+          </section>
+        </section>
+        <div
+          class="XS-Section interactuable"
+          onclick="linkTo('usuario/adoptar/mascota','<%= id %>','<%= mascota.idDueno %>')"
+        >
+          <div class="XS-Section">
+            <h1>Adoptar</h1>
+          </div>
+        </div>
+      </section>
+    </main>
+    <section id="modal-imgs-adopcion" class="modal">
+      <link rel="stylesheet" href="/resources/css/modal.css" />
+      <div class="modal_container">
+        <div class="collage_container">
+          <% imagenes.forEach(imagen => { %>
+          <img
+            class="img_collage"
+            src="data:image/jpeg;base64,<%= imagen.imagen.toString('base64') %>"
+            alt="imagen de la mascota"
+          />
+          <% }) %>
+        </div>
+        <div
+          class="close_modal interactuable"
+          onclick="closeModal('modal-imgs-adopcion')"
+        >
+          X
+        </div>
+        <div class="leftbuttoncontrol" onclick="changeImage_adopcion('left')">
+          <
+        </div>
+        <div class="rightbuttoncontrol" onclick="changeImage_adopcion('right')">
+          >
+        </div>
+      </div>
+    </section>
+    <%- include('./partials/footer.ejs') %>
+    <script src="/resources/js/modals.js"></script>
+    <script src="/resources/js/modalcollageImages.js"></script>
+  </body>
+</html>

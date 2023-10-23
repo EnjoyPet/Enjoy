@@ -1,0 +1,31 @@
+<section style="width: fit-content; flex-direction: column">
+  <form
+    class="registerform"
+    id="registrar-Usuario-form"
+    action="/actualizar-imagen_usuario"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <h1>Actualizar Imagen</h1>
+    <label for="imagen_post">Imagen</label>
+    <button type="button" id="eliminar-imagen-btn" style="display: none">
+      Limpiar Imagen
+    </button>
+    <img
+      style="display: none"
+      id="imagen_preview"
+      src="#"
+      alt="Imagen previa"
+    />
+    <input type="file" name="imagen_post" id="imagen_post" accept="image/*" />
+    <button id="submit-btn registrar-submit-btn" type="submit" name="enviar">
+      Enviar
+    </button>
+  </form>
+  <form action="/eliminar-imagen_usuario" method="post">
+    <button id="submit-btn registrar-submit-btn" type="submit" name="enviar">
+      Eliminar Imagen
+    </button>
+  </form>
+</section>
+<script src="/resources/js/forms.js"></script>

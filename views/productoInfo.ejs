@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Enjoyourpet - Productos</title>
+    <%- include("./partials/metalink.ejs") %>
+  </head>
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+      <div class="sectionnomargin">
+        <section class="horizontalmidsection">
+          <h1 id="producto_Nombre"><%= producto.nombre %></h1>
+          <img
+            class="producto_Big_img"
+            src="data:image/jpeg;base64,<%= producto.imagen_producto.toString('base64') %>"
+            alt="imagen del producto"
+          />
+        </section>
+        <section class="horizontalmidsection">
+          <div id="decripcion_producto" class="listado_1">
+            <h2>Lo que debes saber</h2>
+            <p>
+              <%= producto.descripcion %> Dimensiones: <%= producto.dimensiones
+              %> Stock: <%= producto.stock %>
+            </p>
+            <h1 id="precio_producto">$<%= producto.precio %> COP</h1>
+          </div>
+        </section>
+        <% if(data.usuario == null) {%>
+        <section class="smallSection">
+          <button
+            class="Buttton-Compras"
+            onclick="linkTo('cuenta','iniciar-sesion')"
+          >
+            Comprar
+          </button>
+          <button
+            class="Buttton-Compras"
+            onclick="linkTo('cuenta','iniciar-sesion')"
+          >
+            Al Carrito
+          </button>
+        </section>
+        <% }else{ %>
+        <section class="smallSection">
+          <button
+            class="Buttton-Compras"
+            onclick="linkTo('producto','comprar','<%= producto.id_producto %>')"
+          >
+            Comprar
+          </button>
+          <button
+            class="Buttton-Compras"
+            onclick="linkTo('producto','al-carro','<%= producto.id_producto %>')"
+          >
+            Al Carrito
+          </button>
+        </section>
+        <% } %>
+      </div>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

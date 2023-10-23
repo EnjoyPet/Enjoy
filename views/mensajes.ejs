@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>¡MENSAJE!</title>
+    <%- include("./partials/metalink.ejs") %>
+  </head>
+  <body>
+    <%- include('./partials/header.ejs') %>
+    <main>
+      <section style="flex-direction: column">
+        <h1 class="listado_1"><%= header %></h1>
+        <h3 class="listado_1"><%= body %></h3>
+      </section>
+    </main>
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

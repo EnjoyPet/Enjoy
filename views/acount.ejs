@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Enjoyourpet - Información</title>
+        <%- include("./partials/metalink.ejs") %>
+    </head>
+    <body>
+        <%- include("./partials/header.ejs") %>
+        <main>
+            <% if(data.usuario != null && data.direccion == null) {%>
+            <section class="smallerSection">
+                <p class="listado_1" style="color: brown; font-weight: bold;">POR
+                    FAVOR COMPLETA TUS DATOS PERSONALES</p>
+            </section>
+            <% } %>
+            <section class="smallerSection">
+                <p class="listado_1">Para actualizar o guardar nueva informacion
+                    selecciona su espacio correspondiente</p>
+            </section>
+            <div class="sectionnomargin"
+                style="display: flex; flex-direction: column">
+                <section class="horizontalmidsection">
+                    <div class="interactuable form__flex" id="user_big_img"
+                        onclick="linkTo('usuario','informacion','actualizar','foto')">
+                        <% if(data.usuario_img == null) {%>
+                        <img src="/resources/img/iconografia/face.png"
+                            alt="Imagen predeterminada">
+                        <% }else{%>
+                        <img class="usuario_img"
+                            src="data:image/jpeg;base64,<%= data.usuario_img.toString('base64') %>"
+                            alt="<% data.nombre %>">
+                        <% } %>
+                    </div>
+                </section>
+                <section class="horizontalmidsection">
+                    <div class="textcontainer">
+                        <h2 class="listado_1 interactuable"
+                            onclick="linkTo('usuario','informacion','actualizar','nombre')">
+                            <%= data.nombre %></h2>
+                        <p class="formatparagraph animated-text">
+                            <div class="listado_1"
+                                style="display: flex; flex-direction:column; text-align: center;">
+                                <h4>Correo</h4>
+                                <h3 class="listado_1 interactuable"
+                                    onclick="linkTo('usuario','informacion','actualizar','correo')"><%=
+                                    data.correo %></h3>
+                            </div>
+
+                            <div class="listado_1"
+                                style="display: flex; flex-direction:column; text-align: center;">
+                                <h3 class="listado_1 interactuable"
+                                    onclick="linkTo('usuario','informacion','actualizar','contrasenia')">Contraseña</h3>
+                            </div>
+
+                            <div class="listado_1"
+                                style="display: flex; flex-direction:column; text-align: center;">
+                                <h4>Celular</h4>
+                                <h3 class="listado_1 interactuable"
+                                    onclick="linkTo('usuario','informacion','actualizar','celular')"><%=
+                                    data.celular %></h3>
+                            </div>
+
+                            <div class="listado_1"
+                                style="display: flex; flex-direction:column; text-align: center;">
+                                <h4>Direccion</h4>
+                                <h3 class="listado_1 interactuable"
+                                    onclick="linkTo('usuario','informacion','actualizar','direccion')"><%=
+                                    data.direccion ? data.direccion :
+                                    'direccion' %></h3>
+                            </div>
+
+                        </p>
+                    </div>
+                </section>
+            </div>
+            <section class="smallerSection" style="flex-direction: row;">
+                <div class="listado_1 "
+                    style="display: flex; flex-direction:column; text-align: center;"
+                    onclick="linkTo('usuario','informacion','actualizar','identificacion')">
+                    <h4>I.D</h4>
+                    <h3 class="listado_1 interactuable"><%= data.identificacion
+                        ? data.identificacion :
+                        'Identificacion' %></h3>
+                </div>
+
+                <div class="listado_1"
+                    style="display: flex; flex-direction:column; text-align: center;"
+                    onclick="linkTo('usuario','informacion','actualizar','telefono')">
+                    <h4>Tel.</h4>
+                    <h3 class="listado_1 interactuable"><%= data.telefono ?
+                        data.telefono :
+                        'Telefono' %></h3>
+                </div>
+            </section>
+        </main>
+        <%- include("./partials/footer.ejs") %>
+    </body>
+</html>

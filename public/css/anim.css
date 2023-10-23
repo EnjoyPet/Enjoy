@@ -1,0 +1,77 @@
+#ejoyIndexText {
+  opacity: 0;
+}
+
+.animated-text {
+  opacity: 0;
+  animation: appearText 2s forwards;
+}
+
+@keyframes appearText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btnshwanim:hover,
+.btnshwanim:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--color-primario);
+  transform: translateY(-0.25em);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.img--pet {
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 28px 16px -26px black;
+  transition: transform 0.5s;
+}
+
+.img--pet:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.btn--hover,
+.txt--hover {
+  transition: 0.5s;
+}
+
+.btn--hover:hover,
+.txt--hover:hover {
+  color: var(--color-secundario);
+}
+
+.active,
+.active:hover {
+  background-color: var(--color-secundario);
+  color: var(--color-primario);
+}
+
+.btn--w {
+  width: 213.7px;
+  max-width: 100%;
+}
+
+section .sl {
+  filter: blur(5px);
+  transition: 1s;
+}
+
+section .sl-active {
+  filter: blur(0);
+}
+
+.sl {
+  transform: scale(0.7);
+}
+
+.sl-active {
+  transform: scale(1);
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Enjoyourpet - Mail</title>
+    <%- include("./partials/metalink.ejs") %>
+  </head>
+  <body>
+    <div class="main">
+      <section id="Titulo_Empresa">
+        <h1>
+          <strong> Enjoy Your Pet </strong>
+        </h1>
+        <h4>
+          <strong> Un Hogar Para Tu Mascota </strong>
+        </h4>
+      </section>
+      <section id="Email">
+        <div id="Asunto_Email">
+          <h2>¡Tienes Una Venta!</h2>
+        </div>
+        <div id="CuerpoEmail">
+          <h1>¡Notificación de Venta!</h1>
+          <p>Estimado/a <%=usuario%>,</p>
+          <p>
+            Le informamos que se ha realizado una venta de un producto en su
+            cuenta con los siguientes detalles:
+          </p>
+
+          <table>
+            <tr>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Precio Unitario</th>
+              <th>Total</th>
+            </tr>
+            <tr>
+              <td><%=producto%></td>
+              <td>1</td>
+              <td><%=precio%></td>
+              <td>$ <%=precio%> COP</td>
+            </tr>
+          </table>
+
+          <p>
+            La venta se ha completado exitosamente, y se ha registrado una suma
+            de dinero de $ <%=precio%> COP en su Venta.
+          </p>
+          <p>la direccion de envio es: <%= direccion %></p>
+          <p>
+            Por Favor comunicate con tu comprador para afinar los detalles de
+            entrega y pago
+          </p>
+          <a
+            href="https://api.whatsapp.com/send?phone=<%=numero%>"
+            target="_blank"
+            >Abrir Chat de WhatsApp</a
+          >
+          <p>Gracias por confiar en nosotros.</p>
+          <p>Atentamente,</p>
+          <p>Enjoy Your Pet</p>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
