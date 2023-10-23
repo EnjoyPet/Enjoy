@@ -1,0 +1,54 @@
+<section class="sign__flex">
+  <form
+    class="registerform"
+    id="registrar-Usuario-form"
+    action="/usuario/recuperar-contrasenia/verificar/actualizar-contrasenia"
+    method="post"
+  >
+    <h1>Actualizar Contraseña</h1>
+    <p>Enviamos un código a tu bandeja de entrada o spam :)</p>
+    <input
+      type="email"
+      name="correo"
+      value="<%= correo %>"
+      style="display: none"
+      required
+    />
+    <label for="codigo">Código de verificación</label>
+    <input
+      type="text"
+      name="codigo"
+      placeholder="Código"
+      autocomplete="off"
+      maxlength="4"
+      required
+    />
+
+    <label for="Nuev_contrasenia">Nueva Contraseña</label>
+    <input
+      id="registercontrasenia"
+      type="password"
+      name="Nuev_contrasenia"
+      placeholder="Contraseña"
+      autocomplete="off"
+      maxlength="150"
+      required
+    />
+
+    <label for="Nuev_contrasenia_2">Repite Tu Contraseña</label>
+    <input
+      id="registercontrasenia2"
+      type="password"
+      name="Nuev_contrasenia_2"
+      placeholder="Contraseña"
+      autocomplete="off"
+      maxlength="150"
+      required
+    />
+
+    <button id="submit-btn" type="submit" name="enviar" style="display: none">
+      Enviar
+    </button>
+  </form>
+</section>
+<script src="/resources/js/forms.js"></script>

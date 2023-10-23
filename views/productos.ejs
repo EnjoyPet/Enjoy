@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Enjoyourpet - Productos</title>
+    <%- include("./partials/metalink.ejs") %>
+  </head>
+  <body>
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+      <% if(productos.length > 0) {%>
+      <section id="productosContainer">
+        <% productos.forEach(producto => { %>
+        <div
+          class="productocontainer"
+          onclick="linkTo('ver','producto','<%= producto.id_producto %>')"
+        >
+          <h5 class="productotitulo"><%= producto.nombre %></h5>
+          <img
+            class="producto_img"
+            src="data:image/jpeg;base64,<%= producto.imagen_producto.toString('base64') %>"
+            alt="imagen del producto"
+          />
+          <h3 class="listado_1 article__price">$ <%= producto.precio %> COP</h3>
+        </div>
+        <% }) %>
+      </section>
+      <% if(pagina == 0) { %>
+      <div class="arrowContainer">
+        <h1
+          onclick="linkTo('productos','<%= categoria %>','<%= parseInt(pagina) +1 %>')"
+          style="margin: 0 25px 0 25px"
+        >
+          &#8594;
+        </h1>
+      </div>
+      <% } else { %>
+      <div class="arrowContainer">
+        <h1
+          onclick="linkTo('productos','<%= categoria %>','<%= parseInt(pagina) -1 %>')"
+        >
+          &#8592;
+        </h1>
+        <h1
+          onclick="linkTo('productos','<%= categoria %>', '<%= parseInt(pagina) +1 %>' )"
+        >
+          &#8594;
+        </h1>
+      </div>
+      <% } %> <% } else { %>
+      <section style="flex-direction: column">
+        <div class="listado_1">
+          <h1 class="listado_1">¡SE ACABARON!</h1>
+          <h3>lo sentimos, ya no tenemos mas productos para ofrecer.</h3>
+        </div>
+        <div class="btn__flex">
+          <a href="/vender" class="btn__eyp btnshwanim--blur btn__hover--blur"
+            >Vende ahora</a
+          >
+        </div>
+        <div class="arrowContainer">
+          <h1
+            onclick="linkTo('productos','<%= categoria %>','<%= parseInt(pagina) -1 %>')"
+            style="margin: 0 25px 0 25px"
+          >
+            &#8592;
+          </h1>
+        </div>
+      </section>
+      <% } %>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>

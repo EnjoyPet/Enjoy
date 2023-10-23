@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Carrito de <%= data.usuario %></title>
+    <%- include("./partials/metalink.ejs") %>
+  </head>
+  <body>
+    <%- include("./partials/header.ejs") %>
+    <main>
+      <section style="flex-direction: column">
+        <h1 class="listado_1" style="margin: 10px auto; width: 100%">
+          Productos
+        </h1>
+        <section>
+          <table>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Stock</th>
+              <th>Precio</th>
+            </tr>
+            <% productos.forEach(producto => { %>
+            <tr>
+              <td><%= producto.id_producto %></td>
+              <td><%= producto.nombre %></td>
+              <td><%= producto.stock %></td>
+              <td>$ <%= producto.precio %> COP</td>
+            </tr>
+            <% }); %>
+          </table>
+        </section>
+      </section>
+    </main>
+    <%- include("./partials/footer.ejs") %>
+  </body>
+</html>

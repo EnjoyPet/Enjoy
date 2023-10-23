@@ -1,0 +1,156 @@
+#ejoyIndexText {
+  opacity: 0;
+}
+
+.animated-text {
+  opacity: 0;
+  animation: appearText 2s forwards;
+}
+
+@keyframes appearText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btnshwanim:hover,
+.btnshwanim:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--color-primario);
+  transform: translateY(-0.25em);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.img--pet {
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 28px 16px -26px black;
+  transition: transform 0.5s;
+}
+
+.img--pet:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.btn--hover,
+.txt--hover {
+  transition: 0.5s;
+}
+
+.btn--hover:hover,
+.txt--hover:hover {
+  color: var(--color-secundario);
+}
+
+.active,
+.active:hover {
+  background-color: var(--color-secundario);
+  color: var(--color-primario);
+}
+
+.btn--w {
+  width: 213.7px;
+  max-width: 100%;
+}
+
+/* Scrolling */
+
+section .sl {
+  filter: blur(5px);
+  transition: 1s;
+}
+
+section .sl-active {
+  filter: blur(0);
+}
+
+.sl {
+  transform: scale(0.7);
+}
+
+.sl-active {
+  transform: scale(1);
+}
+
+/* Buttons */
+.btn__eyp {
+  background: #a787b8;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  display: block;
+  font-weight: 700;
+  padding: 1.2em 4em;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .btn__eyp {
+    display: inline-block;
+    width: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .btn__eyp {
+    display: inline-block;
+    width: auto;
+  }
+}
+.btn__eyp--blur {
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  background: hsla(0, 0%, 100%, 0.1);
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  display: block;
+  font-weight: 700;
+  padding: 1.2em 4em;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .btn__eyp--blur {
+    display: inline-block;
+    width: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .btn__eyp--blur {
+    display: inline-block;
+    width: auto;
+  }
+}
+.btnshwanim:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em #c9aec4;
+}
+.btnshwanim--blur:hover,
+.btnshwanim:hover {
+  cursor: pointer;
+  -webkit-transform: translateY(-0.25em);
+  transform: translateY(-0.25em);
+  transition: 0.3s;
+}
+.btnshwanim--blur:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em rgba(167, 135, 184, 0.7);
+}
+.btn__hover {
+  transition: 0.5s;
+}
+.btn__hover:hover {
+  color: #c9aec4;
+}
+.btn__hover--blur {
+  transition: 0.5s;
+}
+.btn__hover--blur:hover {
+  color: #fff;
+}

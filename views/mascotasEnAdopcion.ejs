@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Enjoyourpet - Adóptame</title>
+    <%- include("./partials/metalink.ejs") %>
+  </head>
+  <body>
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+      <% if(mascotas.length > 0) {%>
+      <section id="productosContainer">
+        <% mascotas.forEach(mascota => { %>
+        <div
+          class="productocontainer"
+          onclick="linkTo('ver','mascota','<%= mascota.id_mascota, %>')"
+        >
+          <h5 class="productotitulo"><%= mascota.nombre %></h5>
+          <img
+            class="producto_img"
+            src="data:image/jpeg;base64,<%= mascota.imagen.toString('base64') %>"
+            alt="imagen de la mascota"
+          />
+          <h3 class="listado_1">
+            <% if(mascota.sexo == 0){ %> <%= 'Hembra' %> <% }else{ %><%= 'Macho'
+            %> <% } %>
+          </h3>
+        </div>
+        <% }) %>
+      </section>
+      <% if(pagina == 0) { %>
+      <div class="arrowContainer">
+        <h1
+          onclick="linkTo('usuario/adopciones/adoptar','<%= categoria %>','<%= filtro %>', '<%= parseInt(pagina) +1 %>')"
+          style="margin: 0 25px 0 25px"
+        >
+          &#8594;
+        </h1>
+      </div>
+      <% } else { %>
+      <div class="arrowContainer">
+        <h1
+          onclick="linkTo('usuario/adopciones/adoptar','<%= categoria %>','<%= filtro %>','<%= parseInt(pagina) -1 %>')"
+        >
+          &#8592;
+        </h1>
+        <h1
+          onclick="linkTo('usuario/adopciones/adoptar','<%= categoria %>','<%= filtro %>', '<%= parseInt(pagina) +1 %>' )"
+        >
+          &#8594;
+        </h1>
+      </div>
+      <% } %> <% } else { %>
+      <section style="flex-direction: column">
+        <div class="listado_1">
+          <h1 class="listado_1">¡SE ACABARON!</h1>
+          <h3>lo sentimos, ya no tenemos mas animales que puedas ver</h3>
+        </div>
+        <div class="btn__flex">
+          <a
+            href="/usuario/adopciones/dar"
+            class="btn__eyp btnshwanim--blur btn__hover--blur"
+            >Da en adopción</a
+          >
+        </div>
+        <div class="arrowContainer">
+          <h1
+            onclick="linkTo('usuario/adopciones/adoptar','<%= categoria %>','<%= filtro %>','<%= parseInt(pagina) -1 %>')"
+            style="margin: 0 25px 0 25px"
+          >
+            &#8592;
+          </h1>
+        </div>
+      </section>
+      <% } %>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
