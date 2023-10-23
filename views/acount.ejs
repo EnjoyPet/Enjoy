@@ -8,12 +8,12 @@
         <%- include("./partials/header.ejs") %>
         <main>
             <% if(data.usuario != null && data.direccion == null) {%>
-            <section class="smallerSection">
+            <section class="adjustment">
                 <p class="listado_1" style="color: brown; font-weight: bold;">POR
                     FAVOR COMPLETA TUS DATOS PERSONALES</p>
             </section>
             <% } %>
-            <section class="smallerSection">
+            <section class="adjustment">
                 <p class="listado_1">Para actualizar o guardar nueva informacion
                     selecciona su espacio correspondiente</p>
             </section>
@@ -62,7 +62,7 @@
 
                             <div class="listado_1"
                                 style="display: flex; flex-direction:column; text-align: center;">
-                                <h4>Direccion</h4>
+                                <h4>Dirección</h4>
                                 <h3 class="listado_1 interactuable"
                                     onclick="linkTo('usuario','informacion','actualizar','direccion')"><%=
                                     data.direccion ? data.direccion :

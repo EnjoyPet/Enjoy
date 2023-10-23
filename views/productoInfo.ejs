@@ -27,7 +27,7 @@
           </div>
         </section>
         <% if(data.usuario == null) {%>
-        <section class="smallSection">
+        <section class="btn__flex">
           <button
             class="Buttton-Compras"
             onclick="linkTo('cuenta','iniciar-sesion')"
@@ -38,11 +38,11 @@
             class="Buttton-Compras"
             onclick="linkTo('cuenta','iniciar-sesion')"
           >
-            Al Carrito
+            Agregar al Carrito
           </button>
         </section>
         <% }else{ %>
-        <section class="smallSection">
+        <section class="btn__flex">
           <button
             class="Buttton-Compras"
             onclick="linkTo('producto','comprar','<%= producto.id_producto %>')"
@@ -53,7 +53,7 @@
             class="Buttton-Compras"
             onclick="linkTo('producto','al-carro','<%= producto.id_producto %>')"
           >
-            Al Carrito
+            Agregar al Carrito
           </button>
         </section>
         <% } %>

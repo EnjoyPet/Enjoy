@@ -21,7 +21,7 @@
             src="data:image/jpeg;base64,<%= producto.imagen_producto.toString('base64') %>"
             alt="imagen del producto"
           />
-          <h3 class="listado_1">$ <%= producto.precio %> COP</h3>
+          <h3 class="listado_1 article__price">$ <%= producto.precio %> COP</h3>
         </div>
         <% }) %>
       </section>
@@ -53,11 +53,11 @@
           <h1 class="listado_1">¡SE ACABARON!</h1>
           <h3>lo sentimos, ya no tenemos mas productos para ofrecer.</h3>
         </div>
-        <section class="smallerSection" style="width: max-content">
-          <h1 class="listado_1 interactuable" onclick="linkTo('vender')">
-            ¡Vende productos para incrementar las ofertas!
-          </h1>
-        </section>
+        <div class="btn__flex">
+          <a href="/vender" class="btn__eyp btnshwanim--blur btn__hover--blur"
+            >Vende ahora</a
+          >
+        </div>
         <div class="arrowContainer">
           <h1
             onclick="linkTo('productos','<%= categoria %>','<%= parseInt(pagina) -1 %>')"

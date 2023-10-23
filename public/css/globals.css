@@ -94,12 +94,18 @@ img {
   align-items: center;
 }
 
+.sign__flex,
+.btn__flex,
 .form__flex {
   display: flex;
   justify-content: center;
 }
 
-.sign__flex {
-  display: flex;
-  justify-content: center;
+.btn__flex {
+  gap: 1rem;
+}
+
+.adjustment {
+  margin: 0 auto;
+  max-width: 90%;
 }

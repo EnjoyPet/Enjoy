@@ -59,6 +59,8 @@
   max-width: 100%;
 }
 
+/* Scrolling */
+
 section .sl {
   filter: blur(5px);
   transition: 1s;
@@ -74,4 +76,81 @@ section .sl-active {
 
 .sl-active {
   transform: scale(1);
+}
+
+/* Buttons */
+.btn__eyp {
+  background: #a787b8;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  display: block;
+  font-weight: 700;
+  padding: 1.2em 4em;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .btn__eyp {
+    display: inline-block;
+    width: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .btn__eyp {
+    display: inline-block;
+    width: auto;
+  }
+}
+.btn__eyp--blur {
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  background: hsla(0, 0%, 100%, 0.1);
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  display: block;
+  font-weight: 700;
+  padding: 1.2em 4em;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .btn__eyp--blur {
+    display: inline-block;
+    width: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .btn__eyp--blur {
+    display: inline-block;
+    width: auto;
+  }
+}
+.btnshwanim:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em #c9aec4;
+}
+.btnshwanim--blur:hover,
+.btnshwanim:hover {
+  cursor: pointer;
+  -webkit-transform: translateY(-0.25em);
+  transform: translateY(-0.25em);
+  transition: 0.3s;
+}
+.btnshwanim--blur:hover {
+  box-shadow: 0 0.5em 0.5em -0.4em rgba(167, 135, 184, 0.7);
+}
+.btn__hover {
+  transition: 0.5s;
+}
+.btn__hover:hover {
+  color: #c9aec4;
+}
+.btn__hover--blur {
+  transition: 0.5s;
+}
+.btn__hover--blur:hover {
+  color: #fff;
 }

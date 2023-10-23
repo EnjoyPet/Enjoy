@@ -93,16 +93,15 @@ a:hover {
 
 form p {
   color: var(--color-secundario);
-  background-color: var(--color-primario);
-  width: 50%;
+  background-color: #bf3c3c;
+  width: 100%;
   padding: 10px;
   margin: 0 auto;
   text-align: center;
   align-items: center;
   justify-content: center;
   margin-bottom: 25px;
-  border-top-right-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-radius: 2px;
 }
 
 #imagen_preview {
