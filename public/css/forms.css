@@ -9,7 +9,8 @@ form {
   flex-wrap: wrap;
   padding: 100px;
   margin: 50px 25px 50px 25px;
-
+  width: 460px;
+  max-width: 90%;
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
 }
