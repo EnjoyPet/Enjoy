@@ -38,3 +38,18 @@ input_imagen_mascota.forEach(element => {
         }
     })
 });
+
+const especie_select = document.getElementById('especie-select');
+
+if(especie_select){
+  especie_select.addEventListener('change', ()=>{
+    const raza_options = document.querySelectorAll('#raza-select option')
+
+    raza_options.forEach(raza =>{
+      if(!raza.classList.contains(especie_select.value)){
+        raza.style.display = 'none';
+      }else 
+      raza.style.display = 'block';
+    })
+  })
+}

@@ -6,6 +6,7 @@ const shar = require('sharp');
 const ejs = require('ejs');
 const path = require('path');
 const { query } = require('express');
+const { error } = require('console');
 
 
 /* * Acount * */
@@ -614,6 +615,17 @@ ventasModel.publicarVenta = async (req, nombre, categoria, descripcion, dimencio
 
 /* * adopciones * */
 const adopcionesModel = {};
+
+adopcionesModel.getInfoRazaEspecieMascota = async (callback) =>{
+    const query = 'SELECT idmascota_raza as id, raza, especie from mascota_raza ORDER  BY raza ASC'
+    conection.query(query,(error,result)=>{
+        if(error){
+            callback({error:true, message:"error en la consiulta de la Base De datos"})
+        }else{
+            callback({error:false, result:result})
+        }
+    })
+}
 
 adopcionesModel.registrarmascota = async (req, callback) => {
     const { Nombre, Edad, Especie, Raza, Sexo, Personalidad, Historia, C_Ninos, C_Animales, Requisitos } = req.body;

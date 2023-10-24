@@ -28,7 +28,7 @@
     <div class="formSelectContainer">
       <div>
         <label for="Especie">Especie</label>
-        <select name="Especie" required>
+        <select name="Especie" id="especie-select" required>
           <option></option>
           <option value="0">Perro</option>
           <option value="1">Gato</option>
@@ -36,10 +36,11 @@
       </div>
       <div>
         <label for="Raza">Raza</label>
-        <select name="Raza" required>
+        <select name="Raza" id="raza-select" required>
           <option></option>
-          <option value="0">Pastor Alemán</option>
-          <option value="1">Egipcio</option>
+          <% Info.forEach(raza => { %>
+          <option value="<%= raza.id %>" class="<%= raza.especie %>"><%= raza.raza %></option>
+          <% }) %>
         </select>
       </div>
       <div>

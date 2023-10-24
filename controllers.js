@@ -477,10 +477,19 @@ adopcionesController.rendermascotas = async (req, res) => {
 
 adopcionesController.rendermascotasform = async (req, res) => {
     const data = models.getData(req);
-    if(data.usuario != null)
-        res.render('sessionform', { tipo: 'registrarmascota', data })
-    else
+    if(data.usuario != null){
+        models.adopcionesModel.getInfoRazaEspecieMascota((result)=>{
+        if(result.error){
+            res.send(result.message);
+
+        }else{
+            console.log(result.result[0])
+            res.render('sessionform', { tipo: 'registrarmascota', Info: result.result, data })
+        }
+    })
+    }else{
         res.redirect('/');
+    }
 }
 
 adopcionesController.registrarmascota = async (req, res) => {
