@@ -65,9 +65,11 @@ app.get("/", (req, res) => {
     rol: req.session.rol || null,
     usuario_img: req.session.usuario_img || null,
   };
-  if (data.usuario != null && data.direccion == null)
+  if (data.usuario === null) {
+    res.render("index", { data });
+  } else if (data.usuario != null && data.direccion == null)
     res.redirect("/usuario/informacion");
-  else res.render("index", { data });
+  else res.render("indexInSession", { data });
 });
 //
 

@@ -2,7 +2,7 @@
   background-color: transparent;
   color: var(--color-texto);
   padding: 0;
-  width: 100vw;
+  width: 1005;
   margin-top: 80px;
   margin-bottom: 0;
 }
@@ -15,7 +15,7 @@
 } */
 
 /* .footercontainer {
-  max-width: 100vw;
+  max-width: 1005;
   max-height: 150px;
   margin: 0 auto;
   padding: 0 20px;

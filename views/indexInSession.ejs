@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Enjoyourpet - <%= data.usuario %></title>
+    <%- include("./partials/metalink.ejs") %>
+  </head>
+  <body>
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+      <section class="width-90" id="carousel-container">
+        <div id="carousel">
+          <div id="carousel-text"><h1></h1></div>
+          <img
+            class="img-carousel hide"
+            src="/resources/img/carousel/001.jpg"
+            alt="imagen 1 del carousel"
+          />
+          <img
+            class="img-carousel hide"
+            src="/resources/img/carousel/002.jpg"
+            alt="imagen 2 del carousel"
+          />
+          <img
+            class="img-carousel hide"
+            src="/resources/img/carousel/003.jpg"
+            alt="imagen 3 del carousel"
+          />
+          <img
+            class="img-carousel hide"
+            src="/resources/img/carousel/004.jpg"
+            alt="imagen 4 del carousel"
+          />
+          <img
+            class="img-carousel hide"
+            src="/resources/img/carousel/005.jpg"
+            alt="imagen 5 del carousel"
+          />
+        </div>
+      </section>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+    <script src="/resources/js/carousel.js"></script>
+  </body>
+</html>

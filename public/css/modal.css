@@ -96,7 +96,7 @@
 
 .close_modal {
   position: absolute;
-  top: -5%;
+  top: 0%;
   right: -8%;
   font-size: x-large;
   font-weight: bold;

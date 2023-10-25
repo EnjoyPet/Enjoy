@@ -5,7 +5,7 @@ header {
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  width: 90vw;
+  width: 905;
 }
 
 #logoContainer img {
@@ -207,7 +207,7 @@ li a {
 
 @media screen and (max-width: 450px) {
   header {
-    min-width: 100vw;
+    min-width: 1005;
   }
 }
 
