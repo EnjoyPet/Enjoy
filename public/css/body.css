@@ -4,18 +4,17 @@
 
 section {
   height: min-content;
-  min-height: 250px;
+  min-height: 150px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 3rem;
-  width: fit-content;
+  width: 90%;
   background-color: var(--color-terciario);
-  margin: 20px auto;
   border-top-right-radius: 35px;
   border-bottom-left-radius: 35px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   text-align: center;
+  margin: 5rem auto;
 }
 
 .width-90{
@@ -73,7 +72,7 @@ section {
   align-items: center;
   align-content: center;
   position: relative;
-
+  padding: 1rem;
 }
 
 .like_button_container {
@@ -183,9 +182,10 @@ section {
 
 /* Conoce a tu compañero */
 .XS-Section {
+  display: flex;
   height: fit-content;
   width: 50%;
-  margin: auto;
+  font-size: 100%;
   text-align: center;
   text-wrap: wrap;
   padding: 1rem 2rem;
@@ -194,12 +194,16 @@ section {
   border-radius: 2px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   align-content: space-between;
+  justify-content: center;
 }
-
+.XS-Section h1{
+  margin: 0 auto;
+  width:fit-content;
+}
 .verticalSection {
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin: 0 auto;
   align-items: center;
 }
 
@@ -287,10 +291,10 @@ section {
 }
 
 .info {
-  width: 75%;
-  padding: 2rem 2rem;
+  width: 80%;
   margin: auto;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   align-content: center;
   justify-content: space-between;
@@ -298,8 +302,14 @@ section {
   border-bottom: 1px solid var(--color-primario);
 }
 
+.info h1{
+  font-size: 100%;
+}
+
 .info p{
-  margin-right: 2rem;
+  width: 90%;
+  font-size: 100%;
+  margin-right: .5rem;
 }
 
 .info:last-child {

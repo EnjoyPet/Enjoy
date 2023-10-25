@@ -8,7 +8,8 @@
     <%- include('./partials/header.ejs') %>
     <main>
       <% if(tipo !== null) {%> <% const Ruta = './partials/' + tipo + '.ejs' %>
-      <%- include(Ruta) %> <% } else {%>
+      <section class="form-container"><%- include(Ruta) %></section>
+      <% } else {%>
       <section style="flex-direction: column">
         <h1 class="listado_1">Hubo un Problema</h1>
         <h3 class="listado_1">

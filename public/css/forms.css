@@ -1,5 +1,22 @@
 /* Estilo general para todos los elementos de formulario */
+.form-container{
+  background: none;
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  margin: 5rem auto 2rem;
+}
+
+.form-container .sign__flex,
+.form-container .btn__flex,
+.form-container .form__flex{
+  width: 100%;
+  padding: 1rem;
+  margin: 0;
+} 
+
 form {
+  margin: auto;
   background-color: var(--color-fondo);
   padding: 20px;
   border: 1px solid #ccc;
@@ -7,10 +24,9 @@ form {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  padding: 100px;
-  margin: 50px 25px 50px 25px;
-  width: 460px;
-  max-width: 90%;
+  align-content: center;
+  justify-content: space-between;
+  width: 90%;
   border-top-right-radius: 15px;
   border-bottom-left-radius: 15px;
 }
@@ -67,6 +83,7 @@ select {
 
 /* Estilo para los botones del formulario */
 button {
+  width: 50%;
   padding: 10px 20px;
   background-color: var(--color-primario);
   color: white;
@@ -74,7 +91,9 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  margin-top: 15px;
+  margin: 15px auto;
+  text-align: center;
+  text-wrap:wrap;
 }
 
 button:hover {

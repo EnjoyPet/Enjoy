@@ -98,7 +98,10 @@ img {
 .btn__flex,
 .form__flex {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
 .btn__flex {
