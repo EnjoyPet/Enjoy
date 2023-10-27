@@ -265,8 +265,9 @@ section {
 
 .imagen-interactuable-container img {
   position: absolute;
-  width: 80%;
+  width: 70%;
   height: auto;
+  max-height: 350px;
   margin: auto;
   top: 0;
   bottom: 0;
