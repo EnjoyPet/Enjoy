@@ -65,11 +65,21 @@ app.get("/", (req, res) => {
     rol: req.session.rol || null,
     usuario_img: req.session.usuario_img || null,
   };
+  const productosModel = require("./models.js");
   if (data.usuario === null) {
     res.render("index", { data });
   } else if (data.usuario != null && data.direccion == null)
     res.redirect("/usuario/informacion");
-  else res.render("indexInSession", { data });
+  else {
+    productosModel.productosModel.renderProductos("todo", 0, (result) => {
+      if (!result.valid) {
+        console.error(result.message);
+        res.send(result.message);
+      } else {
+        res.render("indexInSession", { data, productos: result.productos });
+      }
+    });
+  }
 });
 //
 

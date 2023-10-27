@@ -1,5 +1,10 @@
 #ejoyIndexText {
-  opacity: 0;
+  opacity: 1;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  white-space:pre-line;
+  font-size: 60%;
 }
 
 .animated-text {
@@ -90,6 +95,7 @@ section .sl-active {
   text-align: center;
   text-decoration: none;
   width: 100%;
+  margin: auto;
 }
 @media (min-width: 768px) {
   .btn__eyp {

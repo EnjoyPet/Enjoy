@@ -57,8 +57,10 @@ section {
   align-items: center;
   align-content: center;
   justify-content: space-between;
+  border: none;
   width: 90%;
   margin: 25px auto;
+  gap: 2.5%;
 }
 .horizontalmidsection{
   flex: 1;
@@ -73,6 +75,7 @@ section {
   align-content: center;
   position: relative;
   padding: 1rem;
+  margin: 5px;
 }
 
 .like_button_container {

@@ -1,9 +1,9 @@
-const animatedText = document.getElementById('ejoyIndexText');
-animatedText.textContent = '';
+const animatedText = document.getElementById("ejoyIndexText");
+animatedText.textContent = "";
 
 // Texto que quieres mostrar letra por letra
 const textToShow = [
-  ' Proporciona bienestar, calidad, cuidado y respeto \na los nuevos miembros de la familia, satisfaciendo  \n las expectativas de nuestros clientes.  \n  \n \n  Mejora la calidad de vida de los animales callejeros, \nque actualmente no tienen cuidado y una familia \n para adoptarlos.  \n  \n \n Ofrece una tienda de productos atractivos, garantizados \n y de alta calidad',
+  `Proporciona bienestar, calidad, cuidado y respeto a los nuevos miembros de la familia, satisfaciendo las expectativas de nuestros clientes.  \n  \n \n  Mejora la calidad de vida de los animales callejeros, que actualmente no tienen cuidado y una familia para adoptarlos.  \n  \n \n Ofrece una tienda de productos atractivos, garantizados y de alta calidad`,
 ];
 let currentLetterIndex = 0;
 
@@ -48,5 +48,5 @@ function animateNumber(targetElementId, targetValue, speed, ratio) {
 }
 
 // Llama a la función para animar los números con los valores deseados
-animateNumber('dogsAmount', 66467, 1, 20); // 66,467
-animateNumber('dogsperKM', 165, 50, 1); // 165
+// animateNumber("dogsAmount", 66467, 1, 20); // 66,467
+// animateNumber("dogsperKM", 165, 50, 1); // 165
