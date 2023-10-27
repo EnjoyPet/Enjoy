@@ -62,7 +62,7 @@ section {
 }
 .horizontalmidsection{
   flex: 1;
-  min-width: 200px;
+  min-width: 100px;
   width: 40%;
   height: 100%;
   min-height: 375px;
@@ -314,4 +314,10 @@ section {
 
 .info:last-child {
   border-bottom: none;
+}
+
+@media screen and (max-width: 360px) {
+  .horizontalmidsection{
+    min-height: 150px;
+  }
 }
