@@ -22,7 +22,7 @@ EnjoyYourPet todavía está en desarrollo y tiene como objetivo proporcionar una
 **Estado del Proyecto:** En progreso
 
 ### Captura de Pantalla
-![EnjoyYourPet](https://www.united-internet.de/fileadmin/user_upload/Brands/Downloads/Logo_IONOS_by.jpg)
+![EnjoyYourPet](https://github.com/EnjoyPet/Enjoy/blob/534e8ff124660b5befc23bcc9e4c298c7a89114e/view-index-image001.jpeg)
 
 ## Tecnologías
 ***
