@@ -1,4 +1,4 @@
-# Enjoy Your Pet
+# EnjoYourPet
 ***
 
 EnjoYourPet is a comprehensive web solution catering to various needs associated with owning or wanting to own a pet. From pet products to adoption services, it aims to simplify the pet ownership experience.
