@@ -22,7 +22,7 @@ EnjoYourPet is still under development and aims to provide a wide range of servi
 **Project Status:** In progress
 
 ### Screenshot
-![EnjoYourPet](https://www.united-internet.de/fileadmin/user_upload/Brands/Downloads/Logo_IONOS_by.jpg)
+![EnjoYourPet](https://github.com/EnjoyPet/Enjoy/blob/534e8ff124660b5befc23bcc9e4c298c7a89114e/view-index-image001.jpeg)
 
 ## Technologies
 ***
