@@ -1,7 +1,7 @@
 # EnjoYourPet
 ***
 
-EnjoyYourPet es una solución web integral que atiende a diversas necesidades asociadas con ser dueño o querer ser dueño de una mascota. Desde productos para mascotas hasta servicios de adopción, tiene como objetivo simplificar la experiencia de ser dueño de una mascota.
+EnjoYourPet es una solución web integral que atiende a diversas necesidades asociadas con ser dueño o querer ser dueño de una mascota. Desde productos para mascotas hasta servicios de adopción, tiene como objetivo simplificar la experiencia de ser dueño de una mascota.
 
 ## Tabla de Contenidos
 1. [Información General](#general-info)
