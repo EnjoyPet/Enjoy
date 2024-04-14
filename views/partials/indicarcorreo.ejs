@@ -1,23 +1,15 @@
+<!-- Sección de formulario para recuperar contraseña -->
 <section class="sign__flex">
-  <form
-    class="registerform"
-    id="registrar-Usuario-form"
-    action="/usuario/recuperar-contrasenia/verificar"
-    method="post"
-  >
+  <!-- Formulario de registro de usuario -->
+  <form class="registerform" id="registrar-Usuario-form" action="/usuario/recuperar-contrasenia/verificar" method="post">
+    <!-- Título del formulario -->
     <h1>Recuperar Contraseña</h1>
+    <!-- Etiqueta y campo de entrada para el correo -->
     <label for="correo">Ingresa tu correo</label>
-    <input
-      id="_registercorreo"
-      type="email"
-      name="correo"
-      placeholder="Correo"
-      autocomplete="off"
-      required
-    />
-    <button id="submit-btn registrar-submit-btn" type="submit" name="enviar">
-      Enviar
-    </button>
+    <input id="_registercorreo" type="email" name="correo" placeholder="Correo" autocomplete="off" required />
+    <!-- Botón de envío del formulario -->
+    <button id="submit-btn registrar-submit-btn" type="submit" name="enviar">Enviar</button>
   </form>
 </section>
+<!-- Script para la funcionalidad del formulario -->
 <script src="/resources/js/forms.js"></script>

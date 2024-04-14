@@ -1,327 +1,305 @@
 /* .btn--eyp:hover {
   box-shadow: 0px 10px 16px rgb(104 52 166 / 0.4);
 } */
-
 section {
-  height: min-content;
-  min-height: 150px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 90%;
-  background-color: var(--color-terciario);
-  border-top-right-radius: 35px;
-  border-bottom-left-radius: 35px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  margin: 5rem auto;
+  height: min-content; /* Altura mínima necesaria para contener el contenido */
+  min-height: 150px; /* Altura mínima */
+  display: flex; /* Mostrar como elemento flex */
+  flex-direction: row; /* Disposición en fila de los elementos hijos */
+  justify-content: space-between; /* Distribuir el espacio entre los elementos hijos */
+  width: 90%; /* Anchura del 90% del contenedor padre */
+  background-color: var(--color-terciario); /* Color de fondo */
+  border-top-right-radius: 35px; /* Radio de borde superior derecho */
+  border-bottom-left-radius: 35px; /* Radio de borde inferior izquierdo */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+  text-align: center; /* Alinear el texto al centro */
+  margin: 5rem auto; /* Margen superior e inferior de 5rem, y margen izquierdo y derecho automático */
 }
-
-.width-90{
-  width: 90%;
+.width-90 {
+  width: 90%; /* Anchura del 90% del contenedor padre */
 }
-.column{
-  flex-direction: column;
+.column {
+  flex-direction: column; /* Cambiar la disposición a columna de los elementos hijos */
 }
-
 .smallSection {
-  height: fit-content;
-  min-height: 200px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 90%;
-  background-color: rgb(255, 255, 255, 0.5);
-  margin: 25px auto;
-  border-radius: 2px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  height: fit-content; /* Altura se ajusta al contenido */
+  min-height: 200px; /* Altura mínima */
+  display: flex; /* Mostrar como elemento flex */
+  flex-direction: row; /* Disposición en fila de los elementos hijos */
+  justify-content: space-between; /* Distribuir el espacio entre los elementos hijos */
+  width: 90%; /* Anchura del 90% del contenedor padre */
+  background-color: rgba(255, 255, 255, 0.5); /* Color de fondo con transparencia */
+  margin: 25px auto; /* Margen superior e inferior de 25px, y margen izquierdo y derecho automático */
+  border-radius: 2px; /* Radio de borde */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Sombra */
 }
 .smallerSection {
-  height: fit-content;
-  min-height: 100px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 90%;
-  max-width: 90%;
-  background-color: rgb(255, 255, 255, 0.5);
-  margin: 25px auto;
-  border-radius: 2px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  height: fit-content; /* La altura se ajusta al contenido */
+  min-height: 100px; /* Altura mínima */
+  display: flex; /* Mostrar como elemento flex */
+  flex-direction: row; /* Disposición en fila de los elementos hijos */
+  justify-content: space-between; /* Distribuir el espacio entre los elementos hijos */
+  width: 90%; /* Anchura del 90% del contenedor padre */
+  max-width: 90%; /* Anchura máxima del 90% del contenedor padre */
+  background-color: rgba(255, 255, 255, 0.5); /* Color de fondo con transparencia */
+  margin: 25px auto; /* Margen superior e inferior de 25px, y margen izquierdo y derecho automático */
+  border-radius: 2px; /* Radio de borde */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Sombra */
 }
-.sectionnomargin{
-  height: fit-content;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  align-content: center;
-  justify-content: space-between;
-  border: none;
-  width: 90%;
-  margin: 25px auto;
-  gap: 2.5%;
+.sectionnomargin {
+  height: fit-content; /* Altura se ajusta al contenido */
+  display: flex; /* Mostrar como elemento flex */
+  flex-direction: row; /* Disposición en fila de los elementos hijos */
+  flex-wrap: wrap; /* Envolver elementos en múltiples líneas si es necesario */
+  align-items: center; /* Alinear verticalmente los elementos al centro */
+  align-content: center; /* Alinear el contenido verticalmente al centro */
+  justify-content: space-between; /* Distribuir el espacio entre los elementos hijos */
+  border: none; /* Sin borde */
+  width: 90%; /* Anchura del 90% del contenedor padre */
+  margin: 25px auto; /* Margen superior e inferior de 25px, y margen izquierdo y derecho automático */
+  gap: 2.5%; /* Espacio entre los elementos hijos */
 }
-.horizontalmidsection{
-  flex: 1;
-  min-width: 100px;
-  width: 40%;
-  height: 100%;
-  min-height: 375px;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  position: relative;
-  padding: 1rem;
-  margin: 5px;
+
+.horizontalmidsection {
+  flex: 1; /* El elemento ocupa todo el espacio disponible */
+  min-width: 100px; /* Anchura mínima */
+  width: 40%; /* Anchura del 40% del contenedor padre */
+  height: 100%; /* Altura del 100% */
+  min-height: 375px; /* Altura mínima */
+  flex-direction: column; /* Disposición en columna de los elementos hijos */
+  flex-wrap: wrap; /* Envolver elementos en múltiples líneas si es necesario */
+  justify-content: center; /* Centrar verticalmente los elementos */
+  align-items: center; /* Centrar horizontalmente los elementos */
+  align-content: center; /* Centrar el contenido verticalmente */
+  position: relative; /* Posición relativa */
+  padding: 1rem; /* Relleno de 1 rem en todos los lados */
+  margin: 5px; /* Margen de 5px */
 }
 
 .like_button_container {
-  display: flex;
-  padding: 10px;
-  width: 100%;
-  background-color: var(--color-primario);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  margin: 15px auto;
-  flex-direction: column;
+  display: flex; /* Mostrar como elemento flex */
+  padding: 10px; /* Relleno de 10px en todos los lados */
+  width: 100%; /* Anchura del 100% del contenedor padre */
+  background-color: var(--color-primario); /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Radio de borde */
+  cursor: pointer; /* Cursor de puntero */
+  transition: background-color 0.3s; /* Transición suave del color de fondo */
+  margin: 15px auto; /* Margen superior e inferior de 15px, y margen izquierdo y derecho automático */
+  flex-direction: column; /* Disposición en columna de los elementos hijos */
 }
-
 .like_button_container:hover {
-  background-color: var(--color-enlace);
+  background-color: var(--color-enlace); /* Cambiar color de fondo al pasar el ratón */
 }
 
 .formatparagraph {
-  top: 0;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  justify-items: center;
-  align-content: center;
-  text-align: center;
-  white-space: pre-line;
+  top: 0; /* Posición superior en relación al contenedor padre */
+  height: 100%; /* Altura del 100% */
+  width: 100%; /* Anchura del 100% */
+  align-items: center; /* Centrar horizontalmente los elementos */
+  justify-items: center; /* Centrar verticalmente los elementos */
+  align-content: center; /* Centrar el contenido verticalmente */
+  text-align: center; /* Alinear el texto al centro */
+  white-space: pre-line; /* Mantener saltos de línea */
 }
 .listado_1 {
-  list-style-type: none;
-  width: fit-content;
-  max-width: 100%;
-  padding: 15px;
-  margin: 5% auto;
-  overflow-wrap: break-word;
-  background-color: var(--color-primario);
-  color: #fff;
-  border-radius: 2px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  list-style-type: none; /* Eliminar viñetas de la lista */
+  width: fit-content; /* Ajustar el ancho al contenido */
+  max-width: 100%; /* Ancho máximo del 100% del contenedor padre */
+  padding: 15px; /* Relleno de 15px en todos los lados */
+  margin: 5% auto; /* Margen del 5% respecto al alto del contenedor padre y centrado horizontal */
+  overflow-wrap: break-word; /* Romper palabras largas para ajustarse al contenedor */
+  background-color: var(--color-primario); /* Color de fondo */
+  color: #fff; /* Color del texto */
+  border-radius: 2px; /* Radio de borde */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Sombra */
 }
-
 .article__desc,
 .article__price {
-  max-width: 90%;
+  max-width: 90%; /* Ancho máximo del 90% del contenedor padre */
 }
-
 .grid {
-  list-style-type: none;
-  width: fit-content;
-  max-width: 100%;
-  padding: 15px;
-  margin: 5% auto;
-  overflow-wrap: break-word;
-  background-color: var(--color-terciario);
-  color: var(--color-texto-primario);
-  border-radius: 2px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  padding: 30px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 32px;
+  list-style-type: none; /* Elimina viñetas de la lista */
+  width: fit-content; /* Ajusta el ancho al contenido */
+  max-width: 100%; /* Ancho máximo del 100% del contenedor padre */
+  padding: 15px; /* Relleno de 15px en todos los lados */
+  margin: 5% auto; /* Margen del 5% respecto al alto del contenedor padre y centrado horizontal */
+  overflow-wrap: break-word; /* Rompe palabras largas para ajustarse al contenedor */
+  background-color: var(--color-terciario); /* Color de fondo */
+  color: var(--color-texto-primario); /* Color del texto */
+  border-radius: 2px; /* Radio de borde */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+  padding: 30px; /* Relleno de 30px en todos los lados */
+  display: grid; /* Mostrar como grid */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas automáticas ajustables */
+  gap: 32px; /* Espacio entre las cajas del grid */
 }
-
 .textcontainer {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-  max-height: 100%;
-  text-align: center;
-  overflow-wrap: break-word;
-  padding: 10px 20px 10px 20px;
+  display: flex; /* Mostrar como elemento flex */
+  flex-direction: column; /* Disposición en columna de los elementos hijos */
+  margin: 0 auto; /* Margen automático en los lados */
+  width: 100%; /* Anchura del 100% */
+  height: 100%; /* Altura del 100% */
+  max-height: 100%; /* Altura máxima del 100% */
+  text-align: center; /* Alinear el texto al centro */
+  overflow-wrap: break-word; /* Romper palabras largas para ajustarse al contenedor */
+  padding: 10px 20px 10px 20px; /* Relleno de 10px arriba y abajo, 20px izquierda y derecha */
 }
-
 .img--center {
-  margin: 0 auto;
+  margin: 0 auto; /* Margen automático a los lados para centrar la imagen */
 }
-
 .usuario_img {
-  margin: 0 auto;
-  width: 550px;
-  height: auto;
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 2px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  margin: 0 auto; /* Margen automático en los lados para centrar la imagen */
+  width: 550px; /* Anchura de la imagen */
+  height: auto; /* Altura automática para mantener la proporción */
+  max-width: 90%; /* Anchura máxima del 90% del contenedor padre */
+  max-height: 90%; /* Altura máxima del 90% del contenedor padre */
+  border-radius: 2px; /* Radio de borde */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
 }
-
 @media screen and (max-width: 520px) {
   .listado_1 {
-    font-size: small;
+    font-size: small; /* Tamaño de fuente pequeño para pantallas más pequeñas */
   }
 }
 
 @media screen and (max-width: 450px) {
   .listado_1 {
-    font-size: smaller;
+    font-size: smaller; /* Tamaño de fuente aún más pequeño para pantallas muy pequeñas */
   }
 }
-
 .imgcontainer {
-  display: flex;
+  display: flex; /* Mostrar como elemento flex */
 }
 
 /* Conoce a tu compañero */
 .XS-Section {
-  display: flex;
-  height: fit-content;
-  width: 50%;
-  font-size: 100%;
-  text-align: center;
-  text-wrap: wrap;
-  padding: 1rem 2rem;
-  background-color: var(--color-secundario);
-  margin: 15px auto;
-  border-radius: 2px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-  align-content: space-between;
-  justify-content: center;
+  display: flex; /* Mostrar como elemento flex */
+  height: fit-content; /* La altura se ajusta al contenido */
+  width: 50%; /* Anchura del 50% del contenedor padre */
+  font-size: 100%; /* Tamaño de fuente por defecto */
+  text-align: center; /* Alinear el texto al centro */
+  text-wrap: wrap; /* Envolver texto cuando sea necesario */
+  padding: 1rem 2rem; /* Relleno de 1 rem arriba y abajo, 2 rem izquierda y derecha */
+  background-color: var(--color-secundario); /* Color de fondo */
+  margin: 15px auto; /* Margen superior e inferior de 15px, y margen izquierdo y derecho automático */
+  border-radius: 2px; /* Radio de borde */
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); /* Sombra */
+  align-content: space-between; /* Distribuir el espacio entre los elementos en el eje cruzado */
+  justify-content: center; /* Centrar horizontalmente los elementos */
 }
-.XS-Section h1{
-  margin: 0 auto;
-  width:fit-content;
+.XS-Section h1 {
+  margin: 0 auto; /* Margen automático en los lados para centrar el elemento */
+  width: fit-content; /* Ancho ajustado al contenido del encabezado */
 }
 .verticalSection {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  align-items: center;
+  display: flex; /* Mostrar como elemento flex */
+  flex-direction: column; /* Disposición en columna de los elementos hijos */
+  margin: 0 auto; /* Margen automático en los lados para centrar la sección */
+  align-items: center; /* Centrar horizontalmente los elementos */
 }
 
 @media (min-width: 768px) {
   .verticalSection {
-    margin: 27px auto;
+    margin: 27px auto; /* Margen superior e inferior de 27px, y margen izquierdo y derecho automático */
   }
 }
-
 .pet--grid {
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  align-items: center;
-  justify-items: center;
-  justify-content: center;
+  display: grid; /* Mostrar como grid */
+  grid-template-rows: repeat(2, 1fr); /* Definir dos filas de igual tamaño */
+  align-items: center; /* Alinear los elementos verticalmente al centro */
+  justify-items: center; /* Alinear los elementos horizontalmente al centro */
+  justify-content: center; /* Centrar horizontalmente el contenido del grid */
 }
 
 @media (min-width: 768px) {
   .pet--grid {
-    row-gap: unset;
-    grid-template-rows: unset;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    row-gap: unset; /* Restablecer espacio entre filas */
+    grid-template-rows: unset; /* Restablecer la definición de filas */
+    grid-template-columns: repeat(2, 1fr); /* Definir dos columnas de igual tamaño */
+    gap: 1rem; /* Espacio entre las cajas del grid */
   }
 }
-
 .mediaSection {
-  width: 50%;
-  height: 100%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+  width: 50%; /* Anchura del 50% del contenedor padre */
+  height: 100%; /* Altura del 100% */
+  flex-direction: column; /* Disposición en columna de los elementos hijos */
+  justify-content: center; /* Centrar verticalmente los elementos */
+  align-items: center; /* Centrar horizontalmente los elementos */
+  align-content: center; /* Centrar el contenido verticalmente */
 }
-
-.imagen-interactuable-container{
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-
+.imagen-interactuable-container {
+  width: 100%; /* Anchura del 100% */
+  height: 100%; /* Altura del 100% */
+  cursor: pointer; /* Cursor de puntero */
 }
-
-.interactuable{
-  cursor: pointer;
+.interactuable {
+  cursor: pointer; /* Cursor de puntero */
 }
-.medio-margin{
-  padding: 2rem;
-  margin: 2rem;
-  border-top-right-radius: 15px;
-  border-bottom-left-radius: 15px;
+.medio-margin {
+  padding: 2rem; /* Relleno de 2 rem en todos los lados */
+  margin: 2rem; /* Margen de 2 rem en todos los lados */
+  border-top-right-radius: 15px; /* Radio de borde superior derecho */
+  border-bottom-left-radius: 15px; /* Radio de borde inferior izquierdo */
 }
-
-.interactuable:hover{
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+.interactuable:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra al pasar el ratón */
 }
-
 .imagen-interactuable-container img {
-  position: absolute;
-  width: 70%;
-  height: auto;
-  max-height: 350px;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-top-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  position: absolute; /* Posición absoluta */
+  width: 70%; /* Anchura del 70% del contenedor padre */
+  height: auto; /* Altura automática para mantener la proporción */
+  max-height: 350px; /* Altura máxima de 350px */
+  margin: auto; /* Margen automático en todos los lados */
+  top: 0; /* Posición superior en relación al contenedor padre */
+  bottom: 0; /* Posición inferior en relación al contenedor padre */
+  left: 0; /* Posición izquierda en relación al contenedor padre */
+  right: 0; /* Posición derecha en relación al contenedor padre */
+  border-top-right-radius: 15px; /* Radio de borde superior derecho */
+  border-bottom-left-radius: 15px; /* Radio de borde inferior izquierdo */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
 }
-.imagen-interactuable-cortinilla{
-  position: absolute;
-  width: 90%;
-  height: 90%;
-  top: 5%;
-  bottom: 5%;
-  left: 5%;
-  right: 5%;
-  border-top-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
-  background-color: rgba(0, 0, 0, 0.75);
-  z-index: 1;
-  opacity: 0;
-  transition: opacity .6s;
+.imagen-interactuable-cortinilla {
+  position: absolute; /* Posición absoluta */
+  width: 90%; /* Anchura del 90% del contenedor padre */
+  height: 90%; /* Altura del 90% del contenedor padre */
+  top: 5%; /* Margen superior del 5% */
+  bottom: 5%; /* Margen inferior del 5% */
+  left: 5%; /* Margen izquierdo del 5% */
+  right: 5%; /* Margen derecho del 5% */
+  border-top-right-radius: 15px; /* Radio de borde superior derecho */
+  border-bottom-left-radius: 15px; /* Radio de borde inferior izquierdo */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 1); /* Sombra */
+  background-color: rgba(0, 0, 0, 0.75); /* Color de fondo con transparencia */
+  z-index: 1; /* Capa z para superponerla sobre la imagen */
+  opacity: 0; /* Opacidad inicial */
+  transition: opacity .6s; /* Transición de opacidad */
 }
-
 .info {
-  width: 80%;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-content: center;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--color-primario);
+  width: 80%; /* Anchura del 80% del contenedor padre */
+  margin: auto; /* Margen automático en los lados */
+  display: flex; /* Mostrar como elemento flex */
+  flex-wrap: wrap; /* Envolver elementos en múltiples líneas si es necesario */
+  flex-direction: row; /* Disposición en fila de los elementos hijos */
+  align-content: center; /* Centrar el contenido verticalmente */
+  justify-content: space-between; /* Distribuir el espacio entre los elementos */
+  align-items: center; /* Centrar verticalmente los elementos */
+  border-bottom: 1px solid var(--color-primario); /* Borde inferior sólido */
 }
-
-.info h1{
-  font-size: 100%;
+.info h1 {
+  font-size: 100%; /* Tamaño de fuente por defecto */
 }
-
-.info p{
-  width: 90%;
-  font-size: 100%;
-  margin-right: .5rem;
+.info p {
+  width: 90%; /* Anchura del 90% del contenedor padre */
+  font-size: 100%; /* Tamaño de fuente por defecto */
+  margin-right: .5rem; /* Margen derecho de 0.5rem */
 }
-
 .info:last-child {
-  border-bottom: none;
+  border-bottom: none; /* Eliminar el borde inferior del último elemento */
 }
-
 @media screen and (max-width: 360px) {
-  .horizontalmidsection{
-    min-height: 150px;
+  .horizontalmidsection {
+    min-height: 150px; /* Altura mínima de 150px */
   }
 }

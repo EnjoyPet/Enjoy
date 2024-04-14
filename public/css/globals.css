@@ -1,11 +1,10 @@
 .container {
-  margin: 0 auto;
-  max-width: 1200px;
-  width: 95%;
+  margin: 0 auto; /* Margen superior e inferior automático y margen izquierdo y derecho automático */
+  max-width: 1200px; /* Anchura máxima de 1200px */
+  width: 95%; /* Anchura del 95% */
 }
-
 .interactuable {
-  cursor: pointer;
+  cursor: pointer; /* Cursor apuntador */
 }
 
 /* main {
@@ -17,98 +16,86 @@
     padding: 20px;
     color: var(--color-texto-terciario);
   } */
-
-html {
-  box-sizing: border-box;
-  font-size: 62.5%;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.6rem;
-}
+  html {
+    box-sizing: border-box; /* Utilizar el modelo de caja de borde */
+    font-size: 62.5%; /* Establecer el tamaño de fuente base en 62.5% (equivalente a 10px) */
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit; /* Heredar el modelo de caja de borde del elemento HTML */
+  }
+  body {
+    font-family: 'Poppins', sans-serif; /* Utilizar la fuente 'Poppins' con alternativa de respaldo sans-serif */
+    font-size: 1.6rem; /* Establecer el tamaño de fuente en 1.6 rem (equivalente a 16px) */
+  }
+      
 
 /* Globals */
-
 p {
-  color: #000;
-  font-size: 2rem;
-  line-height: 2;
+  color: #000; /* Color del texto */
+  font-size: 2rem; /* Tamaño de fuente de 2 rem */
+  line-height: 2; /* Altura de línea de 2 */
 }
 .container {
-  width: 95%;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 95%; /* Anchura del 95% */
+  max-width: 1200px; /* Anchura máxima de 1200px */
+  margin: 0 auto; /* Margen superior e inferior automático y margen izquierdo y derecho automático */
 }
-
 a {
-  text-decoration: none;
+  text-decoration: none; /* Sin decoración de texto */
 }
-
 h1,
 h2,
 h3 {
-  margin: 0 0 2rem 0;
+  margin: 0 0 2rem 0; /* Margen inferior de 2rem */
 }
 h1 {
-  font-size: 2.4rem;
+  font-size: 2.4rem; /* Tamaño de fuente de 2.4 rem para h1 */
 }
+
 h2 {
-  font-size: 3.6rem;
+  font-size: 3.6rem; /* Tamaño de fuente de 3.6 rem para h2 */
 }
+
 h3 {
-  font-size: 2.8rem;
-  text-align: center;
-  text-transform: uppercase;
+  font-size: 2.8rem; /* Tamaño de fuente de 2.8 rem para h3 */
+  text-align: center; /* Alinear texto al centro */
+  text-transform: uppercase; /* Convertir texto a mayúsculas */
 }
 ul {
-  padding: 0;
-  list-style: none;
+  padding: 0; /* Eliminar relleno */
+  list-style: none; /* Eliminar viñetas */
 }
-
 @media (min-width: 768px) {
   h1 {
-    font-size: 4rem;
+    font-size: 4rem; /* Tamaño de fuente de 4 rem para h1 en pantallas con un ancho mínimo de 768px */
   }
 }
-
 img {
-  max-width: 100%;
-  display: block;
-  object-fit: cover;
+  max-width: 100%; /* Ancho máximo del 100% */
+  display: block; /* Convertir en elemento de bloque */
+  object-fit: cover; /* Escalar la imagen para que cubra completamente el contenedor */
 }
-
 .center {
-  text-align: center;
+  text-align: center; /* Alinear texto al centro */
 }
-
 .logo--flex {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: flex; /* Mostrar como flexbox */
+  flex-direction: column; /* Dirección de los elementos: columna */
+  align-items: center; /* Alinear elementos al centro verticalmente */
 }
-
 .sign__flex,
 .btn__flex,
 .form__flex {
-  display: flex;
-  justify-content: space-between;
-  justify-content: space-between;
-  align-items: center;
-
+  display: flex; /* Mostrar como flexbox */
+  justify-content: space-between; /* Distribuir el espacio entre los elementos */
+  align-items: center; /* Alinear elementos al centro verticalmente */
 }
-
 .btn__flex {
-  gap: 1rem;
+  gap: 1rem; /* Espacio entre los elementos hijo de 1 rem */
 }
-
 .adjustment {
-  margin: 0 auto;
-  max-width: 90%;
+  margin: 0 auto; /* Margen superior e inferior automático y margen izquierdo y derecho automático */
+  max-width: 90%; /* Anchura máxima del 90% */
 }

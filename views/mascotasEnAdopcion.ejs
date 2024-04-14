@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Título de la página -->
     <title>Enjoyourpet - Adóptame</title>
+    <!-- Inclusión de enlaces a archivos externos -->
     <%- include("./partials/metalink.ejs") %>
   </head>
   <body>
+    <!-- Inclusión del encabezado de la página -->
     <%- include('./partials/header.ejs') %>
 
+    <!-- Contenido principal -->
     <main>
+      <!-- Condición para verificar si hay mascotas disponibles -->
       <% if(mascotas.length > 0) {%>
+      <!-- Sección de contenedor de productos -->
       <section class="width-90" id="productosContainer">
+        <!-- Iteración sobre cada mascota -->
         <% mascotas.forEach(mascota => { %>
+        <!-- Contenedor de cada mascota -->
         <div
           class="productocontainer"
           onclick="linkTo('ver','mascota','<%= mascota.id_mascota, %>')"
         >
+          <!-- Título de la mascota -->
           <h5 class="productotitulo"><%= mascota.nombre %></h5>
+          <!-- Imagen de la mascota -->
           <img
             class="producto_img"
             src="data:image/jpeg;base64,<%= mascota.imagen.toString('base64') %>"
             alt="imagen de la mascota"
           />
+          <!-- Sexo de la mascota -->
           <h3 class="listado_1">
             <% if(mascota.sexo == 0){ %> <%= 'Hembra' %> <% }else{ %><%= 'Macho'
             %> <% } %>
@@ -28,8 +39,10 @@
         </div>
         <% }) %>
       </section>
+      <!-- Sección para navegar entre páginas -->
       <% if(pagina == 0) { %>
       <div class="arrowContainer">
+        <!-- Botón para avanzar a la siguiente página -->
         <h1
           onclick="linkTo('usuario/adopciones/adoptar','<%= categoria %>','<%= filtro %>', '<%= parseInt(pagina) +1 %>')"
           style="margin: 0 25px 0 25px"
@@ -39,23 +52,29 @@
       </div>
       <% } else { %>
       <div class="arrowContainer">
+        <!-- Botón para retroceder a la página anterior -->
         <h1
           onclick="linkTo('usuario/adopciones/adoptar','<%= categoria %>','<%= filtro %>','<%= parseInt(pagina) -1 %>')"
         >
           &#8592;
         </h1>
+        <!-- Botón para avanzar a la siguiente página -->
         <h1
           onclick="linkTo('usuario/adopciones/adoptar','<%= categoria %>','<%= filtro %>', '<%= parseInt(pagina) +1 %>' )"
         >
           &#8594;
         </h1>
       </div>
-      <% } %> <% } else { %>
+      <% } %> 
+      <% } else { %>
+      <!-- Sección para mostrar cuando no hay mascotas disponibles -->
       <section style="flex-direction: column">
         <div class="listado_1">
+          <!-- Mensaje de que no hay mascotas disponibles -->
           <h1 class="listado_1">¡SE ACABARON!</h1>
           <h3>lo sentimos, ya no tenemos mas animales que puedas ver</h3>
         </div>
+        <!-- Botón para redirigir a la página de dar en adopción -->
         <div class="btn__flex">
           <a
             href="/usuario/adopciones/dar"
@@ -63,6 +82,7 @@
             >Da en adopción</a
           >
         </div>
+        <!-- Botón para retroceder a la página anterior -->
         <div class="arrowContainer">
           <h1
             onclick="linkTo('usuario/adopciones/adoptar','<%= categoria %>','<%= filtro %>','<%= parseInt(pagina) -1 %>')"
@@ -75,6 +95,7 @@
       <% } %>
     </main>
 
+    <!-- Inclusión del pie de página -->
     <%- include('./partials/footer.ejs') %>
   </body>
 </html>

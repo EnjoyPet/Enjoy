@@ -1,11 +1,14 @@
 <section class="form__flex">
+  <!-- Formulario para actualizar el número de celular -->
   <form
     class="registerform"
     id="registrar-Usuario-form"
     action="/actualizar-celular"
     method="post"
   >
+    <!-- Título del formulario -->
     <h1>Actualizar Celular</h1>
+    <!-- Campo de entrada para el número de celular -->
     <label for="celular">Celular</label>
     <input
       type="number"
@@ -16,9 +19,11 @@
       minlength="10"
       required
     />
+    <!-- Botón de envío del formulario -->
     <button id="submit-btn registrar-submit-btn" type="submit" name="enviar">
       Enviar
     </button>
   </form>
 </section>
+<!-- Inclusión del script JavaScript para el manejo del formulario -->
 <script src="/resources/js/forms.js"></script>

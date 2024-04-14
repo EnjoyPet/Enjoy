@@ -1,73 +1,68 @@
 header {
-  /* Color principal */
+  /* Color principal del texto */
   color: var(--color-texto-terciario);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  width: 905;
+  display: flex; /* Mostrar como flexbox */
+  justify-content: space-between; /* Distribuir el espacio entre los elementos */
+  align-items: center; /* Alinear elementos al centro verticalmente */
+  margin: 0 auto; /* Margen superior e inferior automático y margen izquierdo y derecho automático */
+  width: 905; /* Anchura del encabezado */
 }
-
 #logoContainer img {
-  width: auto;
-  height: 62px;
-  /* max-width: 100%; */
+  width: auto; /* Ancho automático */
+  height: 62px; /* Altura de 62px */
+  /* max-width: 100%; */ /* No se utiliza en este caso */
 }
 
 /* Menús y elementos desplegables */
 .menu {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: flex; /* Mostrar como flexbox */
+  justify-content: center; /* Centrar horizontalmente los elementos */
+  align-items: center; /* Centrar verticalmente los elementos */
 }
-
 .menu-item {
-  margin-right: 20px;
-  margin-left: 20px;
-  padding-right: 20px;
-  position: relative;
-  display: inline-block;
-  z-index: 11;
+  margin-right: 20px; /* Margen derecho de 20px */
+  margin-left: 20px; /* Margen izquierdo de 20px */
+  padding-right: 20px; /* Relleno derecho de 20px */
+  position: relative; /* Posición relativa */
+  display: inline-block; /* Mostrar como elemento en línea */
+  z-index: 11; /* Índice z para la superposición */
 }
-
 .menu-item:hover {
-  cursor: pointer;
+  cursor: pointer; /* Cambiar el cursor a puntero al pasar el ratón */
 }
-
 .menu-item:hover .submenu {
-  display: block;
+  display: block; /* Mostrar el submenú al pasar el ratón sobre el ítem del menú */
+}
+.submenu {
+  border-radius: 3px; /* Borde redondeado de 3px */
+  background-color: var(--color-secundario); /* Color de fondo del submenú */
+  display: none; /* Ocultar el submenú por defecto */
+  position: absolute; /* Posición absoluta */
+  list-style: none; /* Sin viñetas */
+  padding: 10px; /* Relleno de 10px */
+  max-width: 200px; /* Ancho máximo de 200px */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra */
+  z-index: 10; /* Índice z para la superposición */
+  margin: 0 auto; /* Margen superior e inferior automático y margen izquierdo y derecho automático */
 }
 
-.submenu {
-  border-radius: 3px;
-  background-color: var(--color-secundario);
-  /* Color secundario */
-  display: none;
-  position: absolute;
-  list-style: none;
-  padding: 10px;
-  max-width: 200px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 10;
-  margin: 0 auto;
-}
 
 ul.submenu ul {
-  border-radius: 3px;
-  display: none;
-  position: absolute;
-  background-color: var(--color-secundario);
-  list-style: none;
-  text-align: center;
+  border-radius: 3px; /* Borde redondeado de 3px */
+  display: none; /* Ocultar los elementos de lista por defecto */
+  position: absolute; /* Posición absoluta */
+  background-color: var(--color-secundario); /* Color de fondo del submenú */
+  list-style: none; /* Sin viñetas */
+  text-align: center; /* Alinear texto al centro */
+}
+.vet--submenu {
+  top: 80px; /* Posición superior a 80px */
+  left: 0; /* Posición izquierda */
+  right: 0; /* Posición derecha */
+  width: 100%; /* Anchura del 100% */
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2); /* Sombra */
 }
 
-.vet--submenu {
-  top: 80px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
-}
 
 /* @media (min-width: 768px) {
   .vet--submenu {
@@ -77,149 +72,130 @@ ul.submenu ul {
 } */
 
 .shop--submenu {
-  top: 80px;
-  left: 0;
-  right: 0;
-  width: 100%;
-  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+  top: 80px; /* Posición superior a 80px */
+  left: 0; /* Posición izquierda */
+  right: 0; /* Posición derecha */
+  width: 100%; /* Anchura del 100% */
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2); /* Sombra */
 }
-
 ul.submenu ul li {
-  padding: 10px 0;
-  border-bottom: none;
-  cursor: pointer;
-  position: relative;
-  left: 0;
+  padding: 10px 0; /* Relleno de 10px arriba y abajo, 0 a los lados */
+  border-bottom: none; /* Sin borde inferior */
+  cursor: pointer; /* Cambiar el cursor a puntero */
+  position: relative; /* Posición relativa */
+  left: 0; /* Posición izquierda */
 }
-
 ul.submenu li:hover ul {
-  display: block;
-  color: var(--color-texto-terciario);
+  display: block; /* Mostrar el submenú al pasar el ratón sobre el ítem del menú */
+  color: var(--color-texto-terciario); /* Color del texto del submenú */
 }
-
 li a {
-  text-decoration: none;
-  color: var(--color-texto-terciario);
+  text-decoration: none; /* Quitar decoración del enlace */
+  color: var(--color-texto-terciario); /* Color del texto */
 }
-
 .submenu li {
-  padding: 10px;
-  border-bottom: 1px solid var(--color-texto-terciario);
-  cursor: pointer;
+  padding: 10px; /* Relleno de 10px */
+  border-bottom: 1px solid var(--color-texto-terciario); /* Borde inferior de 1px sólido */
+  cursor: pointer; /* Cambiar el cursor a puntero */
 }
-
 .submenu li:last-child {
-  border-bottom: none;
+  border-bottom: none; /* Eliminar el borde inferior del último elemento de lista */
 }
-
 .submenu li:hover,
 .submenu li a:hover {
-  color: var(--color-texto-secundario);
+  color: var(--color-texto-secundario); /* Cambiar el color del texto al pasar el ratón sobre el elemento de lista o el enlace */
 }
-
 @media screen and (max-width: 768px) {
   .menu {
-    flex-direction: column;
+    flex-direction: column; /* Cambiar la dirección del flexbox a columna */
   }
 
   .menu-item {
-    margin: 10px 0;
-    padding: 0;
+    margin: 10px 0; /* Margen de 10px arriba y abajo, 0 a los lados */
+    padding: 0; /* Quitar el relleno */
   }
 
   .menu.open .menu-item {
-    display: none;
+    display: none; /* Ocultar los elementos de menú cuando el menú está abierto */
   }
 
   .sandwich-menu {
-    font-size: 24px;
-    display: block;
-    cursor: pointer;
-    margin-left: auto;
-    padding-left: 10px;
-    padding-right: 10px;
+    font-size: 24px; /* Tamaño de fuente de 24px */
+    display: block; /* Mostrar como bloque */
+    cursor: pointer; /* Cambiar el cursor a puntero */
+    margin-left: auto; /* Margen izquierdo automático */
+    padding-left: 10px; /* Relleno izquierdo de 10px */
+    padding-right: 10px; /* Relleno derecho de 10px */
   }
-
   .sandwich-menu.open {
-    display: none;
+    display: none; /* Ocultar el icono de menú cuando está abierto */
   }
-
   .menu.open .menu-item.open .submenu {
-    display: block;
-  }
+    display: block; /* Mostrar el submenú cuando el menú y el elemento de menú están abiertos */
+  } 
 }
 
 @media screen and (min-width: 769px) {
   .sandwich-menu {
-    display: none;
+    display: none; /* Ocultar el icono de menú en pantallas con un ancho mínimo de 769px */
   }
 }
 
 @media screen and (max-width: 768px) {
   .menu {
-    margin: 0;
-    position: relative;
-    top: 50%;
+    margin: 0; /* Eliminar márgenes */
+    position: relative; /* Posicionamiento relativo */
+    top: 50%; /* Colocar el menú en la mitad superior del contenedor padre */
   }
-
   .menu-item {
-    display: none;
+    display: none; /* Ocultar los elementos de menú por defecto */
   }
-
   .menu.open .menu-item {
-    display: block;
-    cursor: pointer;
+    display: block; /* Mostrar los elementos de menú cuando el menú está abierto */
+    cursor: pointer; /* Cambiar el cursor a puntero */
   }
-
   .menu.open .menu-item li {
-    padding: 10px;
-    border-bottom: none;
-    cursor: pointer;
+    padding: 10px; /* Relleno de 10px */
+    border-bottom: none; /* Eliminar el borde inferior */
+    cursor: pointer; /* Cambiar el cursor a puntero */
   }
-
   .menu.open .submenu li:last-child {
-    border-bottom: none;
+    border-bottom: none; /* Eliminar el borde inferior del último elemento de lista dentro de los submenús abiertos en el menú */
   }
-
   .sandwich-menu {
-    position: relative;
-    top: 0;
-    margin: 10px;
-    padding: 5px;
+    position: relative; /* Posición relativa */
+    top: 0; /* Posición superior */
+    margin: 10px; /* Margen de 10px */
+    padding: 5px; /* Relleno de 5px */
   }
-
   .submenu {
-    top: 50%;
-    display: none;
-    position: relative;
-    background-color: var(--color-secundario);
-    /* Color secundario */
-    list-style: none;
-    margin: 10px;
-    padding: 5px;
-    transition: right 1s ease;
+    top: 50%; /* Posición en la mitad superior del contenedor padre */
+    display: none; /* Ocultar por defecto */
+    position: relative; /* Posición relativa */
+    background-color: var(--color-secundario); /* Color de fondo secundario */
+    list-style: none; /* Eliminar viñetas de lista */
+    margin: 10px; /* Margen de 10px */
+    padding: 5px; /* Relleno de 5px */
+    transition: right 1s ease; /* Transición para el despliegue del submenú */
   }
-
   .menu-item:hover .submenu {
-    /* right: 10px; */
-    display: block;
-  }
+    display: block; /* Mostrar el submenú al pasar el ratón sobre el elemento de menú */
+  }        
 }
-
 @media screen and (max-width: 450px) {
   header {
-    min-width: 1005;
+    min-width: 1005px; /* Establecer el ancho mínimo del encabezado en 1005px */
+  }
+}
+@media screen and (max-width: 335px) {
+  #logo01 {
+    display: none; /* Ocultar el elemento con ID "logo01" en pantallas con un ancho máximo de 335px */
+  }
+  #logo {
+    height: 50px; /* Establecer la altura del elemento con ID "logo" en 50px */
+    width: 75px; /* Establecer el ancho del elemento con ID "logo" en 75px */
+    margin: 2.5px; /* Establecer el margen del elemento con ID "logo" en 2.5px */
+    padding: 2.5px; /* Establecer el relleno del elemento con ID "logo" en 2.5px */
   }
 }
 
-@media screen and (max-width: 335px) {
-  #logo01 {
-    display: none;
-  }
-  #logo {
-    height: 50px;
-    width: 75px;
-    margin: 2.5px;
-    padding: 2.5px;
-  }
-}

@@ -1,7 +1,7 @@
 # EnjoYourPet
 ***
 
-EnjoYourPet is a comprehensive web solution catering to various needs associated with owning or wanting to own a pet. From pet products to adoption services, it aims to simplify the pet ownership experience.
+EnjoYourPet is a comprehensive web solution catering to various needs associated with owning or wanting to own a pet. From pet products to adoption services, it aims to simplify the experience of owning a pet.
 
 ## Table of Contents
 1. [General Info](#general-info)
@@ -65,7 +65,7 @@ The pet store offers a wide range of products, including food, toys, grooming su
 To adopt a pet, navigate to the adoption section of the website and follow the instructions provided. You can also contact other users through the pseudo-social network for assistance and advice.
 
 3. **Is the training course available for all types of pets?**
-No, right now the training course is planning to be only for dogs, and in the future, for cats.
+No, right now the basic training course is planning to be only for dogs, and in the future, for cats.
 
 4. **How can I contribute to the project?**
 Right now, you can't contribute because this project is for learning purposes, so we can't accept your help. But thank you anyway.
@@ -83,6 +83,6 @@ Yes, there are plans to transition the frontend to React in the future.
 Yes, mobile deployment is currently in progress.
 
 9. **Where can I find specific services such as the pet training course and the map deployment for pet-related locations?**
-The pet training course is currently in progress, and the map deployment for pet-related locations is also in progress.
+The pet training course is currently in progress, as well as the deployment of maps for pet related locations.
 
 Feel free to ask any further questions or clarifications!

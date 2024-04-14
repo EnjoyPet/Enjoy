@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Título de la página -->
     <title>Enjoyourpet - Mail</title>
+    <!-- Inclusión de enlaces a archivos externos -->
     <%- include("./partials/metalink.ejs") %>
   </head>
   <body>
+    <!-- Contenedor principal -->
     <div class="main">
+      <!-- Sección del título de la empresa -->
       <section id="Titulo_Empresa">
+        <!-- Título principal de la empresa -->
         <h1>
           <strong> Enjoy Your Pet </strong>
         </h1>
+        <!-- Subtítulo de la empresa -->
         <h4>
           <strong> Un Hogar Para Tu Mascota </strong>
         </h4>
       </section>
+      <!-- Sección del correo electrónico -->
       <section id="Email">
+        <!-- Encabezado del correo electrónico -->
         <div id="Asunto_Email">
           <h2>¡Tienes Una Venta!</h2>
         </div>
+        <!-- Cuerpo del correo electrónico -->
         <div id="CuerpoEmail">
+          <!-- Título principal del cuerpo -->
           <h1>¡Notificación de Venta!</h1>
+          <!-- Saludo al usuario -->
           <p>Estimado/a <%=usuario%>,</p>
+          <!-- Información sobre la venta -->
           <p>
             Le informamos que se ha realizado una venta de un producto en su
             cuenta con los siguientes detalles:
           </p>
-
+          <!-- Tabla con detalles de la venta -->
           <table>
             <tr>
               <th>Producto</th>
@@ -34,28 +46,30 @@
               <th>Total</th>
             </tr>
             <tr>
+              <!-- Detalles del producto vendido -->
               <td><%=producto%></td>
               <td>1</td>
               <td><%=precio%></td>
               <td>$ <%=precio%> COP</td>
             </tr>
           </table>
-
+          <!-- Información adicional sobre la venta -->
           <p>
             La venta se ha completado exitosamente, y se ha registrado una suma
             de dinero de $ <%=precio%> COP en su Venta.
           </p>
-          <p>la direccion de envio es: <%= direccion %></p>
+          <!-- Dirección de envío -->
+          <p>La dirección de envío es: <%= direccion %></p>
+          <!-- Instrucciones para comunicarse con el comprador -->
           <p>
-            Por Favor comunicate con tu comprador para afinar los detalles de
-            entrega y pago
+            Por favor comunícate con tu comprador para afinar los detalles de
+            entrega y pago.
           </p>
-          <a
-            href="https://api.whatsapp.com/send?phone=<%=numero%>"
-            target="_blank"
-            >Abrir Chat de WhatsApp</a
-          >
+          <!-- Enlace para abrir un chat de WhatsApp -->
+          <a href="https://api.whatsapp.com/send?phone=<%=numero%>" target="_blank">Abrir Chat de WhatsApp</a>
+          <!-- Agradecimiento final -->
           <p>Gracias por confiar en nosotros.</p>
+          <!-- Despedida y firma -->
           <p>Atentamente,</p>
           <p>Enjoy Your Pet</p>
         </div>

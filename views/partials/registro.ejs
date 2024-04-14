@@ -1,57 +1,27 @@
 <section class="sign__flex">
-  <form
-    class="registerform"
-    id="registrar-Usuario-form"
-    action="/registrar-usuario"
-    method="post"
-  >
+  <!-- Formulario de registro de usuario -->
+  <form class="registerform" id="registrar-Usuario-form" action="/registrar-usuario" method="post">
     <h1>Regístrate</h1>
 
-    <input
-      id="registernombre"
-      type="text"
-      name="nombre"
-      placeholder="Nombre"
-      autocomplete="off"
-      required
-    />
-    <input
-      id="_registercorreo"
-      type="email"
-      name="correo"
-      placeholder="Correo"
-      autocomplete="off"
-      required
-    />
-    <input
-      id="registercontrasenia"
-      type="password"
-      name="contrasenia"
-      placeholder="Contraseña"
-      autocomplete="off"
-      required
-    />
-    <input
-      id="registercontrasenia2"
-      type="password"
-      name="contrasenia2"
-      placeholder="Confirma Tu Contraseña"
-      autocomplete="off"
-      required
-    />
-    <input
-      id="registernumero"
-      type="tel"
-      name="numero"
-      placeholder="Celular"
-      maxlength="10"
-      minlength="10"
-      autocomplete="off"
-      required
-    />
-    <button id="submit-btn" style="display: none" type="submit" name="enviar">
-      Enviar
-    </button>
+    <!-- Campo para ingresar el nombre del usuario -->
+    <input id="registernombre" type="text" name="nombre" placeholder="Nombre" autocomplete="off" required />
+
+    <!-- Campo para ingresar el correo electrónico del usuario -->
+    <input id="_registercorreo" type="email" name="correo" placeholder="Correo" autocomplete="off" required />
+
+    <!-- Campo para ingresar la contraseña del usuario -->
+    <input id="registercontrasenia" type="password" name="contrasenia" placeholder="Contraseña" autocomplete="off" required />
+
+    <!-- Campo para confirmar la contraseña del usuario -->
+    <input id="registercontrasenia2" type="password" name="contrasenia2" placeholder="Confirma Tu Contraseña" autocomplete="off" required />
+
+    <!-- Campo para ingresar el número de celular del usuario -->
+    <input id="registernumero" type="tel" name="numero" placeholder="Celular" maxlength="10" minlength="10" autocomplete="off" required />
+
+    <!-- Botón para enviar el formulario -->
+    <button id="submit-btn" style="display: none" type="submit" name="enviar">Enviar</button>
   </form>
 </section>
+
+<!-- Script para manejar el formulario -->
 <script src="/resources/js/forms.js"></script>

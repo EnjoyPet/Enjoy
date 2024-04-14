@@ -1,7 +1,10 @@
 function toggleMenu() {
+  // Obtener elementos del DOM relacionados con el menú y el título.
   const menu = document.querySelector('.menu');
   const titulo = document.getElementById('titulo');
+  // Media query para verificar si la ventana tiene un ancho mínimo de 768px.
   const mq = window.matchMedia('(min-width: 768px)');
+   // Alternar la clase 'open' para mostrar u ocultar el menú.
   menu.classList.toggle('open');
   titulo.style.display =
     titulo.style.display === 'none' ? 'block' : 'none'; /* Ocultar el título */
@@ -19,7 +22,7 @@ function toggleMenu() {
 
 function linkTo(service, section1, section2, section3) {
   let link = '/';
-
+// Construir la URL concatenando los parámetros proporcionados.
   if (service) {
     link += `${service}`;
 
@@ -35,13 +38,15 @@ function linkTo(service, section1, section2, section3) {
       }
     }
   }
+  // Imprimir la URL en la consola para fines de depuración.
   console.log(link);
 
   window.location.href = link;
 }
 
 function DeplegarSeccion(id) {
+  // Obtener el elemento de la sección mediante su identificador.
   const seccion = document.getElementById(id);
-
+// Alternar la visibilidad de la sección entre 'block' y 'none'.
   seccion.style.display = seccion.style.display === 'block' ? 'none' : 'block';
 }

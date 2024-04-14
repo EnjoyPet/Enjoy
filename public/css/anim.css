@@ -1,127 +1,157 @@
+/* Estilo para el elemento con id "ejoyIndexText" */
 #ejoyIndexText {
-  opacity: 1;
-  width: 90%;
-  margin: auto;
-  text-align: center;
-  white-space:pre-line;
-  font-size: 60%;
+  opacity: 1; /* Opacidad completa */
+  width: 90%; /* Ancho del 90% del contenedor padre */
+  margin: auto; /* Centrar horizontalmente */
+  text-align: center; /* Texto centrado */
+  white-space: pre-line; /* Espacio en blanco pre-linea */
+  font-size: 60%; /* Tamaño de fuente al 60% */
 }
 
+/* Animación para texto animado */
 .animated-text {
-  opacity: 0;
-  animation: appearText 2s forwards;
+  opacity: 0; /* Inicialmente transparente */
+  animation: appearText 2s forwards; /* Animación de aparición de texto */
 }
 
+/* Definición de la animación "appearText" */
 @keyframes appearText {
   0% {
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 0; /* Opacidad 0 al inicio */
+    transform: translateY(20px); /* Desplazamiento hacia abajo 20px */
   }
   100% {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* Opacidad 1 al final */
+    transform: translateY(0); /* Sin desplazamiento al final */
   }
 }
 
+/* Estilos para botones animados al pasar el mouse o enfocarse */
 .btnshwanim:hover,
 .btnshwanim:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--color-primario);
-  transform: translateY(-0.25em);
-  cursor: pointer;
-  transition: 0.3s;
+  box-shadow: 0 0.5em 0.5em -0.4em var(--color-primario); /* Sombra del botón */
+  transform: translateY(-0.25em); /* Desplazamiento hacia arriba */
+  cursor: pointer; /* Cursor de puntero */
+  transition: 0.3s; /* Transición suave */
 }
 
+/* Estilo para imágenes de mascotas */
 .img--pet {
-  width: 300px;
-  height: 300px;
-  box-shadow: 0 28px 16px -26px black;
-  transition: transform 0.5s;
+  width: 300px; /* Ancho de la imagen */
+  height: 300px; /* Alto de la imagen */
+  box-shadow: 0 28px 16px -26px black; /* Sombra suave */
+  transition: transform 0.5s; /* Transición suave al transformar */
 }
 
+/* Estilos para la imagen de mascota cuando se pasa el mouse sobre ella */
 .img--pet:hover {
-  cursor: pointer;
-  transform: scale(1.1);
+  cursor: pointer; /* Cursor de puntero */
+  transform: scale(1.1); /* Escala aumentada al 110% */
 }
 
+/* Estilos para elementos con clase "btn--hover" y "txt--hover" con transición de 0.5 segundos */
 .btn--hover,
 .txt--hover {
-  transition: 0.5s;
+  transition: 0.5s; /* Transición suave de 0.5 segundos */
 }
 
+/* Estilos para elementos con clase "btn--hover" y "txt--hover" al pasar el mouse sobre ellos */
 .btn--hover:hover,
 .txt--hover:hover {
-  color: var(--color-secundario);
+  color: var(--color-secundario); /* Color de texto secundario al pasar el mouse */
 }
 
+/* Estilos para elementos con clase "active" y "active:hover" */
 .active,
 .active:hover {
-  background-color: var(--color-secundario);
-  color: var(--color-primario);
+  background-color: var(--color-secundario); /* Color de fondo secundario */
+  color: var(--color-primario); /* Color de texto primario */
 }
 
+/* Estilos para botones con clase "btn--w" */
 .btn--w {
-  width: 213.7px;
-  max-width: 100%;
+  width: 213.7px; /* Ancho del botón */
+  max-width: 100%; /* Ancho máximo del 100% */
 }
+
 
 /* Scrolling */
-
+/* Estilos para la sección con clase "sl" */
 section .sl {
-  filter: blur(5px);
-  transition: 1s;
+  filter: blur(5px); /* Aplica desenfoque */
+  transition: 1s; /* Transición suave de 1 segundo */
 }
 
+/* Estilos para la sección con clase "sl-active" */
 section .sl-active {
-  filter: blur(0);
+  filter: blur(0); /* Elimina el desenfoque */
 }
 
+/* Estilos para elementos con clase "sl" */
 .sl {
-  transform: scale(0.7);
+  transform: scale(0.7); /* Escala al 70% */
 }
 
+/* Estilos para elementos con clase "sl-active" */
 .sl-active {
-  transform: scale(1);
+  transform: scale(1); /* Escala al 100% */
 }
 
-/* Buttons */
+/* Estilos para botones con clase "btn__eyp" */
 .btn__eyp {
-  background: #a787b8;
-  border: none;
-  border-radius: 2px;
-  color: #fff;
-  display: block;
-  font-weight: 700;
-  padding: 1.2em 4em;
-  text-align: center;
-  text-decoration: none;
-  width: 100%;
-  margin: auto;
+  background: #a787b8; /* Color de fondo */
+  border: none; /* Sin borde */
+  border-radius: 2px; /* Radio de borde */
+  color: #fff; /* Color de texto */
+  display: block; /* Mostrar como bloque */
+  font-weight: 700; /* Grosor de la fuente */
+  padding: 1.2em 4em; /* Relleno */
+  text-align: center; /* Alineación del texto */
+  text-decoration: none; /* Sin decoración de texto */
+  width: 100%; /* Ancho del 100% */
+  margin: auto; /* Margen automático */
 }
+
+/* Media queries para pantallas de al menos 768px de ancho */
 @media (min-width: 768px) {
   .btn__eyp {
-    display: inline-block;
-    width: auto;
+    display: inline-block; /* Mostrar como bloque en línea */
+    width: auto; /* Ancho automático */
+  }
+
+  .btn__eyp--blur {
+    display: inline-block; /* Mostrar como bloque en línea */
+    width: auto; /* Ancho automático */
   }
 }
+
+/* Media queries para pantallas de al menos 1024px de ancho */
 @media (min-width: 1024px) {
   .btn__eyp {
-    display: inline-block;
-    width: auto;
+    display: inline-block; /* Mostrar como bloque en línea */
+    width: auto; /* Ancho automático */
+  }
+
+  .btn__eyp--blur {
+    display: inline-block; /* Mostrar como bloque en línea */
+    width: auto; /* Ancho automático */
   }
 }
+
+/* Estilos para botones con clase "btn__eyp--blur" */
 .btn__eyp--blur {
-  -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
-  background: hsla(0, 0%, 100%, 0.1);
-  border: none;
-  border-radius: 2px;
-  color: #fff;
-  display: block;
-  font-weight: 700;
-  padding: 1.2em 4em;
-  text-align: center;
-  text-decoration: none;
-  width: 100%;
+  -webkit-backdrop-filter: blur(3px); /* Aplicar desenfoque de 3px */
+  backdrop-filter: blur(3px); /* Aplicar desenfoque de 3px */
+  background: hsla(0, 0%, 100%, 0.1); /* Fondo con opacidad */
+  border: none; /* Sin borde */
+  border-radius: 2px; /* Radio de borde */
+  color: #fff; /* Color de texto */
+  display: block; /* Mostrar como bloque */
+  font-weight: 700; /* Grosor de la fuente */
+  padding: 1.2em 4em; /* Relleno */
+  text-align: center; /* Alineación del texto */
+  text-decoration: none; /* Sin decoración de texto */
+  width: 100%; /* Ancho del 100% */
 }
 @media (min-width: 768px) {
   .btn__eyp--blur {
@@ -138,25 +168,33 @@ section .sl-active {
 .btnshwanim:hover {
   box-shadow: 0 0.5em 0.5em -0.4em #c9aec4;
 }
+/* Estilos para botones con clase "btnshwanim--blur" al pasar el cursor */
 .btnshwanim--blur:hover,
 .btnshwanim:hover {
-  cursor: pointer;
-  -webkit-transform: translateY(-0.25em);
-  transform: translateY(-0.25em);
-  transition: 0.3s;
+  cursor: pointer; /* Cambiar el cursor a pointer */
+  -webkit-transform: translateY(-0.25em); /* Transformación */
+  transform: translateY(-0.25em); /* Transformación */
+  transition: 0.3s; /* Transición suave de 0.3 segundos */
 }
 .btnshwanim--blur:hover {
   box-shadow: 0 0.5em 0.5em -0.4em rgba(167, 135, 184, 0.7);
 }
+/* Estilos para botones con clase "btn__hover" al pasar el cursor */
 .btn__hover {
-  transition: 0.5s;
+  transition: 0.5s; /* Transición suave de 0.5 segundos */
 }
+
+/* Estilos para botones con clase "btn__hover" al pasar el cursor */
 .btn__hover:hover {
-  color: #c9aec4;
+  color: #c9aec4; /* Cambiar color del texto */
 }
+
+/* Estilos para botones con clase "btn__hover--blur" al pasar el cursor */
 .btn__hover--blur {
-  transition: 0.5s;
+  transition: 0.5s; /* Transición suave de 0.5 segundos */
 }
+
+/* Estilos para botones con clase "btn__hover--blur" al pasar el cursor */
 .btn__hover--blur:hover {
-  color: #fff;
+  color: #fff; /* Cambiar color del texto */
 }

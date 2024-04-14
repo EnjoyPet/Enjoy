@@ -1,11 +1,15 @@
 <section class="form__flex">
+  <!-- Formulario para actualizar la dirección -->
   <form
     class="registerform"
     id="registrar-Usuario-form"
     action="/actualizar-direccion"
     method="post"
   >
+    <!-- Título del formulario -->
     <h1>Actualizar Dirección</h1>
+    
+    <!-- Campo de entrada para la dirección -->
     <label for="direccion">Dirección</label>
     <input
       type="text"
@@ -15,9 +19,13 @@
       maxlength="100"
       required
     />
+    
+    <!-- Botón de envío del formulario -->
     <button id="submit-btn registrar-submit-btn" type="submit" name="enviar">
       Enviar
     </button>
   </form>
 </section>
+
+<!-- Inclusión del script JavaScript para el manejo del formulario -->
 <script src="/resources/js/forms.js"></script>

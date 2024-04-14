@@ -1,31 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Título de la página -->
     <title>Enjoyourpet - Mail</title>
+    <!-- Inclusión de enlaces a archivos externos -->
     <%- include("./partials/metalink.ejs") %>
   </head>
   <body>
+    <!-- Contenedor principal -->
     <div class="main">
+      <!-- Sección del título de la empresa -->
       <section id="Titulo_Empresa">
+        <!-- Título principal de la empresa -->
         <h1>
           <strong> Enjoy Your Pet </strong>
         </h1>
+        <!-- Subtítulo de la empresa -->
         <h4>
           <strong> Un Hogar Para Tu Mascota </strong>
         </h4>
       </section>
+      <!-- Sección del correo electrónico -->
       <section id="Email">
+        <!-- Encabezado del correo electrónico -->
         <div id="Asunto_Email">
           <h2>Hiciste Una Compra!</h2>
         </div>
+        <!-- Cuerpo del correo electrónico -->
         <div id="CuerpoEmail">
+          <!-- Título principal del cuerpo -->
           <h1>¡Notificación de Compra!</h1>
+          <!-- Saludo al usuario -->
           <p>Estimado/a <%=usuario%>,</p>
+          <!-- Información sobre la compra -->
           <p>
             Le informamos que se ha realizado una compra de un producto en su
             cuenta con los siguientes detalles:
           </p>
-
+          <!-- Tabla con detalles de la compra -->
           <table>
             <tr>
               <th>Producto</th>
@@ -34,27 +46,28 @@
               <th>Total</th>
             </tr>
             <tr>
+              <!-- Detalles del producto comprado -->
               <td><%=producto%></td>
               <td>1</td>
               <td><%=precio%></td>
               <td>$ <%=precio%> COP</td>
             </tr>
           </table>
-
+          <!-- Información adicional sobre la compra -->
           <p>
             La compra se ha registrado exitosamente, y se ha registrado una suma
             de dinero de $ <%=precio%> COP en su compra.
           </p>
+          <!-- Instrucciones sobre la entrega del producto -->
           <p>
-            Por favor espera a que el vendedor llegue a tu direccion con tu
-            producto o comunicate directamente con el al numero:
+            Por favor espera a que el vendedor llegue a tu dirección con tu
+            producto o comunícate directamente con él al número:
           </p>
-          <a
-            href="https://api.whatsapp.com/send?phone=<%=numero%>"
-            target="_blank"
-            >Abrir Chat de WhatsApp</a
-          >
+          <!-- Enlace para abrir un chat de WhatsApp -->
+          <a href="https://api.whatsapp.com/send?phone=<%=numero%>" target="_blank">Abrir Chat de WhatsApp</a>
+          <!-- Agradecimiento final -->
           <p>Gracias por confiar en nosotros.</p>
+          <!-- Despedida y firma -->
           <p>Atentamente,</p>
           <p>Enjoy Your Pet</p>
         </div>

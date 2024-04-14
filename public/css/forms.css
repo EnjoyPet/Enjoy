@@ -1,46 +1,45 @@
 /* Estilo general para todos los elementos de formulario */
-.form-container{
-  background: none;
-  width: 90%;
-  max-width: 600px;
-  height: auto;
-  margin: 5rem auto 2rem;
+.form-container {
+  background: none; /* Fondo transparente */
+  width: 90%; /* Anchura del 90% */
+  max-width: 600px; /* Anchura máxima de 600px */
+  height: auto; /* Altura automática */
+  margin: 5rem auto 2rem; /* Margen superior de 5rem, margen inferior de 2rem y margen izquierdo y derecho automático */
 }
-
 .form-container .sign__flex,
 .form-container .btn__flex,
-.form-container .form__flex{
-  width: 100%;
-  padding: 1rem;
-  margin: 0;
-} 
-
+.form-container .form__flex {
+  width: 100%; /* Anchura del 100% */
+  padding: 1rem; /* Relleno de 1rem */
+  margin: 0; /* Margen 0 */
+}
 form {
-  margin: auto;
-  background-color: var(--color-fondo);
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: space-between;
-  width: 90%;
-  border-top-right-radius: 15px;
-  border-bottom-left-radius: 15px;
+  margin: auto; /* Margen automático en los lados */
+  background-color: var(--color-fondo); /* Color de fondo */
+  padding: 20px; /* Relleno de 20px */
+  border: 1px solid #ccc; /* Borde de 1px sólido */
+  border-radius: 10px; /* Radio de borde de 10px */
+  display: flex; /* Mostrar como elemento flex */
+  flex-direction: column; /* Disposición en columna de los elementos hijos */
+  flex-wrap: wrap; /* Envolver elementos en múltiples líneas si es necesario */
+  align-content: center; /* Centrar el contenido verticalmente */
+  justify-content: space-between; /* Distribuir el espacio entre los elementos */
+  width: 90%; /* Anchura del 90% */
+  border-top-right-radius: 15px; /* Radio de borde superior derecho */
+  border-bottom-left-radius: 15px; /* Radio de borde inferior izquierdo */
 }
 form h1 {
-  margin: 0 auto;
-  margin-bottom: 50px;
-  color: #fff;
-  text-align: center;
+  margin: 0 auto; /* Margen automático en los lados */
+  margin-bottom: 50px; /* Margen inferior de 50px */
+  color: #fff; /* Color del texto */
+  text-align: center; /* Alinear texto al centro */
 }
+
 /* Estilo para etiquetas de formulario */
 label {
-  font-weight: bold;
-  color: #ccc;
-  margin-bottom: 5px;
+  font-weight: bold; /* Peso de la fuente en negrita */
+  color: #ccc; /* Color del texto */
+  margin-bottom: 5px; /* Margen inferior de 5px */
 }
 
 /* Estilo para campos de entrada de texto */
@@ -50,129 +49,121 @@ input[type='email'],
 input[type='number'],
 input[type='tel'],
 textarea {
-  max-width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid var(--color-terciario);
-  border-radius: 5px;
-  background-color: var(--color-fondo);
-  color: #fff;
-  overflow-y: auto;
-  word-wrap: break-word;
-  max-height: 300px;
-  outline: none;
+  max-width: 100%; /* Anchura máxima del 100% */
+  padding: 10px; /* Relleno de 10px */
+  margin-bottom: 10px; /* Margen inferior de 10px */
+  border: 1px solid var(--color-terciario); /* Borde de 1px sólido */
+  border-radius: 5px; /* Radio de borde de 5px */
+  background-color: var(--color-fondo); /* Color de fondo */
+  color: #fff; /* Color del texto */
+  overflow-y: auto; /* Desplazamiento vertical automático si el contenido es demasiado largo */
+  word-wrap: break-word; /* Envolver palabras si el texto es demasiado largo */
+  max-height: 300px; /* Altura máxima de 300px */
+  outline: none; /* Eliminar el contorno al recibir el foco */
 }
 input::placeholder {
-  color: #ccc;
+  color: #ccc; /* Color del texto del marcador de posición */
 }
 textarea {
-  margin: 15px auto;
-  max-width: 100%;
+  margin: 15px auto; /* Margen superior e inferior de 15px y margen izquierdo y derecho automático */
+  max-width: 100%; /* Anchura máxima del 100% */
 }
-
 /* Estilo para campos de entrada de selección (select) */
 select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid var(--color-terciario);
-  border-radius: 5px;
-  background-color: var(--color-fondo);
-  color: var(--color-texto);
+  width: 100%; /* Anchura del 100% */
+  padding: 10px; /* Relleno de 10px */
+  margin-bottom: 10px; /* Margen inferior de 10px */
+  border: 1px solid var(--color-terciario); /* Borde de 1px sólido */
+  border-radius: 5px; /* Radio de borde de 5px */
+  background-color: var(--color-fondo); /* Color de fondo */
+  color: var(--color-texto); /* Color del texto */
 }
 
 /* Estilo para los botones del formulario */
 button {
-  width: 50%;
-  padding: 10px 20px;
-  background-color: var(--color-primario);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  margin: 15px auto;
-  text-align: center;
-  text-wrap:wrap;
+  width: 50%; /* Anchura del 50% */
+  padding: 10px 20px; /* Relleno de 10px arriba y abajo, 20px izquierda y derecha */
+  background-color: var(--color-primario); /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Radio de borde de 5px */
+  cursor: pointer; /* Cursor apuntador al pasar el ratón */
+  transition: background-color 0.3s; /* Transición suave del color de fondo */
+  margin: 15px auto; /* Margen superior e inferior de 15px y margen izquierdo y derecho automático */
+  text-align: center; /* Alinear texto al centro */
+  text-wrap: wrap; /* Envolver texto si es necesario */
 }
 
 button:hover {
-  background-color: var(--color-enlace);
+  background-color: var(--color-enlace); /* Cambiar color de fondo al pasar el ratón */
 }
-
 /* Estilo para enlaces en el formulario */
 a {
-  color: var(--color-enlace);
-  text-decoration: none;
+  color: var(--color-enlace); /* Color del enlace */
+  text-decoration: none; /* Sin decoración de texto */
 }
 
 a:hover {
-  color: var(--color-enlace-hover);
+  color: var(--color-enlace-hover); /* Cambiar color del enlace al pasar el ratón */
 }
-
 form p {
-  color: var(--color-secundario);
-  background-color: #bf3c3c;
-  width: 100%;
-  padding: 10px;
-  margin: 0 auto;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 25px;
-  border-radius: 2px;
+  color: var(--color-secundario); /* Color del texto */
+  background-color: #bf3c3c; /* Color de fondo */
+  width: 100%; /* Anchura del 100% */
+  padding: 10px; /* Relleno de 10px */
+  margin: 0 auto; /* Margen superior e inferior automático y margen izquierdo y derecho automático */
+  text-align: center; /* Alinear texto al centro */
+  align-items: center; /* Centrar verticalmente los elementos */
+  justify-content: center; /* Centrar horizontalmente los elementos */
+  margin-bottom: 25px; /* Margen inferior de 25px */
+  border-radius: 2px; /* Radio de borde de 2px */
 }
-
 #imagen_preview {
-  margin: 15px auto 15px auto;
-  max-width: 200px;
-  max-height: 200px;
-  height: auto;
-  width: auto;
-  border-top-right-radius: 15px;
-  border-bottom-left-radius: 15px;
+  margin: 15px auto 15px auto; /* Margen superior e inferior de 15px y margen izquierdo y derecho automático */
+  max-width: 200px; /* Anchura máxima de 200px */
+  max-height: 200px; /* Altura máxima de 200px */
+  height: auto; /* Altura automática */
+  width: auto; /* Anchura automática */
+  border-top-right-radius: 15px; /* Radio de borde superior derecho */
+  border-bottom-left-radius: 15px; /* Radio de borde inferior izquierdo */
 }
-
 input[type='file'] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid var(--color-terciario);
-  border-radius: 5px;
-  background-color: var(--color-fondo);
-  color: var(--color-texto);
-  cursor: pointer;
+  width: 100%; /* Anchura del 100% */
+  padding: 10px; /* Relleno de 10px */
+  margin-bottom: 10px; /* Margen inferior de 10px */
+  border: 1px solid var(--color-terciario); /* Borde de 1px sólido */
+  border-radius: 5px; /* Radio de borde de 5px */
+  background-color: var(--color-fondo); /* Color de fondo */
+  color: var(--color-texto); /* Color del texto */
+  cursor: pointer; /* Cursor apuntador */
 }
-
 input[type='file']::file-selector-button {
-  padding: 5px 10px;
-  background-color: var(--color-primario);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 5px 10px; /* Relleno de 5px arriba y abajo, 10px izquierda y derecha */
+  background-color: var(--color-primario); /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Radio de borde de 5px */
+  cursor: pointer; /* Cursor apuntador */
 }
-
 input[type='file']::file-display-input {
-  margin-top: 5px;
-  font-size: 14px;
-  color: var(--color-texto);
+  margin-top: 5px; /* Margen superior de 5px */
+  font-size: 14px; /* Tamaño de fuente de 14px */
+  color: var(--color-texto); /* Color del texto */
 }
-
 #eliminar-imagen-btn {
-  background-color: var(--color-secundario);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  width: fit-content;
-  cursor: pointer;
-  margin: 10px auto 10px auto;
+  background-color: var(--color-secundario); /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Radio de borde de 5px */
+  width: fit-content; /* Anchura ajustada al contenido */
+  cursor: pointer; /* Cursor apuntador */
+  margin: 10px auto; /* Margen superior e inferior de 10px y margen izquierdo y derecho automático */
 }
 
 #eliminar-imagen-btn:hover {
-  background-color: var(--color-enlace);
+  background-color: var(--color-enlace); /* Cambiar color de fondo al pasar el ratón */
+}
+#Categoria_post {
+  margin-bottom: 2rem; /* Margen inferior de 2rem */
 }
 
-#Categoria_post {
-  margin-bottom: 2rem;
-}

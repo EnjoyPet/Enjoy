@@ -1,54 +1,29 @@
 <section class="sign__flex">
-  <form
-    class="registerform"
-    id="registrar-Usuario-form"
-    action="/usuario/recuperar-contrasenia/verificar/actualizar-contrasenia"
-    method="post"
-  >
+  <!-- Formulario para actualizar la contraseña del usuario -->
+  <form class="registerform" id="registrar-Usuario-form" action="/usuario/recuperar-contrasenia/verificar/actualizar-contrasenia" method="post">
     <h1>Actualizar Contraseña</h1>
+    <!-- Mensaje para indicar que se envió un código de verificación al correo del usuario -->
     <p>Enviamos un código a tu bandeja de entrada o spam :)</p>
-    <input
-      type="email"
-      name="correo"
-      value="<%= correo %>"
-      style="display: none"
-      required
-    />
+    
+    <!-- Campo oculto para enviar el correo del usuario -->
+    <input type="email" name="correo" value="<%= correo %>" style="display: none" required />
+    
+    <!-- Campo para ingresar el código de verificación -->
     <label for="codigo">Código de verificación</label>
-    <input
-      type="text"
-      name="codigo"
-      placeholder="Código"
-      autocomplete="off"
-      maxlength="4"
-      required
-    />
-
+    <input type="text" name="codigo" placeholder="Código" autocomplete="off" maxlength="4" required />
+    
+    <!-- Campo para ingresar la nueva contraseña -->
     <label for="Nuev_contrasenia">Nueva Contraseña</label>
-    <input
-      id="registercontrasenia"
-      type="password"
-      name="Nuev_contrasenia"
-      placeholder="Contraseña"
-      autocomplete="off"
-      maxlength="150"
-      required
-    />
-
+    <input id="registercontrasenia" type="password" name="Nuev_contrasenia" placeholder="Contraseña" autocomplete="off" maxlength="150" required />
+    
+    <!-- Campo para repetir la nueva contraseña -->
     <label for="Nuev_contrasenia_2">Repite Tu Contraseña</label>
-    <input
-      id="registercontrasenia2"
-      type="password"
-      name="Nuev_contrasenia_2"
-      placeholder="Contraseña"
-      autocomplete="off"
-      maxlength="150"
-      required
-    />
-
-    <button id="submit-btn" type="submit" name="enviar" style="display: none">
-      Enviar
-    </button>
+    <input id="registercontrasenia2" type="password" name="Nuev_contrasenia_2" placeholder="Contraseña" autocomplete="off" maxlength="150" required />
+    
+    <!-- Botón de envío del formulario (oculto) -->
+    <button id="submit-btn" type="submit" name="enviar" style="display: none">Enviar</button>
   </form>
 </section>
+
+<!-- Script para manejar el formulario -->
 <script src="/resources/js/forms.js"></script>

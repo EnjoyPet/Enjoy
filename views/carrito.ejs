@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Título de la página -->
     <title>Carrito de <%= data.usuario %></title>
+    <!-- Inclusión de archivos de estilos y metadatos -->
     <%- include("./partials/metalink.ejs") %>
   </head>
   <body>
+    <!-- Inclusión de encabezado -->
     <%- include("./partials/header.ejs") %>
     <main>
+      <!-- Sección principal -->
       <section style="flex-direction: column">
+        <!-- Título del carrito -->
         <h1 class="listado_1" style="margin: 10px auto; width: 100%">
           Carrito
         </h1>
+        <!-- Tabla para mostrar los productos en el carrito -->
         <section>
           <table>
+            <!-- Encabezados de la tabla -->
             <tr>
               <th>ID</th>
               <th>Fecha</th>
@@ -22,13 +29,20 @@
               <th>Estado</th>
               <th>Eliminar</th>
             </tr>
+            <!-- Iteración sobre los productos en el carrito -->
             <% carrito.forEach(producto => { %>
             <tr>
+              <!-- ID del producto en el carrito -->
               <td><%= producto.id_carrito %></td>
+              <!-- Fecha del producto en el carrito -->
               <td><%= new Date(producto.fecha).toLocaleDateString() %></td>
+              <!-- Nombre del producto -->
               <td><%= producto.producto_nombre %></td>
+              <!-- Precio del producto -->
               <td><%= producto.precio %></td>
+              <!-- Cantidad del producto -->
               <td><%= producto.cantidad %></td>
+              <!-- Estado del producto (si está disponible para comprar) -->
               <% if(producto.estado == 0) { %>
               <td
                 style="cursor: pointer"
@@ -36,9 +50,11 @@
               >
                 Comprar
               </td>
+              <!-- Estado del producto (si ya ha sido comprado) -->
               <% } else if (producto.estado == 1) { %>
               <td>Comprado</td>
               <% } %>
+              <!-- Botón para eliminar el producto del carrito -->
               <td
                 style="cursor: pointer"
                 onclick="linkTo('carrito','<%= producto.id_carrito %>','producto/eliminar','<%= producto.producto %>')"
@@ -51,6 +67,7 @@
         </section>
       </section>
     </main>
+    <!-- Inclusión de pie de página -->
     <%- include("./partials/footer.ejs") %>
   </body>
 </html>

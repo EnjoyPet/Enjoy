@@ -1,11 +1,15 @@
 <section class="form__flex">
+  <!-- Formulario para actualizar la contraseña -->
   <form
     class="registerform"
     id="registrar-Usuario-form"
     action="/actualizar-contrasenia"
     method="post"
   >
+    <!-- Título del formulario -->
     <h1>Actualizar Contraseña</h1>
+    
+    <!-- Campo de entrada para la contraseña anterior -->
     <label for="ant_contrasenia">Contraseña Anterior</label>
     <input
       type="password"
@@ -16,6 +20,7 @@
       required
     />
 
+    <!-- Campo de entrada para la nueva contraseña -->
     <label for="Nuev_contrasenia">Nueva Contraseña</label>
     <input
       type="password"
@@ -26,6 +31,7 @@
       required
     />
 
+    <!-- Campo de entrada para repetir la nueva contraseña -->
     <label for="Nuev_contrasenia_2">Repite Tu Contraseña</label>
     <input
       type="password"
@@ -36,9 +42,11 @@
       required
     />
 
+    <!-- Botón de envío del formulario -->
     <button id="submit-btn registrar-submit-btn" type="submit" name="enviar">
       Enviar
     </button>
   </form>
 </section>
+<!-- Inclusión del script JavaScript para el manejo del formulario -->
 <script src="/resources/js/forms.js"></script>

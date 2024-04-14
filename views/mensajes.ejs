@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Título de la página -->
     <title>¡MENSAJE!</title>
+    <!-- Inclusión de enlaces a archivos externos -->
     <%- include("./partials/metalink.ejs") %>
   </head>
   <body>
+    <!-- Inclusión del encabezado de la página -->
     <%- include('./partials/header.ejs') %>
+    <!-- Contenido principal -->
     <main>
+      <!-- Sección principal con dirección de columna -->
       <section style="flex-direction: column">
+        <!-- Título del mensaje -->
         <h1 class="listado_1"><%= header %></h1>
+        <!-- Cuerpo del mensaje -->
         <h3 class="listado_1"><%= body %></h3>
       </section>
     </main>
+    <!-- Inclusión del pie de página -->
     <%- include('./partials/footer.ejs') %>
   </body>
 </html>

@@ -1,76 +1,76 @@
 .modal_button {
-  padding: 1rem 2rem;
-  border-radius: 5px;
-  border: 0;
-  font-size: 2rem;
-  background-color: #f26250;
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  padding: 1rem 2rem; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  border: 0; /* Sin borde */
+  font-size: 2rem; /* Tamaño de la fuente */
+  background-color: #f26250; /* Color de fondo */
+  color: white; /* Color del texto */
+  cursor: pointer; /* Cursor al pasar por encima */
+  transition: all 0.3s ease; /* Transición suave */
 }
 
 .modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-  margin: 0 0 0 0;
-  background-color: #11111170;
-  pointer-events: none;
-  display: flex;
-  opacity: 0;
-  transition: opacity 0.2s 0.2s;
-  z-index: 5;
-  --transform: translateY(-100vh);
-  --transition: transform 0.2s;
+  position: fixed; /* Posicionamiento fijo */
+  top: 0; /* Desde la parte superior */
+  left: 0; /* Desde la izquierda */
+  right: 0; /* Hasta la derecha */
+  bottom: 0; /* Hasta la parte inferior */
+  width: 100vw; /* Ancho igual al ancho de la ventana */
+  height: 100vh; /* Altura igual a la altura de la ventana */
+  margin: 0; /* Sin margen */
+  background-color: #11111170; /* Fondo oscuro semitransparente */
+  pointer-events: none; /* No captura eventos del mouse */
+  display: flex; /* Muestra elementos en una fila */
+  opacity: 0; /* Opacidad inicial */
+  transition: opacity 0.2s 0.2s; /* Transición suave */
+  z-index: 5; /* Índice de apilamiento */
+  --transform: translateY(-100vh); /* Transformación para desplazamiento vertical */
+  --transition: transform 0.2s; /* Transición de la transformación */
 }
 
 .modal_container {
-  display: flex;
-  position: relative;
-  margin: auto;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-  border-radius: 1rem;
-  width: 50%;
-  max-width: 600px;
-  height: 50%;
-  background-color: #fff;
-  padding: 3rem 2.5rem;
-  transform: var(--transform);
-  transition: var(--transition);
+  display: flex; /* Muestra elementos en una fila */
+  position: relative; /* Posición relativa */
+  margin: auto; /* Margen automático */
+  flex-direction: column; /* Orientación de los elementos */
+  gap: 1rem; /* Espacio entre elementos */
+  align-items: center; /* Alineación vertical */
+  border-radius: 1rem; /* Bordes redondeados */
+  width: 50%; /* Ancho del modal */
+  max-width: 600px; /* Ancho máximo */
+  height: 50%; /* Altura del modal */
+  background-color: #fff; /* Color de fondo */
+  padding: 3rem 2.5rem; /* Relleno interno */
+  transform: var(--transform); /* Aplicar transformación */
+  transition: var(--transition); /* Aplicar transición */
 }
 
 .modal_container h2 {
-  font-size: 2.5rem;
-  margin: 2rem;
+  font-size: 2.5rem; /* Tamaño de la fuente */
+  margin: 2rem; /* Margen */
 }
 
 .modal_container p {
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Margen inferior */
 }
 
 .collage_container {
-  width: 100%;
-  height: auto;
-  max-height: 500px;
-  margin: auto;
+  width: 100%; /* Ancho máximo */
+  height: auto; /* Altura automática */
+  max-height: 500px; /* Altura máxima */
+  margin: auto; /* Margen automático */
 }
 
 .collage_container img {
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 1rem;
-  transition: opacity 0.6s;
+  top: 0; /* Desde la parte superior */
+  right: 0; /* Hasta la derecha */
+  left: 0; /* Desde la izquierda */
+  bottom: 0; /* Hasta la parte inferior */
+  position: absolute; /* Posicionamiento absoluto */
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa */
+  border-radius: 1rem; /* Bordes redondeados */
+  transition: opacity 0.6s; /* Transición de la opacidad */
 }
 
 .hide {
@@ -78,70 +78,69 @@
   right: 0;
   left: 0;
   bottom: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
+  position: absolute; /* Posicionamiento absoluto */
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa */
+  opacity: 0; /* Opacidad inicial */
 }
 
 .unhide {
-  opacity: 1;
+  opacity: 1; /* Opacidad completa */
 }
 
 .contact {
-  text-decoration: none;
-  color: #fff;
-  background-color: #f26250;
-  padding: 1rem 3rem;
-  border-radius: 6px;
-  display: inline-block;
-  font-weight: 300;
-  cursor: pointer;
+  text-decoration: none; /* Sin subrayado */
+  color: #fff; /* Color del texto */
+  background-color: #f26250; /* Color de fondo */
+  padding: 1rem 3rem; /* Relleno */
+  border-radius: 6px; /* Bordes redondeados */
+  display: inline-block; /* Mostrar en línea */
+  font-weight: 300; /* Grosor de la fuente */
+  cursor: pointer; /* Cambiar el cursor al pasar */
 }
 
 .close_modal {
-  position: absolute;
-  top: -5%;
-  right: -10%;
-  font-size: x-large;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 0 10px;
-  background-color: var(--color-primario);
-  color: var(--color-terciario);
-  border-radius: 100%;
+  position: absolute; /* Posicionamiento absoluto */
+  top: -5%; /* Alineación superior */
+  right: -10%; /* Alineación derecha */
+  font-size: x-large; /* Tamaño de la fuente */
+  font-weight: bold; /* Grosor de la fuente */
+  cursor: pointer; /* Cambiar el cursor al pasar */
+  padding: 0 10px; /* Relleno horizontal */
+  background-color: var(--color-primario); /* Color de fondo */
+  color: var(--color-terciario); /* Color del texto */
+  border-radius: 100%; /* Bordes redondeados */
 }
-
 .close_modal:hover {
-  background-color: var(--color-secundario);
+  background-color: var(--color-secundario); /* Cambio de color de fondo al pasar el mouse */
 }
 
 .leftbuttoncontrol {
-  width: 50px;
-  position: absolute;
-  top: 50%;
-  left: -15%;
-  color: #fff;
-  font-size: 2rem;
-  font-weight: bold;
-  cursor: pointer;
+  width: 50px; /* Ancho del botón */
+  position: absolute; /* Posicionamiento absoluto */
+  top: 50%; /* Alineación vertical al centro */
+  left: -15%; /* Desplazamiento a la izquierda */
+  color: #fff; /* Color del texto */
+  font-size: 2rem; /* Tamaño de la fuente */
+  font-weight: bold; /* Grosor de la fuente */
+  cursor: pointer; /* Cambio del cursor al pasar */
 }
 
 .rightbuttoncontrol {
-  width: 50px;
-  position: absolute;
-  top: 50%;
-  right: -15%;
-  color: #fff;
-  font-size: 2rem;
-  font-weight: bold;
-  cursor: pointer;
+  width: 50px; /* Ancho del botón */
+  position: absolute; /* Posicionamiento absoluto */
+  top: 50%; /* Alineación vertical al centro */
+  right: -15%; /* Desplazamiento a la derecha */
+  color: #fff; /* Color del texto */
+  font-size: 2rem; /* Tamaño de la fuente */
+  font-weight: bold; /* Grosor de la fuente */
+  cursor: pointer; /* Cambio del cursor al pasar */
 }
 
 .modal-show {
-  opacity: 1;
-  pointer-events: unset;
-  transition: opacity 0.6s;
-  --transform: translateY(0);
-  --transition: transform 0.2s 0.2s;
+  opacity: 1; /* Opacidad completa */
+  pointer-events: unset; /* Permitir eventos del mouse */
+  transition: opacity 0.6s; /* Transición suave de opacidad */
+  --transform: translateY(0); /* Desplazamiento vertical */
+  --transition: transform 0.2s 0.2s; /* Transición suave del desplazamiento */
 }

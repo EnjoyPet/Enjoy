@@ -1,10 +1,10 @@
 /* Buttons */
 .btn--eyp {
-  background: var(--color-primario);
-  border: none;
-  font: inherit;
-  line-height: 1;
-  margin: 0.5em;
-  padding: 1em 2em;
-  border-radius: 2px;
+  background: var(--color-primario); /* Color de fondo */
+  border: none; /* Sin borde */
+  font: inherit; /* Hereda la fuente del elemento padre */
+  line-height: 1; /* Altura de línea */
+  margin: 0.5em; /* Margen externo */
+  padding: 1em 2em; /* Relleno interno */
+  border-radius: 2px; /* Radio de borde */
 }

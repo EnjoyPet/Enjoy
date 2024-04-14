@@ -1,39 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Título de la página -->
     <title>Enjoyourpet - Productos</title>
+    <!-- Inclusión de enlaces a archivos externos -->
     <%- include("./partials/metalink.ejs") %>
   </head>
   <body>
+    <!-- Inclusión del encabezado de la página -->
     <%- include('./partials/header.ejs') %>
+    <!-- Contenido principal -->
     <main>
+      <!-- División principal con clase "sectionnomargin" -->
       <div class="sectionnomargin">
+        <!-- Sección horizontal para mostrar detalles del producto -->
         <section class="horizontalmidsection">
+          <!-- Título del producto -->
           <h1 id="producto_Nombre"><%= producto.nombre %></h1>
+          <!-- Imagen grande del producto -->
           <img
             class="producto_Big_img"
             src="data:image/jpeg;base64,<%= producto.imagen_producto.toString('base64') %>"
             alt="imagen del producto"
           />
         </section>
+        <!-- Sección horizontal para descripción y botones de compra -->
         <section class="horizontalmidsection">
+          <!-- División para la descripción del producto -->
           <div id="decripcion_producto" class="listado_1">
+            <!-- Título "Lo que debes saber" -->
             <h2>Lo que debes saber</h2>
+            <!-- Descripción del producto con dimensiones y stock -->
             <p>
-              <%= producto.descripcion %> Dimensiones: <%= producto.dimensiones
-              %> Stock: <%= producto.stock %>
+              <%= producto.descripcion %> Dimensiones: <%= producto.dimensiones %> Stock: <%= producto.stock %>
             </p>
+            <!-- Precio del producto -->
             <h1 id="precio_producto">$<%= producto.precio %> COP</h1>
           </div>
         </section>
-        <% if(data.usuario == null) {%>
+        <!-- Sección de botones de compra -->
+        <% if(data.usuario == null) { %>
+        <!-- Si no hay usuario autenticado -->
         <section class="btn__flex">
+          <!-- Botón para iniciar sesión -->
           <button
             class="Buttton-Compras"
             onclick="linkTo('cuenta','iniciar-sesion')"
           >
             Comprar
           </button>
+          <!-- Botón para agregar al carrito -->
           <button
             class="Buttton-Compras"
             onclick="linkTo('cuenta','iniciar-sesion')"
@@ -41,14 +57,17 @@
             Agregar al Carrito
           </button>
         </section>
-        <% }else{ %>
+        <% } else { %>
+        <!-- Si hay usuario autenticado -->
         <section class="btn__flex">
+          <!-- Botón para comprar -->
           <button
             class="Buttton-Compras"
             onclick="linkTo('producto','comprar','<%= producto.id_producto %>')"
           >
             Comprar
           </button>
+          <!-- Botón para agregar al carrito -->
           <button
             class="Buttton-Compras"
             onclick="linkTo('producto','al-carro','<%= producto.id_producto %>')"
@@ -59,6 +78,7 @@
         <% } %>
       </div>
     </main>
+    <!-- Inclusión del pie de página -->
     <%- include('./partials/footer.ejs') %>
   </body>
 </html>

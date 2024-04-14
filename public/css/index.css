@@ -1,27 +1,25 @@
 .size {
-  padding: 3rem 0;
+  padding: 3rem 0; /* Relleno de 3rem arriba y abajo, y sin relleno a los lados por defecto */
 }
 @media (min-width: 768px) {
   .size {
-    padding: 8rem 0;
+    padding: 8rem 0; /* Relleno de 8rem arriba y abajo, y sin relleno a los lados en pantallas con un ancho mínimo de 768px */
   }
 }
 .size5 {
-  padding: 3rem 0;
+  padding: 3rem 0; /* Relleno de 3rem arriba y abajo, y sin relleno a los lados por defecto */
 }
 @media (min-width: 768px) {
   .size5 {
-    padding: 5rem 0;
+    padding: 5rem 0; /* Relleno de 5rem arriba y abajo, y sin relleno a los lados en pantallas con un ancho mínimo de 768px */
   }
 }
 .scl {
-  transition: -webkit-transform 0.5s;
-  transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s; /* Transición para la transformación */
 }
 .scl:hover {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1); /* Escala 1.1 en hover para navegadores WebKit */
+  transform: scale(1.1); /* Escala 1.1 en hover */
 }
 .site__header {
   background-image: linear-gradient(
@@ -29,189 +27,207 @@
       rgba(167, 135, 184, 0.7) 50%,
       #9a7eb4
     ),
-    url(../img/header.jpg);
-  background-position: center 20%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 20rem 0;
+    url(../img/header.jpg); /* Imagen de fondo con degradado y imagen */
+  background-position: center 20%; /* Posición del fondo */
+  background-repeat: no-repeat; /* No repetir la imagen de fondo */
+  background-size: cover; /* Tamaño de la imagen de fondo cubrir */
+  padding: 20rem 0; /* Relleno superior e inferior de 20rem, sin relleno a los lados */
 }
+
 @media (min-width: 768px) {
   .site__header {
-    padding: 10rem 0;
+    padding: 10rem 0; /* Relleno superior e inferior de 10rem en pantallas con un ancho mínimo de 768px */
   }
 }
 .site__header .logo {
-  margin: 0 auto;
-  max-width: 10rem;
+  margin: 0 auto; /* Margen automático a los lados para centrar el logotipo */
+  max-width: 10rem; /* Ancho máximo del logotipo */
 }
 @media (min-width: 768px) {
   .site__header .logo {
-    margin: 0;
+    margin: 0; /* Restablece el margen a 0 en pantallas con un ancho mínimo de 768px */
   }
 }
 .site__header .header__content {
-  padding-bottom: 10rem;
-  padding-top: 10rem;
+  padding-bottom: 10rem; /* Relleno inferior de 10rem */
+  padding-top: 10rem; /* Relleno superior de 10rem */
 }
 @media (min-width: 1024px) {
   .site__header .header__content {
-    padding-bottom: 15rem;
-    padding-top: 15rem;
+    padding-bottom: 15rem; /* Relleno inferior de 15rem en pantallas con un ancho mínimo de 1024px */
+    padding-top: 15rem; /* Relleno superior de 15rem en pantallas con un ancho mínimo de 1024px */
   }
 }
 .site__header .header__content h1 {
-  color: #fff;
-  font-size: 4.5rem;
+  color: #fff; /* Color del texto blanco */
+  font-size: 4.5rem; /* Tamaño de fuente de 4.5rem */
 }
+
 @media (min-width: 768px) {
   .site__header .header__content h1 {
-    font-size: 6rem;
-    max-width: 50%;
+    font-size: 6rem; /* Tamaño de fuente de 6rem en pantallas con un ancho mínimo de 768px */
+    max-width: 50%; /* Ancho máximo del 50% del contenedor */
   }
 }
 @media (min-width: 1024px) {
   .site__header .header__content h1 {
-    max-width: 40%;
+    max-width: 40%; /* Ancho máximo del 40% del contenedor en pantallas con un ancho mínimo de 1024px */
   }
 }
 .signupsignin {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: flex; /* Mostrar como flexbox */
+  flex-direction: column; /* Dirección de columna */
+  gap: 2rem; /* Espacio entre elementos de 2rem */
 }
 @media (min-width: 768px) {
   .signupsignin {
-    flex-direction: row;
+    flex-direction: row; /* Cambiar a dirección de fila en pantallas con un ancho mínimo de 768px */
   }
 }
-
 @media (min-width: 768px) {
   .petfriendly__grid {
-    align-items: center;
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(2, 1fr);
+    align-items: center; /* Alineación de elementos al centro */
+    display: grid; /* Mostrar como grid */
+    gap: 2rem; /* Espacio entre filas y columnas */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
   }
+  
   .shopinfo__grid {
-    align-items: center;
-    display: grid;
-    gap: 4rem;
-    grid-template-columns: repeat(5, 1fr);
+    align-items: center; /* Alineación de elementos al centro */
+    display: grid; /* Mostrar como grid */
+    gap: 4rem; /* Espacio entre filas y columnas */
+    grid-template-columns: repeat(5, 1fr); /* Cinco columnas de igual tamaño */
   }
 }
 .shopinfo__grid .shopinfo__content {
-  grid-column: 1/4;
+  grid-column: 1/4; /* Ocupa desde la primera hasta la cuarta columna */
 }
+
 .shopinfo__grid .shopinfo__img {
-  grid-column: 4/6;
+  grid-column: 4/6; /* Ocupa desde la cuarta hasta la sexta columna */
 }
 .wrapper {
-  background: linear-gradient(0deg, rgba(167, 135, 184, 0.7) 50%, #9a7eb4);
+  background: linear-gradient(0deg, rgba(167, 135, 184, 0.7) 50%, #9a7eb4); /* Fondo con degradado lineal */
 }
+
 .wrapper h2 {
-  color: #fff;
+  color: #fff; /* Color del texto blanco */
 }
 @media (min-width: 768px) {
   .adoptme__grid {
-    align-items: center;
-    display: grid;
-    gap: 4rem;
-    grid-template-columns: repeat(4, 1fr);
+    align-items: center; /* Alineación de elementos al centro */
+    display: grid; /* Mostrar como grid */
+    gap: 4rem; /* Espacio entre filas y columnas */
+    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas de igual tamaño */
   }
 }
+
 .adoptme__grid .adoptme__content {
-  grid-column: 1/3;
+  grid-column: 1/3; /* Ocupa desde la primera hasta la tercera columna */
 }
+
 .adoptme__grid .adoptme__img {
-  grid-column: 3/5;
+  grid-column: 3/5; /* Ocupa desde la tercera hasta la quinta columna */
 }
 .footer {
-  background-color: rgba(167, 135, 184, 0.7);
+  background-color: rgba(167, 135, 184, 0.7); /* Color de fondo con opacidad */
 }
+
 .footer .footer__grid {
-  display: grid;
-  justify-content: center;
-  justify-items: center;
-  text-align: center;
+  display: grid; /* Mostrar como grid */
+  justify-content: center; /* Centrar horizontalmente */
+  justify-items: center; /* Centrar los elementos en el eje horizontal */
+  text-align: center; /* Alinear el texto al centro */
 }
+
 @media (min-width: 768px) {
   .footer .footer__grid {
-    align-items: center;
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(5, 1fr);
-    justify-content: unset;
-    justify-items: unset;
-    text-align: left;
+    align-items: center; /* Centra verticalmente los elementos */
+    display: grid; /* Muestra como grid */
+    gap: 2rem; /* Espacio entre las filas y columnas del grid */
+    grid-template-columns: repeat(5, 1fr); /* Distribuye las columnas en 5 partes iguales */
+    justify-content: unset; /* Reinicia la alineación horizontal */
+    justify-items: unset; /* Reinicia la alineación horizontal de los elementos del grid */
+    text-align: left; /* Alinea el texto a la izquierda */
+  }
+
+  .footer .footer__partners {
+    margin: 0 auto 5rem; /* Establece un margen arriba y abajo y centra horizontalmente */
+    max-width: 15rem; /* Establece un ancho máximo */
   }
 }
-.footer .footer__partners {
-  margin: 0 auto 5rem;
-  max-width: 15rem;
-}
+
 @media (min-width: 768px) {
   .footer .footer__partners {
-    margin: 0;
+    margin: 0; /* Reinicia el margen a cero */
   }
 }
+
 .footer .footer__content {
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; /* Establece un margen inferior de 2rem */
 }
 @media (min-width: 768px) {
   .footer .footer__content {
-    margin-bottom: 0;
+    margin-bottom: 0; /* Establece el margen inferior a 0 */
   }
 }
+
 .footer .footer__content h3 {
-  color: #fff;
-  text-align: left;
+  color: #fff; /* Color de texto blanco */
+  text-align: left; /* Alineación del texto a la izquierda */
 }
+
 @media (min-width: 768px) {
   .footer .footer__content h3 {
-    margin-bottom: 2rem;
+    margin-bottom: 2rem; /* Margen inferior de 2 rem */
   }
 }
 .footer nav {
-  display: inline-block;
+  display: inline-block; /* Mostrar como un bloque en línea */
 }
+
 .footer nav a {
-  color: #fff;
-  display: block;
-  margin-bottom: 1rem;
+  color: #fff; /* Color de texto blanco */
+  display: block; /* Mostrar como bloque */
+  margin-bottom: 1rem; /* Margen inferior de 1 rem */
 }
+
 .footer nav a:last-of-type {
-  margin-bottom: 0;
+  margin-bottom: 0; /* Eliminar el margen inferior del último enlace */
 }
+
 .footer nav a:hover {
-  color: #a787b8;
-  transition: 0.3s;
+  color: #a787b8; /* Cambiar color del texto a un tono de morado */
+  transition: 0.3s; /* Agregar transición de 0.3 segundos */
 }
+
 .footer .footer__copyright {
-  color: #fff;
-  font-size: 1.5rem;
-  margin: 0 auto;
-  text-align: center;
+  color: #fff; /* Color de texto blanco */
+  font-size: 1.5rem; /* Tamaño de fuente de 1.5 rem */
+  margin: 0 auto; /* Margen superior e inferior automáticos y margen izquierdo y derecho automáticos */
+  text-align: center; /* Alineación del texto al centro */
 }
+
 .footer .footer__media {
-  display: grid;
-  justify-items: center;
+  display: grid; /* Los iconos se muestran en una cuadrícula */
+  justify-items: center; /* Centra los íconos horizontalmente */
 }
 
 .footer .footer__icons {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  max-width: 200px;
-  opacity: 0.3;
+  display: flex; /* Los íconos se muestran en una fila */
+  gap: 1rem; /* Espacio entre los íconos */
+  align-items: center; /* Centra los íconos verticalmente */
+  max-width: 200px; /* Ancho máximo de la fila de íconos */
+  opacity: 0.3; /* Opacidad de los íconos (30%) */
 }
 
 .footer__icons .iconsize {
-  width: 150px;
+  width: 150px; /* Ancho fijo para los íconos */
 }
 
-/* Extra */
 .adoptme__content p span,
 .petfriendly__content p span {
-  font-weight: 900;
-  font-style: italic;
+  font-weight: 900; /* Grosor de la fuente */
+  font-style: italic; /* Estilo de la fuente (cursiva) */
 }
+

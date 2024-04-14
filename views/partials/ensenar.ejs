@@ -1,19 +1,22 @@
 <section class="sign__flex">
+  <!-- Formulario para crear un nuevo post -->
   <form
     action="/hacerUnPost"
     id="postForm"
     method="post"
     enctype="multipart/form-data"
   >
-    <label for="titulo">Titulo</label>
+    <!-- Etiqueta y campo de entrada para el título del post -->
+    <label for="titulo">Título</label>
     <input
       type="text"
       name="titulo"
       id="titulo_post"
-      placeholder="Titulo"
+      placeholder="Título"
       maxlength="50"
       required
     />
+    <!-- Etiqueta y área de texto para el contenido del post -->
     <label for="contenido_post">Contenido</label>
     <textarea
       name="contenido_post"
@@ -22,6 +25,7 @@
       style="min-height: 300px"
       required
     ></textarea>
+    <!-- Etiqueta y campo de entrada para la imagen del post -->
     <label for="imagen_post">Imagen</label>
     <img
       style="display: none"
@@ -30,7 +34,8 @@
       alt="Imagen previa"
     />
     <input type="file" name="imagen_post" id="imagen_post" accept="image/*" />
-    <label for="Categoria_post"></label>
+    <!-- Etiqueta y lista desplegable para seleccionar la categoría del post -->
+    <label for="Categoria_post">Categoría</label>
     <select name="Categoria_post" id="Categoria_post" required>
       <option value="1">Cachorro Grande</option>
       <option value="2">Cachorro Mediano</option>
@@ -39,7 +44,9 @@
       <option value="5">Gatos</option>
       <option value="6">Aves</option>
     </select>
+    <!-- Botón para enviar el formulario y crear el post -->
     <button type="submit">Postear</button>
   </form>
 </section>
+<!-- Script para manejar la funcionalidad del formulario -->
 <script src="/resources/js/forms.js"></script>

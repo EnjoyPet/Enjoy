@@ -1,31 +1,31 @@
 /* Estilos para tablas */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
-    border: 1px solid var(--color-terciario);
+    width: 100%; /* Ancho de la tabla */
+    border-collapse: collapse; /* Colapso de bordes de tabla */
+    margin-bottom: 20px; /* Margen inferior */
+    background-color: var(--color-fondo); /* Color de fondo */
+    color: var(--color-texto); /* Color del texto */
+    border: 1px solid var(--color-terciario); /* Borde de la tabla */
 }
 
 th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid var(--color-terciario);
+    padding: 10px; /* Relleno interno */
+    text-align: left; /* Alineación del texto */
+    border-bottom: 1px solid var(--color-terciario); /* Borde inferior */
 }
 
 th {
-    background-color: var(--color-primario);
-    color: var(--color-texto-terciario);
+    background-color: var(--color-primario); /* Color de fondo del encabezado */
+    color: var(--color-texto-terciario); /* Color del texto del encabezado */
 }
 
 /* Estilos para enlaces en tablas */
 table a {
-    color: var(--color-enlace);
-    text-decoration: none;
+    color: var(--color-enlace); /* Color del enlace */
+    text-decoration: none; /* Sin decoración de texto */
 }
 
 table a:hover {
-    color: var(--color-enlace-hover);
-    text-decoration: underline;
+    color: var(--color-enlace-hover); /* Color del enlace al pasar el ratón */
+    text-decoration: underline; /* Subrayado al pasar el ratón */
 }

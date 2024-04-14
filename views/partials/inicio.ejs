@@ -1,30 +1,22 @@
+<!-- Sección para el formulario de inicio de sesión -->
 <section class="sign__flex">
+  <!-- Formulario de inicio de sesión -->
   <form class="form_loginn" action="/inciar" method="post">
+    <!-- Título del formulario -->
     <h1>Inicia Sesión</h1>
 
-    <input
-      id="ing_correo"
-      type="email"
-      name="correo"
-      placeholder="Correo"
-      autocomplete="off"
-      required
-    />
-    <input
-      id="ing_contrasenia"
-      type="password"
-      name="contrasenia"
-      placeholder="Contraseña"
-      autocomplete="off"
-      required
-    />
+    <!-- Campo de entrada para el correo -->
+    <input id="ing_correo" type="email" name="correo" placeholder="Correo" autocomplete="off" required />
+
+    <!-- Campo de entrada para la contraseña -->
+    <input id="ing_contrasenia" type="password" name="contrasenia" placeholder="Contraseña" autocomplete="off" required />
+
+    <!-- Botón para enviar el formulario -->
     <button type="submit" class="Ingresar" name="enviar">Iniciar Sesión</button>
-    <button
-      class="other-button"
-      onclick="linkTo('usuario','recuperar-contrasenia')"
-    >
-      ¿Olvidaste tu contraseña?
-    </button>
+
+    <!-- Botón para recuperar contraseña -->
+    <button class="other-button" onclick="linkTo('usuario','recuperar-contrasenia')">¿Olvidaste tu contraseña?</button>
   </form>
 </section>
+<!-- Script para la funcionalidad del formulario -->
 <script src="/resources/js/forms.js"></script>

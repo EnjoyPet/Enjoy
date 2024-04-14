@@ -1,7 +1,7 @@
 # EnjoYourPet
 ***
 
-EnjoYourPet es una solución web integral que atiende a diversas necesidades asociadas con ser dueño o querer ser dueño de una mascota. Desde productos para mascotas hasta servicios de adopción, tiene como objetivo simplificar la experiencia de ser dueño de una mascota.
+EnjoYourPet es una solución web integral que atiende a diversas necesidades asociadas con ser dueño o querer ser dueño de una mascota. Desde productos para mascotas hasta servicios de adopción, tiene como objetivo simplificar la experiencia de tener una mascota.
 
 ## Tabla de Contenidos
 1. [Información General](#general-info)
@@ -65,10 +65,10 @@ La tienda de mascotas ofrece una amplia gama de productos, incluyendo comida, ju
 Para adoptar una mascota, navega hasta la sección de adopciones del sitio web y sigue las instrucciones proporcionadas. También puedes contactar a otros usuarios a través de la red social pseudo para obtener ayuda y consejos.
 
 3. **¿Está disponible el curso de entrenamiento para todos los tipos de mascotas?**
-No, por ahora el curso de entrenamiento está planeado solo para perros, y en el futuro, para gatos.
+No, por ahora el curso de entrenamiento básico está planeado solo para perros, y en el futuro, para gatos.
 
 4. **¿Cómo puedo contribuir al proyecto?**
-Por ahora, no puedes contribuir porque este proyecto es para fines educativos, por lo que no podemos aceptar tu ayuda. Pero de todos modos, gracias.
+Por ahora, no puedes contribuir porque este proyecto es para fines educativos, por lo que no podemos aceptar tu ayuda. Gracias por tu disposición.
 
 5. **¿Estará disponible el proyecto para el público cuando esté terminado?**
 Sí, estará disponible. Esperamos que puedas usarlo y ayudarnos a mejorarlo con tus comentarios.
@@ -83,6 +83,6 @@ Sí, hay planes para trasladar el frontend a React en el futuro.
 Sí, el despliegue móvil está actualmente en progreso.
 
 9. **¿Dónde puedo encontrar servicios específicos como el curso de entrenamiento para mascotas y el despliegue de mapas para ubicaciones relacionadas con mascotas?**
-El curso de entrenamiento para mascotas está actualmente en progreso, y el despliegue de mapas para ubicaciones relacionadas con mascotas también está en progreso.
+El curso de entrenamiento para mascotas está actualmente en progreso, asi mismo el despliegue de mapas para ubicaciones relacionadas con mascotas.
 
-¡Si tienes más preguntas o necesitas aclaraciones, no dudes en preguntar!
+¡Si tienes más preguntas o necesitas aclaraciones, no dudes en escribirnos!

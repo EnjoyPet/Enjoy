@@ -1,13 +1,13 @@
 body {
-  /* background-color: var(--color-fondo);
-        background-repeat: repeat; */
+  /* background-color: var(--color-fondo); */
+  /* background-repeat: repeat; */
   background: linear-gradient(
     to right,
     var(--color-primario),
     var(--color-secundario)
-  );
-  color: var(--color-texto);
-  overflow-x: hidden;
-  font-weight: 700;
-  max-width: 185rem;
+  ); /* Fondo con degradado lineal desde el color primario hasta el color secundario */
+  color: var(--color-texto); /* Color del texto */
+  overflow-x: hidden; /* Ocultar el desplazamiento horizontal */
+  font-weight: 700; /* Peso de la fuente */
+  max-width: 185rem; /* Anchura máxima del cuerpo */
 }

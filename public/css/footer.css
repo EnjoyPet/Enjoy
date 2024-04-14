@@ -1,10 +1,10 @@
 .footer {
-  background-color: transparent;
-  color: var(--color-texto);
-  padding: 0;
-  width: 1005;
-  margin-top: 80px;
-  margin-bottom: 0;
+  background-color: transparent; /* Color de fondo transparente */
+  color: var(--color-texto); /* Color del texto */
+  padding: 0; /* Sin relleno */
+  width: 1005; /* Anchura fija (probablemente falta la unidad, como píxeles) */
+  margin-top: 80px; /* Margen superior de 80 píxeles */
+  margin-bottom: 0; /* Sin margen inferior */
 }
 
 /* @media (min-width: 768px) {
@@ -22,63 +22,61 @@
 } */
 
 .footer-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  display: flex; /* Mostrar como elemento flex */
+  flex-direction: column; /* Apilar los elementos verticalmente */
+  justify-content: space-between; /* Distribuir el espacio entre los elementos */
+  align-items: center; /* Centrar horizontalmente los elementos */
 }
 
 @media (min-width: 768px) {
   .footer-content {
-    flex-direction: row;
+    flex-direction: row; /* Cambiar a una disposición en fila en pantallas más grandes */
   }
 }
+
 
 /* .footer-links {
   display: flex;
   flex-direction: column;
 } */
-
 .footer-logo img {
-  height: 120px;
-  padding: 0;
-  width: auto;
-  display: flex;
-  justify-content: center;
+  height: 120px; /* Altura del logotipo */
+  padding: 0; /* Sin relleno alrededor de la imagen */
+  width: auto; /* Ancho automático para mantener la proporción */
+  display: flex; /* Mostrar como elemento flex */
+  justify-content: center; /* Centrar horizontalmente */
 }
 
 .footer-links ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
+  list-style-type: none; /* Sin viñetas */
+  padding: 0; /* Sin relleno interno */
+  margin: 0; /* Sin margen */
+  display: flex; /* Mostrar como elemento flex */
+  flex-wrap: wrap; /* Envolver elementos en múltiples líneas si es necesario */
 }
 
 .footer-links li {
-  margin-right: 20px;
+  margin-right: 20px; /* Espacio entre elementos de la lista */
 }
 
 .footer-links a {
-  text-decoration: none;
-  color: #fff;
+  text-decoration: none; /* Sin subrayado en los enlaces */
+  color: #fff; /* Color del texto del enlace */
 }
 
 .footer-links a:hover {
-  color: var(--color-enlace-hover);
-  transition: ease 0.3s;
+  color: var(--color-enlace-hover); /* Cambiar color al pasar el ratón */
+  transition: ease 0.3s; /* Efecto de transición suave */
 }
-
 .footer-info {
-  text-align: center;
+  text-align: center; /* Centrar el texto */
 }
 
 .footer-info p {
-  font-size: 14px;
-  margin: 0 auto;
-  color: var(--color-enlace-hover);
+  font-size: 14px; /* Tamaño de fuente */
+  margin: 0 auto; /* Margen automático */
+  color: var(--color-enlace-hover); /* Color del texto */
 }
-
 .footer-links {
-  padding: 0 2rem;
+  padding: 0 2rem; /* Relleno en los lados */
 }

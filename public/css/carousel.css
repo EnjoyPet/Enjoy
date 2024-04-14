@@ -1,77 +1,67 @@
 #carousel-container {
-  width: 90%;
-  height: 85vh;
-  position: relative;
+  width: 90%; /* Anchura del 90% del contenedor padre */
+  height: 85vh; /* Altura del 85% del viewport */
+  position: relative; /* Posición relativa */
 }
-
 #carousel {
-  width: 100%;
-  height: 100%;
-  position: relative;
+  width: 100%; /* Anchura del 100% */
+  height: 100%; /* Altura del 100% */
+  position: relative; /* Posición relativa */
 }
-
 .img-carousel {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-top-right-radius: 35px;
-  border-bottom-left-radius: 35px;
-  transition: opacity 0.6s;
+  width: 100%; /* Anchura del 100% */
+  height: 100%; /* Altura del 100% */
+  position: absolute; /* Posición absoluta */
+  top: 0; /* Posición superior */
+  bottom: 0; /* Posición inferior */
+  left: 0; /* Posición izquierda */
+  right: 0; /* Posición derecha */
+  border-top-right-radius: 35px; /* Radio de borde superior derecho */
+  border-bottom-left-radius: 35px; /* Radio de borde inferior izquierdo */
+  transition: opacity 0.6s; /* Transición de opacidad */
 }
-
 .carousel--section {
-  display: flex;
-  flex-direction: row;
-  background-color: var(--color-terciario);
-  margin: 20px auto;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  align-items: center;
-  z-index: 1;
+  display: flex; /* Mostrar como elemento flex */
+  flex-direction: row; /* Disposición en fila de los elementos hijos */
+  background-color: var(--color-terciario); /* Color de fondo */
+  margin: 20px auto; /* Margen superior e inferior de 20px y margen izquierdo y derecho automático */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+  text-align: center; /* Alinear texto al centro */
+  align-items: center; /* Centrar verticalmente los elementos */
+  z-index: 1; /* Índice z para superponerlo a otras capas */
 }
-
 #carousel-text {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  color: #fff;
-  padding-top: 2rem;
-  margin: 0px;
-  border-top-right-radius: 35px;
-  border-bottom-left-radius: 35px;
-  background: linear-gradient(180deg, rgba(0, 0, 0) 10%, rgba(0, 0, 0, 0) 70%);
-  z-index: 10;
-  opacity: 0;
-  transition: opacity 0.6s;
+  width: 100%; /* Anchura del 100% */
+  height: 100%; /* Altura del 100% */
+  position: absolute; /* Posición absoluta */
+  top: 0; /* Posición superior */
+  bottom: 0; /* Posición inferior */
+  left: 0; /* Posición izquierda */
+  right: 0; /* Posición derecha */
+  color: #fff; /* Color del texto */
+  padding-top: 2rem; /* Relleno superior de 2rem */
+  margin: 0px; /* Margen 0 */
+  border-top-right-radius: 35px; /* Radio de borde superior derecho */
+  border-bottom-left-radius: 35px; /* Radio de borde inferior izquierdo */
+  background: linear-gradient(180deg, rgba(0, 0, 0) 10%, rgba(0, 0, 0, 0) 70%); /* Degradado de fondo */
+  z-index: 10; /* Índice z para superponerlo a otras capas */
+  opacity: 0; /* Opacidad inicial */
+  transition: opacity 0.6s; /* Transición de opacidad */
 }
-
-#carousel-text h1{
-  text-wrap:balance;
-  width: 80%;
-  margin: auto;
-  text-align: center;
+#carousel-text h1 {
+  text-wrap: balance; /* Ajuste de texto */
+  width: 80%; /* Anchura del 80% del contenedor padre */
+  margin: auto; /* Margen automático en los lados */
+  text-align: center; /* Alinear texto al centro */
 }
-
 #carousel-container:hover #carousel-text {
-  opacity: 1;
+  opacity: 1; /* Mostrar el texto al pasar el ratón sobre el contenedor del carrusel */
 }
-
 .hide {
-  opacity: 0;
+  opacity: 0; /* Ocultar el texto */
 }
-
 @media (max-width: 450px) {
-
-#carousel-text {
-  font-size: small;
-}
-  
+  #carousel-text {
+    font-size: small; /* Tamaño de fuente pequeño para dispositivos con pantalla pequeña */
+  }
 }

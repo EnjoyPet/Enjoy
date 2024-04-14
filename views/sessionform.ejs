@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Título de la página -->
     <title><%=tipo%></title>
+    <!-- Inclusión de enlaces a archivos externos -->
     <%- include("./partials/metalink.ejs") %>
   </head>
   <body>
+    <!-- Inclusión del encabezado de la página -->
     <%- include('./partials/header.ejs') %>
+    <!-- Contenido principal -->
     <main>
-      <% if(tipo !== null) {%> <% const Ruta = './partials/' + tipo + '.ejs' %>
+      <!-- Verificación del tipo de formulario -->
+      <% if(tipo !== null) {%>
+      <!-- Construcción de la ruta del formulario -->
+      <% const Ruta = './partials/' + tipo + '.ejs' %>
+      <!-- Sección para mostrar el formulario -->
       <section class="form-container"><%- include(Ruta) %></section>
+      <!-- Si el tipo es null -->
       <% } else {%>
       <section style="flex-direction: column">
+        <!-- Mensaje de error -->
         <h1 class="listado_1">Hubo un Problema</h1>
         <h3 class="listado_1">
           No encontramos la ruta definida esperamos solucionar esto pronto
@@ -18,6 +28,7 @@
       </section>
       <% } %>
     </main>
+    <!-- Inclusión del pie de página -->
     <%- include('./partials/footer.ejs') %>
   </body>
 </html>

@@ -1,142 +1,157 @@
+/* Estilos para el contenedor de productos */
 .productocontainer {
-  width: 100%;
-  min-height: 350px;
-  max-height: 350px;
-  height: auto;
-  height: fit-content;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  background-color: var(--color-terciario);
-  border-radius: 2px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  cursor: pointer;
+  width: 100%; /* Ancho completo */
+  min-height: 350px; /* Altura mínima */
+  max-height: 350px; /* Altura máxima */
+  height: auto; /* Altura automática */
+  height: fit-content; /* Altura ajustada al contenido */
+  display: flex; /* Mostrar como flexbox */
+  justify-content: space-around; /* Distribución uniforme de los elementos */
+  flex-direction: column; /* Dirección de la disposición */
+  background-color: var(--color-terciario); /* Color de fondo */
+  border-radius: 2px; /* Radio de borde */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+  text-align: center; /* Alineación del texto */
+  cursor: pointer; /* Cambio de cursor al pasar */
 }
 
+/* Estilos para el contenedor de productos principal */
 #productosContainer {
-  padding: 30px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 32px;
+  padding: 30px; /* Relleno interno */
+  display: grid; /* Mostrar como grid */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas responsivas */
+  gap: 32px; /* Espacio entre elementos */
 }
+
+/* Estilos para el título del producto */
 .productocontainer h5 {
-  width: 90%;
-  margin: 0 auto;
+  width: 90%; /* Ancho del título */
+  margin: 0 auto; /* Margen automático */
 }
 
+/* Estilos para el contenedor del nombre del producto */
 #producto_Nombre {
-  width: 80%;
-  margin: 30px auto;
-  padding: 15px;
-  border-radius: 2px;
-  background-color: var(--color-primario);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  color: #fff;
+  width: 80%; /* Ancho del contenedor */
+  margin: 30px auto; /* Margen superior e inferior automático, margen izquierdo y derecho automático */
+  padding: 15px; /* Relleno interno */
+  border-radius: 2px; /* Radio de borde */
+  background-color: var(--color-primario); /* Color de fondo */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+  color: #fff; /* Color del texto */
 }
-
+/* Estilos para el contenedor de descripción del producto */
 #decripcion_producto {
-  width: 80%;
-  margin: 30px auto;
-  justify-content: center;
-  text-align: justify;
-  align-items: center;
+  width: 80%; /* Ancho del contenedor */
+  margin: 30px auto; /* Margen superior e inferior automático, margen izquierdo y derecho automático */
+  justify-content: center; /* Justificar contenido */
+  text-align: justify; /* Alinear texto justificado */
+  align-items: center; /* Alinear elementos al centro */
 }
+
+/* Estilos para el título de la descripción del producto */
 #decripcion_producto h2 {
-  width: 60%;
-  margin: 30px auto;
-  border-radius: 2px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  color: #000;
-  padding: 15px;
-  text-align: center;
-  color: #fff;
+  width: 60%; /* Ancho del título */
+  margin: 30px auto; /* Margen superior e inferior automático, margen izquierdo y derecho automático */
+  border-radius: 2px; /* Radio de borde */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+  color: #000; /* Color del texto */
+  padding: 15px; /* Relleno interno */
+  text-align: center; /* Alineación del texto */
+  color: #fff; /* Color del texto */
 }
 
+/* Estilos para el párrafo de la descripción del producto */
 #decripcion_producto p {
-  width: 80%;
-  margin: 30px auto;
-  color: var(--color-texto);
-  border-radius: 2px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  padding: 15px;
-  white-space: pre-line;
-  color: #fff;
-  font-weight: 400;
+  width: 80%; /* Ancho del párrafo */
+  margin: 30px auto; /* Margen superior e inferior automático, margen izquierdo y derecho automático */
+  color: var(--color-texto); /* Color del texto */
+  border-radius: 2px; /* Radio de borde */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+  padding: 15px; /* Relleno interno */
+  white-space: pre-line; /* Espacio en blanco */
+  color: #fff; /* Color del texto */
+  font-weight: 400; /* Peso de la fuente */
 }
-
+/* Estilos para la imagen grande del producto */
 .producto_Big_img {
-  width: 50%;
-  margin: 30px auto;
-  border-radius: 2px;
-  background-color: #fff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  width: 50%; /* Ancho de la imagen */
+  margin: 30px auto; /* Margen superior e inferior automático, margen izquierdo y derecho automático */
+  border-radius: 2px; /* Radio de borde */
+  background-color: #fff; /* Color de fondo */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
 }
 
+/* Estilos para las imágenes pequeñas del producto */
 .producto_img {
-  width: 80%;
-  max-width: 100%;
-  height: 150px;
-  margin: 0 auto;
-  border-radius: 2px;
-  background-color: #fff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  width: 80%; /* Ancho de la imagen */
+  max-width: 100%; /* Ancho máximo */
+  height: 150px; /* Altura */
+  margin: 0 auto; /* Margen superior e inferior automático, margen izquierdo y derecho automático */
+  border-radius: 2px; /* Radio de borde */
+  background-color: #fff; /* Color de fondo */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
 }
 
+/* Estilos para el contenedor de flechas */
 .arrowContainer {
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  margin: 15px auto;
-  display: flex;
-  flex-direction: row;
-  color: #fff;
-  background-color: var(--color-fondo);
-  height: 50px;
-  width: max-content;
-  border-radius: 2px;
+  text-align: center; /* Alineación del texto al centro */
+  justify-content: center; /* Justificar contenido */
+  align-items: center; /* Alinear elementos al centro */
+  margin: 15px auto; /* Margen superior e inferior automático, margen izquierdo y derecho automático */
+  display: flex; /* Mostrar como flexbox */
+  flex-direction: row; /* Dirección de la fila */
+  color: #fff; /* Color del texto */
+  background-color: var(--color-fondo); /* Color de fondo */
+  height: 50px; /* Altura */
+  width: max-content; /* Ancho máximo */
+  border-radius: 2px; /* Radio de borde */
 }
+/* Estilos para los títulos dentro del contenedor de flechas */
 .arrowContainer h1 {
-  padding: 25px;
+  padding: 25px; /* Relleno interno */
 }
 
 .arrowContainer h1:first-child {
-  margin: 0 125px 0 25px;
+  margin: 0 125px 0 25px; /* Margen izquierdo y derecho */
 }
+
 .arrowContainer h1:last-child {
-  margin: 0 25px 0 125px;
+  margin: 0 25px 0 125px; /* Margen izquierdo y derecho */
 }
 
 .arrowContainer h1:hover {
-  color: var(--color-secundario);
-  transition: 0.3s;
-  cursor: pointer;
+  color: var(--color-secundario); /* Cambio de color al pasar el ratón */
+  transition: 0.3s; /* Transición suave */
+  cursor: pointer; /* Cursor al pasar el ratón */
 }
 
+/* Estilos para el botón de compras */
 .Buttton-Compras {
-  align-self: center;
-  justify-self: center;
-  height: 50px;
-  margin: 25px auto;
-  padding: 10px 20px;
-  background-color: var(--color-primario);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  margin-top: 15px;
+  align-self: center; /* Alineación vertical */
+  justify-self: center; /* Alineación horizontal */
+  height: 50px; /* Altura */
+  margin: 25px auto; /* Margen superior e inferior automático, margen izquierdo y derecho automático */
+  padding: 10px 20px; /* Relleno interno */
+  background-color: var(--color-primario); /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Radio de borde */
+  cursor: pointer; /* Cursor al pasar el ratón */
+  transition: background-color 0.3s; /* Transición suave */
+  margin-top: 15px; /* Margen superior */
 }
-
+/* Estilos para el precio del producto */
 #precio_producto {
-  width: 50%;
-  margin: 15px auto;
-  padding: 10px;
-  text-align: center;
-  border-radius: 2px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  width: 50%; /* Ancho del elemento */
+  margin: 15px auto; /* Margen exterior superior e inferior automático, margen izquierdo y derecho automático */
+  padding: 10px; /* Relleno interno */
+  text-align: center; /* Alineación del texto */
+  border-radius: 2px; /* Radio de borde */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra */
 }
 
+/* Cambio de color de fondo al pasar el ratón sobre el botón de compras */
 .Buttton-Compras:hover {
-  background-color: var(--color-enlace);
+  background-color: var(--color-enlace); /* Color de fondo al pasar el ratón */
 }
+

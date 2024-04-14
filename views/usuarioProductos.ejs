@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Título de la página con el nombre del usuario -->
     <title>Carrito de <%= data.usuario %></title>
+    <!-- Inclusión de enlaces a archivos externos -->
     <%- include("./partials/metalink.ejs") %>
   </head>
   <body>
+    <!-- Inclusión del encabezado de la página -->
     <%- include("./partials/header.ejs") %>
     <main>
+      <!-- Sección principal con dirección de columna -->
       <section style="flex-direction: column">
+        <!-- Encabezado de la sección de productos -->
         <h1 class="listado_1" style="margin: 10px auto; width: 100%">
           Productos
         </h1>
+        <!-- Sección para mostrar la tabla de productos -->
         <section>
           <table>
+            <!-- Encabezados de la tabla -->
             <tr>
               <th>ID</th>
               <th>Nombre</th>
               <th>Stock</th>
               <th>Precio</th>
             </tr>
+            <!-- Iteración sobre los productos para mostrarlos en la tabla -->
             <% productos.forEach(producto => { %>
             <tr>
               <td><%= producto.id_producto %></td>
@@ -31,6 +39,7 @@
         </section>
       </section>
     </main>
+    <!-- Inclusión del pie de página -->
     <%- include("./partials/footer.ejs") %>
   </body>
 </html>

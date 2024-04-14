@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Título de la página -->
     <title>Enjoyourpet - Productos</title>
+    <!-- Inclusión de enlaces a archivos externos -->
     <%- include("./partials/metalink.ejs") %>
   </head>
   <body>
+    <!-- Inclusión del encabezado de la página -->
     <%- include('./partials/header.ejs') %>
 
+    <!-- Contenido principal -->
     <main>
+      <!-- Verificación si hay productos disponibles -->
       <% if(productos.length > 0) {%>
+      <!-- Sección para mostrar los productos -->
       <section class="width-90" id="productosContainer">
+        <!-- Iteración sobre cada producto -->
         <% productos.forEach(producto => { %>
         <div
           class="productocontainer"
           onclick="linkTo('ver','producto','<%= producto.id_producto %>')"
         >
+          <!-- Nombre del producto -->
           <h5 class="productotitulo"><%= producto.nombre %></h5>
+          <!-- Imagen del producto -->
           <img
             class="producto_img"
             src="data:image/jpeg;base64,<%= producto.imagen_producto.toString('base64') %>"
             alt="imagen del producto"
           />
+          <!-- Precio del producto -->
           <h3 class="listado_1 article__price">$ <%= producto.precio %> COP</h3>
         </div>
         <% }) %>
       </section>
+      <!-- Verificación de la paginación -->
       <% if(pagina == 0) { %>
+      <!-- Si es la primera página -->
       <div class="arrowContainer">
+        <!-- Botón para ir a la siguiente página -->
         <h1
           onclick="linkTo('productos','<%= categoria %>','<%= parseInt(pagina) +1 %>')"
           style="margin: 0 25px 0 25px"
@@ -35,12 +48,15 @@
         </h1>
       </div>
       <% } else { %>
+      <!-- Si no es la primera página -->
       <div class="arrowContainer">
+        <!-- Botón para ir a la página anterior -->
         <h1
           onclick="linkTo('productos','<%= categoria %>','<%= parseInt(pagina) -1 %>')"
         >
           &#8592;
         </h1>
+        <!-- Botón para ir a la siguiente página -->
         <h1
           onclick="linkTo('productos','<%= categoria %>', '<%= parseInt(pagina) +1 %>' )"
         >
@@ -48,16 +64,20 @@
         </h1>
       </div>
       <% } %> <% } else { %>
+      <!-- Si no hay productos disponibles -->
       <section style="flex-direction: column">
+        <!-- Mensaje de que no hay productos -->
         <div class="listado_1">
           <h1 class="listado_1">¡SE ACABARON!</h1>
           <h3>lo sentimos, ya no tenemos mas productos para ofrecer.</h3>
         </div>
+        <!-- Botón para vender productos -->
         <div class="btn__flex">
           <a href="/vender" class="btn__eyp btnshwanim--blur btn__hover--blur"
             >Vende ahora</a
           >
         </div>
+        <!-- Botón de paginación para ir a la página anterior -->
         <div class="arrowContainer">
           <h1
             onclick="linkTo('productos','<%= categoria %>','<%= parseInt(pagina) -1 %>')"
@@ -70,6 +90,7 @@
       <% } %>
     </main>
 
+    <!-- Inclusión del pie de página -->
     <%- include('./partials/footer.ejs') %>
   </body>
 </html>

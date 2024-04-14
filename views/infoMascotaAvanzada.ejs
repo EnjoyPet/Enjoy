@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
+    <!-- Título de la página -->
     <title>Enjoyourpet - Mascota</title>
+    <!-- Codificación de caracteres y escala inicial -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      href="/resources/img/iconografia/ico.ico"
-      type="image/x-icon"
-    />
+    <!-- Ícono de la página -->
+    <link rel="icon" href="/resources/img/iconografia/ico.ico" type="image/x-icon" />
+    <!-- Enlaces a fuentes externas -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+    <!-- Enlaces a hojas de estilo CSS -->
     <link rel="stylesheet" href="/resources/css/body.css" />
     <link rel="stylesheet" href="/resources/css/footer.css" />
     <link rel="stylesheet" href="/resources/css/header.css" />
@@ -23,61 +21,55 @@
     <link rel="stylesheet" href="/resources/css/gradient.css" />
   </head>
   <body>
+    <!-- Inclusión del encabezado de la página, utilizando EJS -->
     <%- include('./partials/header.ejs') %>
+    <!-- Contenido principal de la página -->
     <main>
+      <!-- Sección principal -->
       <section class="verticalSection width-90">
+        <!-- Título principal -->
         <h1 class="XS-Section">CONOCE A TU POSIBLE COMPAÑERO</h1>
-        <div
-          class="sectionnomargin"
-          style="flex-direction: row; gap: 1rem; flex-wrap: wrap"
-        >
-          <section
-            class="horizontalmidsection secondary-color position-relative"
-          >
-            <div
-              class="imagen-interactuable-container"
-              onclick="openModal('modal-imgs-adopcion')"
-            >
+        <!-- Contenedor de información de la mascota -->
+        <div class="sectionnomargin" style="flex-direction: row; gap: 1rem; flex-wrap: wrap">
+          <!-- Sección de imagen de la mascota -->
+          <section class="horizontalmidsection secondary-color position-relative">
+            <div class="imagen-interactuable-container" onclick="openModal('modal-imgs-adopcion')">
               <div class="imagen-interactuable-cortinilla"></div>
-              <img
-                src="data:image/jpeg;base64,<%= imagenes[0].imagen.toString('base64') %>"
-                alt="imagen de la mascota"
-              />
+              <!-- Imagen de la mascota, convertida de Buffer a base64 -->
+              <img src="data:image/jpeg;base64,<%= imagenes[0].imagen.toString('base64') %>" alt="imagen de la mascota" />
             </div>
           </section>
+          <!-- Sección de información de la mascota -->
           <section class="horizontalmidsection">
             <div class="XS-Section">
+              <!-- Nombre de la mascota -->
               <h1><%= mascota.Nombre %></h1>
             </div>
             <div class="info">
+              <!-- Edad de la mascota -->
               <h2>Edad:</h2>
               <p><%= mascota.Edad %></p>
             </div>
             <div class="info">
+              <!-- Sexo de la mascota -->
               <h2>Sexo:</h2>
-              <p>
-                <% if(mascota.Sexo == 0){ %> <%= 'Hembra' %> <% }else{ %><%=
-                'Macho' %> <% } %>
-              </p>
+              <p><% if(mascota.Sexo == 0){ %> <%= 'Hembra' %> <% }else{ %><%= 'Macho' %> <% } %></p>
             </div>
           </section>
         </div>
+        <!-- Sección de ficha de información -->
         <section class="verticalSection">
-          <div
-            class="medio-margin interactuable"
-            onclick="DeplegarSeccion('Ficha-De-Informacion')"
-          >
+          <div class="medio-margin interactuable" onclick="DeplegarSeccion('Ficha-De-Informacion')">
             <h1>Ficha De Informacion</h1>
           </div>
-          <section
-            id="Ficha-De-Informacion"
-            class="verticalSection"
-            style="display: none"
-          >
+          <!-- Sección de información detallada de la mascota -->
+          <section id="Ficha-De-Informacion" class="verticalSection" style="display: none">
+            <!-- Información básica -->
             <div class="samallSection botom-border">
               <div class="XS-Section">
                 <h1>Informacion Básica</h1>
               </div>
+              <!-- Detalles sobre la mascota -->
               <div class="info">
                 <h2>Nombre:</h2>
                 <p><%= mascota.Nombre %></p>
@@ -148,43 +140,37 @@
             </div>
           </section>
         </section>
-        <div
-          class="XS-Section interactuable"
-          onclick="linkTo('usuario/adoptar/mascota','<%= id %>','<%= mascota.idDueno %>')"
-        >
+         <!-- Botón para adoptar la mascota -->
+         <div class="XS-Section interactuable" onclick="linkTo('usuario/adoptar/mascota','<%= id %>','<%= mascota.idDueno %>')">
           <div class="XS-Section">
             <h1>Adoptar</h1>
           </div>
         </div>
       </section>
     </main>
+    <!-- Modal de imágenes de adopción -->
     <section id="modal-imgs-adopcion" class="modal">
+      <!-- Estilos del modal -->
       <link rel="stylesheet" href="/resources/css/modal.css" />
+      <!-- Contenedor del modal -->
       <div class="modal_container">
+        <!-- Contenedor de imágenes -->
         <div class="collage_container">
+          <!-- Iteración sobre las imágenes de la mascota -->
           <% imagenes.forEach(imagen => { %>
-          <img
-            class="img_collage"
-            src="data:image/jpeg;base64,<%= imagen.imagen.toString('base64') %>"
-            alt="imagen de la mascota"
-          />
+          <img class="img_collage" src="data:image/jpeg;base64,<%= imagen.imagen.toString('base64') %>" alt="imagen de la mascota" />
           <% }) %>
         </div>
-        <div
-          class="close_modal interactuable"
-          onclick="closeModal('modal-imgs-adopcion')"
-        >
-          X
-        </div>
-        <div class="leftbuttoncontrol" onclick="changeImage_adopcion('left')">
-          <
-        </div>
-        <div class="rightbuttoncontrol" onclick="changeImage_adopcion('right')">
-          >
-        </div>
+        <!-- Botón para cerrar el modal -->
+        <div class="close_modal interactuable" onclick="closeModal('modal-imgs-adopcion')">X</div>
+        <!-- Botones de control de imágenes del modal -->
+        <div class="leftbuttoncontrol" onclick="changeImage_adopcion('left')">◀</div>
+        <div class="rightbuttoncontrol" onclick="changeImage_adopcion('right')">▶</div>
       </div>
     </section>
+    <!-- Inclusión del pie de página, utilizando EJS -->
     <%- include('./partials/footer.ejs') %>
+    <!-- Scripts JavaScript -->
     <script src="/resources/js/modals.js"></script>
     <script src="/resources/js/modalcollageImages.js"></script>
   </body>

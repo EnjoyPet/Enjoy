@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Título de la página -->
     <title>Enjoyourpet - Aprende</title>
+    <!-- Inclusión de archivos de estilos y metadatos -->
     <%- include("./partials/metalink.ejs") %>
   </head>
   <body>
+    <!-- Inclusión de encabezado -->
     <%- include("./partials/header.ejs") %>
     <main>
+      <!-- Contenedor principal sin margen -->
       <div class="sectionnomargin">
+        <!-- Iteración sobre los posts -->
         <% posts.forEach(post => { %>
         <section>
+          <!-- Sección para cada post -->
           <div class="horizontalmidsection" style="flex-direction: column">
+            <!-- Título del post -->
             <h2 class="listado_1 center"><%= post.titulo_post %></h2>
-
+            <!-- Contenedor de imagen -->
             <div class="imgcontainer">
+              <!-- Imagen del post -->
               <img
                 id="user_big_img"
                 class="usuario_img"
@@ -21,10 +29,13 @@
                 alt="imagen del post"
               />
             </div>
-
+            <!-- Descripción del post -->
             <p class="listado_1 article__desc"><%= post.contenido_post %></p>
+            <!-- Contenedor de botones -->
             <div class="grid">
+              <!-- Botones de 'Me Gusta' y 'No Me Gusta' -->
               <% if (data.usuario != null) { %>
+              <!-- Si el usuario está autenticado -->
               <div
                 class="like_button_container"
                 onclick="meGustaPost('<%= post.id_post %>')"
@@ -46,6 +57,7 @@
                 >
               </div>
               <% } else { %>
+              <!-- Si el usuario no está autenticado -->
               <div
                 onclick="linkTo('cuenta/iniciar-sesion')"
                 class="like_button_container"
@@ -69,7 +81,9 @@
         <% }); %>
       </div>
     </main>
+    <!-- Inclusión de pie de página -->
     <%- include("./partials/footer.ejs") %>
+    <!-- Inclusión de script asíncrono -->
     <script src="/resources/js/async.js"></script>
   </body>
 </html>

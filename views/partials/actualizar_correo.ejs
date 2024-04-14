@@ -1,11 +1,15 @@
 <section class="form__flex">
+  <!-- Formulario para actualizar el correo electrónico -->
   <form
     class="registerform"
     id="registrar-Usuario-form"
     action="/actualizar-correo"
     method="post"
   >
+    <!-- Título del formulario -->
     <h1>Actualizar Correo</h1>
+    
+    <!-- Campo de entrada para el correo electrónico -->
     <label for="correo">Correo</label>
     <input
       id="_registercorreo"
@@ -15,6 +19,8 @@
       autocomplete="off"
       required
     />
+    
+    <!-- Botón de envío del formulario -->
     <button
       id="submit-btn registrar-submit-btn"
       type="submit"
@@ -24,6 +30,8 @@
       Enviar
     </button>
   </form>
+
+  <!-- Formulario para verificar la actualización del correo -->
   <form
     class="form_login"
     id="validar-Usuario-form"
@@ -31,7 +39,10 @@
     method="post"
     style="display: none"
   >
-    <p>En tu correo encontraras el codigo de verificacion</p>
+    <!-- Mensaje informativo para el usuario -->
+    <p>En tu correo encontrarás el código de verificación</p>
+    
+    <!-- Campo de entrada para el correo electrónico -->
     <label for="correo">Correo</label>
     <input
       id="__registercorreo"
@@ -41,17 +52,23 @@
       autocomplete="off"
       required
     />
-    <label for="codigo">Codigo</label>
+    
+    <!-- Campo de entrada para el código de verificación -->
+    <label for="codigo">Código</label>
     <input
       id="registercodigo"
       type="text"
       name="codigo"
-      placeholder="Codigo"
+      placeholder="Código"
       maxlength="4"
       autocomplete="off"
       required
     />
+    
+    <!-- Botón de envío del formulario -->
     <button id="submit-btn" type="submit" name="enviar">Verificar</button>
   </form>
 </section>
+
+<!-- Inclusión del script JavaScript para el manejo del formulario -->
 <script src="/resources/js/forms.js"></script>
