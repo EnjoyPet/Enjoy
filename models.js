@@ -677,7 +677,6 @@ adopcionesModel.registrarmascota = async (req, callback) => {
         callback({ error: true, message: 'Hay problemas con las imágenes' });
     }
 };
-const adopcionesModel = {};
 
 // Función para renderizar las mascotas según diferentes filtros y categorías
 adopcionesModel.rendermascotas = async (categoria, filtro, pagina, callback) => {
